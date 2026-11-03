@@ -301,4 +301,4 @@ Any motion driven only by Phase repeats perfectly every 240 frames.
    length, and the `folds` list the creases. The tidy layout and frames come back from `nodes_layout.json`. Nodes you
    add that are not in that file keep the plain automatic layout.
 
-*Made with Blender 5.2 Geometry Nodes for [Nodevember](https://nodevember.io) 2026, Day 1 · Origami.*
+*Made with Blender 5.2 Geometry Nodes for [Nodevember](https://nodevember.com) 2026, Day 1 · Origami.*
