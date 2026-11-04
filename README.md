@@ -11,10 +11,16 @@ build it again yourself.
 | Day | Prompt | Piece | |
 |---|---|---|---|
 | 01 | Origami | **Paper plane.** A sheet of washi paper folds itself into a paper plane and glides off the stack. The sheet underneath is already waiting, so the 8-second loop is seamless. | [files](2026/day01-origami) · [loop](2026/day01-origami/loop.mp4) · [**node-by-node tutorial**](2026/day01-origami/tutorial/README.md) |
+| 03 | Stitch | **Kintsugi.** An old cream tea bowl breaks along its gold seams. The shards are glued back one by one with black urushi lacquer, which squeezes out of each seam, and then gold flows down every crack from the rim until the bowl is whole again. | [files](2026/day03-stitch-v3-kintsugi) · [loop](2026/day03-stitch-v3-kintsugi/loop.mp4) · [**node-by-node tutorial**](2026/day03-stitch-v3-kintsugi/tutorial/README.md) |
 
 <p>
   <img src="2026/day01-origami/_still_086.png" width="49%" alt="The washi sheet folded into a dart on a stack of paper">
   <img src="2026/day01-origami/_still_160.png" width="49%" alt="The paper plane standing on its keel, lifting off the stack">
+</p>
+
+<p>
+  <img src="2026/day03-stitch-v3-kintsugi/_still_001.png" width="49%" alt="A cream tea bowl with fine crazing, its cracks mended with flat gold lines">
+  <img src="2026/day03-stitch-v3-kintsugi/_still_128.png" width="49%" alt="The same bowl with every shard back in place, the seams still black urushi lacquer before the gold">
 </p>
 
 ## What is in a day folder

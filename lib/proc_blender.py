@@ -413,6 +413,9 @@ def _layout_key(tree):
     for m in bpy.data.materials:
         if m.node_tree == tree:
             return "MAT:" + m.name
+    for w in bpy.data.worlds:
+        if w.node_tree == tree:
+            return "WORLD:" + w.name
     return "GN:" + tree.name
 
 
@@ -446,8 +449,8 @@ def layout_load(path):
     res = {}
     for key, d in data.items():
         kind, name = key.split(":", 1)
-        owner = bpy.data.materials.get(name) if kind == "MAT" else bpy.data.node_groups.get(name)
-        t = owner.node_tree if kind == "MAT" and owner else owner
+        owner = {"MAT": bpy.data.materials, "WORLD": bpy.data.worlds}.get(kind, bpy.data.node_groups).get(name)
+        t = owner.node_tree if kind in ("MAT", "WORLD") and owner else owner
         if t is None:
             continue
         for n in [n for n in t.nodes if n.bl_idname == "NodeFrame"]:
@@ -1008,7 +1011,16 @@ def audit(piece_name=None):
 
 
 def save(path):
-    """Save a copy of the current file (keeps the user's open file path unchanged)."""
+    """Save a copy of the current file (keeps the user's open file path unchanged). An absolute render
+    output path inside the save folder is stored relative (//loop.mp4), so the folder can be moved."""
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-    bpy.ops.wm.save_as_mainfile(filepath=path, copy=True)
+    r = bpy.context.scene.render
+    keep = r.filepath
+    folder = os.path.dirname(os.path.abspath(path))
+    if os.path.isabs(keep) and os.path.dirname(os.path.abspath(keep)).startswith(folder):
+        r.filepath = "//" + os.path.relpath(keep, folder)
+    try:
+        bpy.ops.wm.save_as_mainfile(filepath=path, copy=True)
+    finally:
+        r.filepath = keep
     return {"file": path}

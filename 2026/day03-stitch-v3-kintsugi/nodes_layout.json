@@ -1,0 +1,5368 @@
+{
+ "GN:PA_Bowl_GN": {
+  "frames": [
+   {
+    "name": "Frame",
+    "label": "1 · Loop clock",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.30000001192092896,
+     0.23999999463558197,
+     0.10000000149011612
+    ]
+   },
+   {
+    "name": "Frame.001",
+    "label": "2 · Grid and fracture cells",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.11999999731779099,
+     0.25,
+     0.1599999964237213
+    ]
+   },
+   {
+    "name": "Frame.002",
+    "label": "3 · Shards: split, snap the edges",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.12999999523162842,
+     0.18000000715255737,
+     0.3199999928474426
+    ]
+   },
+   {
+    "name": "Frame.003",
+    "label": "4 · Solid walls on the chawan",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.3199999928474426,
+     0.12999999523162842,
+     0.11999999731779099
+    ]
+   },
+   {
+    "name": "Frame.004",
+    "label": "5 · Makienaoshi: the lost chip",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.2199999988079071,
+     0.15000000596046448,
+     0.30000001192092896
+    ]
+   },
+   {
+    "name": "Frame.005",
+    "label": "6 · Fly apart, come home",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.10000000149011612,
+     0.25,
+     0.27000001072883606
+    ]
+   },
+   {
+    "name": "Frame.006",
+    "label": "7 · Glue: urushi on the broken edge",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.2800000011920929,
+     0.1899999976158142,
+     0.07999999821186066
+    ]
+   },
+   {
+    "name": "Frame.007",
+    "label": "8 · Seams and gold width",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.18000000715255737,
+     0.2199999988079071,
+     0.11999999731779099
+    ]
+   },
+   {
+    "name": "Frame.008",
+    "label": "9 · Urushi: squeeze-out, set, hide",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.25999999046325684,
+     0.11999999731779099,
+     0.2199999988079071
+    ]
+   },
+   {
+    "name": "Frame.009",
+    "label": "10 · Gold flows down the seams",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.14000000059604645,
+     0.20000000298023224,
+     0.25999999046325684
+    ]
+   },
+   {
+    "name": "Frame.010",
+    "label": "11 · Gold dust at the break",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.27000001072883606,
+     0.20000000298023224,
+     0.14000000059604645
+    ]
+   },
+   {
+    "name": "Frame.011",
+    "label": "12 · Output: join and turn",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.20000000298023224,
+     0.20000000298023224,
+     0.20000000298023224
+    ]
+   }
+  ],
+  "nodes": {
+   "Group": {
+    "loc": [
+     0.0,
+     -123.0
+    ],
+    "parent": "Frame"
+   },
+   "Cylinder": {
+    "loc": [
+     300.0,
+     -139.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Position": {
+    "loc": [
+     300.0,
+     -418.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Separate XYZ": {
+    "loc": [
+     500.0,
+     -273.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Math": {
+    "loc": [
+     700.0,
+     -218.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.001": {
+    "loc": [
+     900.0,
+     -218.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Combine XYZ": {
+    "loc": [
+     1100.0,
+     -233.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Group.001": {
+    "loc": [
+     1300.0,
+     -233.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Store Named Attribute": {
+    "loc": [
+     1500.0,
+     -297.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.002": {
+    "loc": [
+     1500.0,
+     -123.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Store Named Attribute.001": {
+    "loc": [
+     1720.0,
+     -210.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Store Named Attribute.002": {
+    "loc": [
+     1940.0,
+     -210.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Named Attribute": {
+    "loc": [
+     2260.0,
+     -352.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Split to Instances": {
+    "loc": [
+     2460.0,
+     -165.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Realize Instances": {
+    "loc": [
+     2660.0,
+     -123.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Edge Neighbors": {
+    "loc": [
+     2260.0,
+     -406.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.003": {
+    "loc": [
+     2460.0,
+     -356.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Store Named Attribute.003": {
+    "loc": [
+     2860.0,
+     -271.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Position.001": {
+    "loc": [
+     2260.0,
+     -460.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Separate XYZ.001": {
+    "loc": [
+     2460.0,
+     -550.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.004": {
+    "loc": [
+     2660.0,
+     -263.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Position.002": {
+    "loc": [
+     2260.0,
+     -514.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Separate XYZ.002": {
+    "loc": [
+     2460.0,
+     -614.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.005": {
+    "loc": [
+     2660.0,
+     -437.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.006": {
+    "loc": [
+     2860.0,
+     -462.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Combine XYZ.001": {
+    "loc": [
+     3080.0,
+     -392.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Named Attribute.001": {
+    "loc": [
+     2260.0,
+     -568.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.007": {
+    "loc": [
+     2460.0,
+     -678.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Group.002": {
+    "loc": [
+     3280.0,
+     -363.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Separate XYZ.003": {
+    "loc": [
+     3480.0,
+     -509.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Combine XYZ.002": {
+    "loc": [
+     3680.0,
+     -381.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math": {
+    "loc": [
+     3880.0,
+     -390.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Separate XYZ.004": {
+    "loc": [
+     4080.0,
+     -509.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.008": {
+    "loc": [
+     3680.0,
+     -526.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.009": {
+    "loc": [
+     3880.0,
+     -517.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Combine XYZ.003": {
+    "loc": [
+     4280.0,
+     -468.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Set Position": {
+    "loc": [
+     4480.0,
+     -440.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Position.003": {
+    "loc": [
+     2260.0,
+     -622.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Separate XYZ.005": {
+    "loc": [
+     2460.0,
+     -852.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.010": {
+    "loc": [
+     2660.0,
+     -611.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.011": {
+    "loc": [
+     2860.0,
+     -636.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.012": {
+    "loc": [
+     3080.0,
+     -537.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.013": {
+    "loc": [
+     2660.0,
+     -785.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Combine XYZ.004": {
+    "loc": [
+     3280.0,
+     -573.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Store Named Attribute.004": {
+    "loc": [
+     4680.0,
+     -445.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Named Attribute.002": {
+    "loc": [
+     2260.0,
+     -676.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Store Named Attribute.005": {
+    "loc": [
+     4900.0,
+     -445.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Named Attribute.003": {
+    "loc": [
+     5220.0,
+     -404.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Separate XYZ.006": {
+    "loc": [
+     5420.0,
+     -389.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Group.003": {
+    "loc": [
+     5620.0,
+     -210.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Set Position.001": {
+    "loc": [
+     5820.0,
+     -210.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Extrude Mesh": {
+    "loc": [
+     6020.0,
+     -297.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Named Attribute.004": {
+    "loc": [
+     5220.0,
+     -458.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Separate XYZ.007": {
+    "loc": [
+     5420.0,
+     -453.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Group.004": {
+    "loc": [
+     5620.0,
+     -398.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Set Position.002": {
+    "loc": [
+     6220.0,
+     -123.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Flip Faces": {
+    "loc": [
+     6420.0,
+     -437.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Set Material": {
+    "loc": [
+     6620.0,
+     -426.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Named Attribute.005": {
+    "loc": [
+     5220.0,
+     -512.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Separate XYZ.008": {
+    "loc": [
+     5420.0,
+     -517.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.014": {
+    "loc": [
+     5620.0,
+     -586.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.015": {
+    "loc": [
+     5820.0,
+     -412.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.016": {
+    "loc": [
+     6220.0,
+     -325.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Set Material.001": {
+    "loc": [
+     6820.0,
+     -426.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.017": {
+    "loc": [
+     6220.0,
+     -499.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Set Material.002": {
+    "loc": [
+     7020.0,
+     -426.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.018": {
+    "loc": [
+     5820.0,
+     -586.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.019": {
+    "loc": [
+     6220.0,
+     -673.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Set Shade Smooth": {
+    "loc": [
+     7220.0,
+     -413.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Join Geometry": {
+    "loc": [
+     7420.0,
+     -448.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Set Material.003": {
+    "loc": [
+     6020.0,
+     -554.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Named Attribute.006": {
+    "loc": [
+     7720.0,
+     -127.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Separate XYZ.009": {
+    "loc": [
+     7920.0,
+     -123.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Combine XYZ.005": {
+    "loc": [
+     7720.0,
+     -181.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Separate XYZ.010": {
+    "loc": [
+     7920.0,
+     -187.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.020": {
+    "loc": [
+     8140.0,
+     -156.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.021": {
+    "loc": [
+     8340.0,
+     -253.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.022": {
+    "loc": [
+     8540.0,
+     -351.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.023": {
+    "loc": [
+     8740.0,
+     -340.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.024": {
+    "loc": [
+     8940.0,
+     -340.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.025": {
+    "loc": [
+     8140.0,
+     -330.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.026": {
+    "loc": [
+     8340.0,
+     -427.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Combine XYZ.006": {
+    "loc": [
+     9140.0,
+     -355.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Vector Math.001": {
+    "loc": [
+     9340.0,
+     -364.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Position.004": {
+    "loc": [
+     7720.0,
+     -326.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Noise Texture": {
+    "loc": [
+     7920.0,
+     -251.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.027": {
+    "loc": [
+     8140.0,
+     -504.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.028": {
+    "loc": [
+     9540.0,
+     -340.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.029": {
+    "loc": [
+     7720.0,
+     -380.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.030": {
+    "loc": [
+     7720.0,
+     -554.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.031": {
+    "loc": [
+     7920.0,
+     -558.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Set Material.004": {
+    "loc": [
+     9740.0,
+     -281.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.032": {
+    "loc": [
+     9740.0,
+     -399.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Set Material.005": {
+    "loc": [
+     9940.0,
+     -368.5
+    ],
+    "parent": "Frame.004"
+   },
+   "Position.005": {
+    "loc": [
+     10240.0,
+     -209.5
+    ],
+    "parent": "Frame.005"
+   },
+   "Store Named Attribute.006": {
+    "loc": [
+     10440.0,
+     -123.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Position.006": {
+    "loc": [
+     10240.0,
+     -263.5
+    ],
+    "parent": "Frame.005"
+   },
+   "Named Attribute.007": {
+    "loc": [
+     10240.0,
+     -317.5
+    ],
+    "parent": "Frame.005"
+   },
+   "Group.005": {
+    "loc": [
+     10440.0,
+     -314.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Set Position.003": {
+    "loc": [
+     10660.0,
+     -189.5
+    ],
+    "parent": "Frame.005"
+   },
+   "Named Attribute.008": {
+    "loc": [
+     10960.0,
+     -400.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Separate XYZ.011": {
+    "loc": [
+     11160.0,
+     -180.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Named Attribute.009": {
+    "loc": [
+     10960.0,
+     -454.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.033": {
+    "loc": [
+     11160.0,
+     -244.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.034": {
+    "loc": [
+     11380.0,
+     -123.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.035": {
+    "loc": [
+     11580.0,
+     -478.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Delete Geometry": {
+    "loc": [
+     11780.0,
+     -468.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Mesh to Curve": {
+    "loc": [
+     11980.0,
+     -555.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Named Attribute.010": {
+    "loc": [
+     10960.0,
+     -508.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Separate XYZ.012": {
+    "loc": [
+     11160.0,
+     -418.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Group.006": {
+    "loc": [
+     11380.0,
+     -297.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Set Position.004": {
+    "loc": [
+     12180.0,
+     -561.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Named Attribute.011": {
+    "loc": [
+     10960.0,
+     -562.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Group.007": {
+    "loc": [
+     11160.0,
+     -482.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Spline Parameter": {
+    "loc": [
+     10960.0,
+     -616.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.036": {
+    "loc": [
+     11380.0,
+     -485.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.037": {
+    "loc": [
+     11580.0,
+     -652.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.038": {
+    "loc": [
+     11780.0,
+     -615.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Map Range": {
+    "loc": [
+     11980.0,
+     -702.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.039": {
+    "loc": [
+     11380.0,
+     -659.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.040": {
+    "loc": [
+     11380.0,
+     -833.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.041": {
+    "loc": [
+     11580.0,
+     -846.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Map Range.001": {
+    "loc": [
+     11780.0,
+     -789.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.042": {
+    "loc": [
+     12180.0,
+     -763.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.043": {
+    "loc": [
+     11380.0,
+     -1007.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.044": {
+    "loc": [
+     12380.0,
+     -662.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Position.007": {
+    "loc": [
+     10960.0,
+     -680.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Noise Texture.001": {
+    "loc": [
+     11160.0,
+     -692.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.045": {
+    "loc": [
+     11380.0,
+     -1181.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.046": {
+    "loc": [
+     12580.0,
+     -662.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Store Named Attribute.007": {
+    "loc": [
+     12780.0,
+     -653.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Named Attribute.012": {
+    "loc": [
+     10960.0,
+     -734.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Curve Circle": {
+    "loc": [
+     10960.0,
+     -788.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Curve to Mesh": {
+    "loc": [
+     13000.0,
+     -665.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Named Attribute.013": {
+    "loc": [
+     10960.0,
+     -935.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Math.047": {
+    "loc": [
+     11160.0,
+     -999.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Delete Geometry.001": {
+    "loc": [
+     13200.0,
+     -675.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Set Shade Smooth.001": {
+    "loc": [
+     13400.0,
+     -677.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Set Material.006": {
+    "loc": [
+     13600.0,
+     -690.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Position.008": {
+    "loc": [
+     10960.0,
+     -989.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Named Attribute.014": {
+    "loc": [
+     10960.0,
+     -1043.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Group.008": {
+    "loc": [
+     11160.0,
+     -1173.5
+    ],
+    "parent": "Frame.006"
+   },
+   "Set Position.005": {
+    "loc": [
+     13800.0,
+     -648.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Named Attribute.015": {
+    "loc": [
+     0.0,
+     -2253.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Named Attribute.016": {
+    "loc": [
+     0.0,
+     -2307.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Named Attribute.017": {
+    "loc": [
+     0.0,
+     -2361.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.048": {
+    "loc": [
+     200.0,
+     -2199.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.049": {
+    "loc": [
+     400.0,
+     -1685.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.050": {
+    "loc": [
+     600.0,
+     -2001.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Delete Geometry.002": {
+    "loc": [
+     800.0,
+     -2130.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Mesh to Curve.001": {
+    "loc": [
+     1000.0,
+     -2009.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Position.009": {
+    "loc": [
+     0.0,
+     -2415.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Separate XYZ.013": {
+    "loc": [
+     200.0,
+     -2373.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.051": {
+    "loc": [
+     400.0,
+     -1859.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Position.010": {
+    "loc": [
+     0.0,
+     -2469.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Separate XYZ.014": {
+    "loc": [
+     200.0,
+     -2437.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.052": {
+    "loc": [
+     400.0,
+     -2033.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.053": {
+    "loc": [
+     600.0,
+     -2175.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Combine XYZ.007": {
+    "loc": [
+     800.0,
+     -2277.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Group.009": {
+    "loc": [
+     1000.0,
+     -2156.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Separate XYZ.015": {
+    "loc": [
+     1220.0,
+     -2052.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Combine XYZ.008": {
+    "loc": [
+     1420.0,
+     -2050.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Vector Math.002": {
+    "loc": [
+     1620.0,
+     -2176.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Separate XYZ.016": {
+    "loc": [
+     1820.0,
+     -2469.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.054": {
+    "loc": [
+     1420.0,
+     -2195.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.055": {
+    "loc": [
+     1620.0,
+     -2303.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Combine XYZ.009": {
+    "loc": [
+     2020.0,
+     -2428.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Set Position.006": {
+    "loc": [
+     2220.0,
+     -2400.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Group.010": {
+    "loc": [
+     1220.0,
+     -2116.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.056": {
+    "loc": [
+     1420.0,
+     -2369.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Group.011": {
+    "loc": [
+     1220.0,
+     -2326.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.057": {
+    "loc": [
+     1420.0,
+     -2563.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.058": {
+    "loc": [
+     1620.0,
+     -2477.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Store Named Attribute.008": {
+    "loc": [
+     2420.0,
+     -2405.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Position.011": {
+    "loc": [
+     0.0,
+     -2523.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Separate XYZ.017": {
+    "loc": [
+     200.0,
+     -2501.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.059": {
+    "loc": [
+     400.0,
+     -2207.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.060": {
+    "loc": [
+     600.0,
+     -2349.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.061": {
+    "loc": [
+     800.0,
+     -2422.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.062": {
+    "loc": [
+     400.0,
+     -2381.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Combine XYZ.010": {
+    "loc": [
+     1000.0,
+     -2673.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Store Named Attribute.009": {
+    "loc": [
+     2640.0,
+     -2405.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Named Attribute.018": {
+    "loc": [
+     0.0,
+     -2577.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Separate XYZ.018": {
+    "loc": [
+     200.0,
+     -2565.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.063": {
+    "loc": [
+     400.0,
+     -2555.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.064": {
+    "loc": [
+     600.0,
+     -2523.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.065": {
+    "loc": [
+     600.0,
+     -2675.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.066": {
+    "loc": [
+     400.0,
+     -2729.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Combine XYZ.011": {
+    "loc": [
+     800.0,
+     -2574.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Noise Texture.002": {
+    "loc": [
+     1000.0,
+     -2366.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Map Range.002": {
+    "loc": [
+     1220.0,
+     -2536.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Spline Parameter.001": {
+    "loc": [
+     0.0,
+     -2631.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Spline Length": {
+    "loc": [
+     0.0,
+     -2695.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.067": {
+    "loc": [
+     200.0,
+     -2629.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.068": {
+    "loc": [
+     400.0,
+     -3143.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.069": {
+    "loc": [
+     600.0,
+     -2827.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.070": {
+    "loc": [
+     800.0,
+     -2719.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Map Range.003": {
+    "loc": [
+     400.0,
+     -2903.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.071": {
+    "loc": [
+     1000.0,
+     -2818.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.072": {
+    "loc": [
+     1420.0,
+     -2757.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.073": {
+    "loc": [
+     1220.0,
+     -2776.0
+    ],
+    "parent": "Frame.007"
+   },
+   "Math.074": {
+    "loc": [
+     1620.0,
+     -2651.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Store Named Attribute.010": {
+    "loc": [
+     2860.0,
+     -2405.5
+    ],
+    "parent": "Frame.007"
+   },
+   "Position.012": {
+    "loc": [
+     3180.0,
+     -2346.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Noise Texture.003": {
+    "loc": [
+     3380.0,
+     -1932.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.075": {
+    "loc": [
+     3600.0,
+     -1685.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.019": {
+    "loc": [
+     3180.0,
+     -2400.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Separate XYZ.019": {
+    "loc": [
+     3380.0,
+     -2239.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Group.012": {
+    "loc": [
+     3600.0,
+     -1879.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Set Position.007": {
+    "loc": [
+     3800.0,
+     -2127.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.020": {
+    "loc": [
+     3180.0,
+     -2454.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Separate XYZ.020": {
+    "loc": [
+     3380.0,
+     -2303.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Group.013": {
+    "loc": [
+     3600.0,
+     -2067.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Set Position.008": {
+    "loc": [
+     3800.0,
+     -2329.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Join Geometry.001": {
+    "loc": [
+     4440.0,
+     -2567.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.021": {
+    "loc": [
+     3180.0,
+     -2508.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Separate XYZ.021": {
+    "loc": [
+     3380.0,
+     -2367.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Group.014": {
+    "loc": [
+     3600.0,
+     -2255.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.022": {
+    "loc": [
+     3180.0,
+     -2562.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Separate XYZ.022": {
+    "loc": [
+     3380.0,
+     -2431.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Group.015": {
+    "loc": [
+     3600.0,
+     -2443.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Vector Math.003": {
+    "loc": [
+     3800.0,
+     -2531.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Vector Math.004": {
+    "loc": [
+     4020.0,
+     -2550.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.023": {
+    "loc": [
+     3180.0,
+     -2616.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Separate XYZ.023": {
+    "loc": [
+     3380.0,
+     -2495.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Group.016": {
+    "loc": [
+     3600.0,
+     -2631.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.024": {
+    "loc": [
+     3180.0,
+     -2670.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Separate XYZ.024": {
+    "loc": [
+     3380.0,
+     -2559.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Group.017": {
+    "loc": [
+     3600.0,
+     -2819.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Vector Math.005": {
+    "loc": [
+     3800.0,
+     -2680.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Vector Math.006": {
+    "loc": [
+     4020.0,
+     -2677.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Store Named Attribute.011": {
+    "loc": [
+     4220.0,
+     -2486.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Store Named Attribute.012": {
+    "loc": [
+     4220.0,
+     -2677.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Position.013": {
+    "loc": [
+     3180.0,
+     -2724.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Store Named Attribute.013": {
+    "loc": [
+     4640.0,
+     -2636.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.025": {
+    "loc": [
+     3180.0,
+     -2778.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.076": {
+    "loc": [
+     3380.0,
+     -2623.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.077": {
+    "loc": [
+     3380.0,
+     -2797.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Map Range.004": {
+    "loc": [
+     3600.0,
+     -3007.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.078": {
+    "loc": [
+     3380.0,
+     -2971.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.079": {
+    "loc": [
+     3380.0,
+     -3145.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Map Range.005": {
+    "loc": [
+     3600.0,
+     -3247.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.026": {
+    "loc": [
+     3180.0,
+     -2832.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Separate XYZ.025": {
+    "loc": [
+     3380.0,
+     -3319.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Group.018": {
+    "loc": [
+     3600.0,
+     -3636.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Noise Texture.004": {
+    "loc": [
+     3800.0,
+     -3268.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.027": {
+    "loc": [
+     3180.0,
+     -2886.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Separate XYZ.026": {
+    "loc": [
+     3380.0,
+     -3383.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.080": {
+    "loc": [
+     3600.0,
+     -3824.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.081": {
+    "loc": [
+     4020.0,
+     -2978.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.082": {
+    "loc": [
+     4220.0,
+     -3042.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.083": {
+    "loc": [
+     4440.0,
+     -2641.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.084": {
+    "loc": [
+     4440.0,
+     -2815.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Map Range.006": {
+    "loc": [
+     4640.0,
+     -2827.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.085": {
+    "loc": [
+     3800.0,
+     -2829.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.086": {
+    "loc": [
+     4860.0,
+     -2764.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.087": {
+    "loc": [
+     5060.0,
+     -2764.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Store Named Attribute.014": {
+    "loc": [
+     5260.0,
+     -2756.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.028": {
+    "loc": [
+     3180.0,
+     -2940.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Curve Circle.001": {
+    "loc": [
+     3180.0,
+     -2994.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Curve to Mesh.001": {
+    "loc": [
+     5480.0,
+     -2768.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.029": {
+    "loc": [
+     3180.0,
+     -3141.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.088": {
+    "loc": [
+     3380.0,
+     -3447.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Delete Geometry.003": {
+    "loc": [
+     5680.0,
+     -2778.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Map Range.007": {
+    "loc": [
+     3800.0,
+     -3003.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.030": {
+    "loc": [
+     3180.0,
+     -3195.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Position.014": {
+    "loc": [
+     3180.0,
+     -3249.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Named Attribute.031": {
+    "loc": [
+     3180.0,
+     -3303.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Vector Math.007": {
+    "loc": [
+     3380.0,
+     -3621.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Vector Math.008": {
+    "loc": [
+     3600.0,
+     -3487.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.089": {
+    "loc": [
+     4020.0,
+     -2804.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Math.090": {
+    "loc": [
+     4220.0,
+     -2868.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Vector Math.009": {
+    "loc": [
+     4440.0,
+     -2989.0
+    ],
+    "parent": "Frame.008"
+   },
+   "Set Position.009": {
+    "loc": [
+     5880.0,
+     -2781.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Set Shade Smooth.002": {
+    "loc": [
+     6080.0,
+     -2779.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Set Material.007": {
+    "loc": [
+     6280.0,
+     -2792.5
+    ],
+    "parent": "Frame.008"
+   },
+   "Map Range.008": {
+    "loc": [
+     6580.0,
+     -1829.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.032": {
+    "loc": [
+     6580.0,
+     -2069.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Separate XYZ.027": {
+    "loc": [
+     6780.0,
+     -2097.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Group.019": {
+    "loc": [
+     6980.0,
+     -1685.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Set Position.010": {
+    "loc": [
+     7180.0,
+     -1923.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.033": {
+    "loc": [
+     6580.0,
+     -2123.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Separate XYZ.028": {
+    "loc": [
+     6780.0,
+     -2161.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Group.020": {
+    "loc": [
+     6980.0,
+     -1873.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Set Position.011": {
+    "loc": [
+     7180.0,
+     -2125.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Join Geometry.002": {
+    "loc": [
+     7820.0,
+     -2390.5
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.034": {
+    "loc": [
+     6580.0,
+     -2177.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Separate XYZ.029": {
+    "loc": [
+     6780.0,
+     -2225.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Group.021": {
+    "loc": [
+     6980.0,
+     -2061.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.035": {
+    "loc": [
+     6580.0,
+     -2231.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Separate XYZ.030": {
+    "loc": [
+     6780.0,
+     -2289.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Group.022": {
+    "loc": [
+     6980.0,
+     -2249.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Vector Math.010": {
+    "loc": [
+     7180.0,
+     -2327.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Vector Math.011": {
+    "loc": [
+     7400.0,
+     -2227.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.036": {
+    "loc": [
+     6580.0,
+     -2285.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Separate XYZ.031": {
+    "loc": [
+     6780.0,
+     -2353.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Group.023": {
+    "loc": [
+     6980.0,
+     -2437.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.037": {
+    "loc": [
+     6580.0,
+     -2339.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Separate XYZ.032": {
+    "loc": [
+     6780.0,
+     -2417.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Group.024": {
+    "loc": [
+     6980.0,
+     -2625.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Vector Math.012": {
+    "loc": [
+     7180.0,
+     -2476.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Vector Math.013": {
+    "loc": [
+     7400.0,
+     -2354.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Store Named Attribute.015": {
+    "loc": [
+     7600.0,
+     -2236.5
+    ],
+    "parent": "Frame.009"
+   },
+   "Store Named Attribute.016": {
+    "loc": [
+     7600.0,
+     -2427.5
+    ],
+    "parent": "Frame.009"
+   },
+   "Position.015": {
+    "loc": [
+     6580.0,
+     -2393.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Store Named Attribute.017": {
+    "loc": [
+     8020.0,
+     -2299.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.038": {
+    "loc": [
+     6580.0,
+     -2447.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Separate XYZ.033": {
+    "loc": [
+     6780.0,
+     -2481.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Group.025": {
+    "loc": [
+     6980.0,
+     -2813.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Noise Texture.005": {
+    "loc": [
+     7180.0,
+     -2625.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.039": {
+    "loc": [
+     6580.0,
+     -2501.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Separate XYZ.034": {
+    "loc": [
+     6780.0,
+     -2545.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Math.091": {
+    "loc": [
+     6980.0,
+     -3001.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Math.092": {
+    "loc": [
+     7400.0,
+     -2481.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Math.093": {
+    "loc": [
+     7600.0,
+     -2618.5
+    ],
+    "parent": "Frame.009"
+   },
+   "Math.094": {
+    "loc": [
+     7820.0,
+     -2464.5
+    ],
+    "parent": "Frame.009"
+   },
+   "Map Range.009": {
+    "loc": [
+     8020.0,
+     -2490.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Math.095": {
+    "loc": [
+     8240.0,
+     -2427.5
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.040": {
+    "loc": [
+     6580.0,
+     -2555.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Math.096": {
+    "loc": [
+     8440.0,
+     -2427.5
+    ],
+    "parent": "Frame.009"
+   },
+   "Store Named Attribute.018": {
+    "loc": [
+     8640.0,
+     -2419.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.041": {
+    "loc": [
+     6580.0,
+     -2609.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Curve Circle.002": {
+    "loc": [
+     6580.0,
+     -2663.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Curve to Mesh.002": {
+    "loc": [
+     8860.0,
+     -2431.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.042": {
+    "loc": [
+     6580.0,
+     -2810.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Math.097": {
+    "loc": [
+     6780.0,
+     -2609.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Delete Geometry.004": {
+    "loc": [
+     9060.0,
+     -2441.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.043": {
+    "loc": [
+     6580.0,
+     -2864.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Position.016": {
+    "loc": [
+     6580.0,
+     -2918.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Named Attribute.044": {
+    "loc": [
+     6580.0,
+     -2972.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Vector Math.014": {
+    "loc": [
+     6780.0,
+     -2783.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Vector Math.015": {
+    "loc": [
+     6980.0,
+     -3195.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Math.098": {
+    "loc": [
+     6580.0,
+     -3026.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Math.099": {
+    "loc": [
+     7180.0,
+     -2932.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Vector Math.016": {
+    "loc": [
+     7400.0,
+     -2655.0
+    ],
+    "parent": "Frame.009"
+   },
+   "Set Position.012": {
+    "loc": [
+     9260.0,
+     -2444.5
+    ],
+    "parent": "Frame.009"
+   },
+   "Set Shade Smooth.003": {
+    "loc": [
+     9460.0,
+     -2442.5
+    ],
+    "parent": "Frame.009"
+   },
+   "Set Material.008": {
+    "loc": [
+     9660.0,
+     -2455.5
+    ],
+    "parent": "Frame.009"
+   },
+   "Curve to Points": {
+    "loc": [
+     9960.0,
+     -1702.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Position.017": {
+    "loc": [
+     9960.0,
+     -1915.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Vector Math.017": {
+    "loc": [
+     10160.0,
+     -1911.5
+    ],
+    "parent": "Frame.010"
+   },
+   "White Noise Texture": {
+    "loc": [
+     10360.0,
+     -1689.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Named Attribute.045": {
+    "loc": [
+     9960.0,
+     -1969.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Separate XYZ.035": {
+    "loc": [
+     10160.0,
+     -2058.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Group.026": {
+    "loc": [
+     10360.0,
+     -1838.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Named Attribute.046": {
+    "loc": [
+     9960.0,
+     -2023.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Separate XYZ.036": {
+    "loc": [
+     10160.0,
+     -2122.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Group.027": {
+    "loc": [
+     10360.0,
+     -2026.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Vector Math.018": {
+    "loc": [
+     10560.0,
+     -2090.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Vector Math.019": {
+    "loc": [
+     10760.0,
+     -2073.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Vector Math.020": {
+    "loc": [
+     10560.0,
+     -1685.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Vector Math.021": {
+    "loc": [
+     10760.0,
+     -1926.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Vector Math.022": {
+    "loc": [
+     10960.0,
+     -2148.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.100": {
+    "loc": [
+     10560.0,
+     -1896.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Vector Math.023": {
+    "loc": [
+     11160.0,
+     -2149.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.101": {
+    "loc": [
+     9960.0,
+     -2077.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.102": {
+    "loc": [
+     10160.0,
+     -2186.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.103": {
+    "loc": [
+     10360.0,
+     -2214.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.104": {
+    "loc": [
+     10560.0,
+     -2239.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.105": {
+    "loc": [
+     10760.0,
+     -2200.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Vector Math.024": {
+    "loc": [
+     11360.0,
+     -2149.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.106": {
+    "loc": [
+     10360.0,
+     -2388.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.107": {
+    "loc": [
+     10560.0,
+     -2587.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Combine XYZ.012": {
+    "loc": [
+     10760.0,
+     -2374.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Vector Math.025": {
+    "loc": [
+     11560.0,
+     -2148.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.108": {
+    "loc": [
+     9960.0,
+     -2251.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.109": {
+    "loc": [
+     9960.0,
+     -2425.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.110": {
+    "loc": [
+     10160.0,
+     -2360.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Set Position.013": {
+    "loc": [
+     11760.0,
+     -2153.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Ico Sphere": {
+    "loc": [
+     9960.0,
+     -2599.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.111": {
+    "loc": [
+     10360.0,
+     -2562.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Math.112": {
+    "loc": [
+     10560.0,
+     -2413.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Instance on Points": {
+    "loc": [
+     11960.0,
+     -2075.5
+    ],
+    "parent": "Frame.010"
+   },
+   "Realize Instances.001": {
+    "loc": [
+     12160.0,
+     -2153.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Set Material.009": {
+    "loc": [
+     12360.0,
+     -2164.0
+    ],
+    "parent": "Frame.010"
+   },
+   "Join Geometry.003": {
+    "loc": [
+     12660.0,
+     -1696.5
+    ],
+    "parent": "Frame.011"
+   },
+   "Math.113": {
+    "loc": [
+     12660.0,
+     -1785.5
+    ],
+    "parent": "Frame.011"
+   },
+   "Combine XYZ.013": {
+    "loc": [
+     12860.0,
+     -1755.5
+    ],
+    "parent": "Frame.011"
+   },
+   "Transform Geometry": {
+    "loc": [
+     13060.0,
+     -1685.0
+    ],
+    "parent": "Frame.011"
+   },
+   "Group Input": {
+    "loc": [
+     -300.0,
+     0.0
+    ],
+    "parent": null
+   },
+   "Group Output": {
+    "loc": [
+     13380.0,
+     -1562.0
+    ],
+    "parent": null
+   }
+  }
+ },
+ "GN:PA_Chawan": {
+  "frames": [
+   {
+    "name": "Frame",
+    "label": "a · Two smooth profiles",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.30000001192092896,
+     0.23999999463558197,
+     0.10000000149011612
+    ]
+   },
+   {
+    "name": "Frame.001",
+    "label": "b · Sample both by arc length from the lip",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.11999999731779099,
+     0.25,
+     0.1599999964237213
+    ]
+   },
+   {
+    "name": "Frame.002",
+    "label": "c · Round lip, wall thickness, around the axis",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.12999999523162842,
+     0.18000000715255737,
+     0.3199999928474426
+    ]
+   }
+  ],
+  "nodes": {
+   "Group Input": {
+    "loc": [
+     -300.0,
+     0.0
+    ],
+    "parent": null
+   },
+   "Group Output": {
+    "loc": [
+     6320.0,
+     0.0
+    ],
+    "parent": null
+   },
+   "Mesh Line": {
+    "loc": [
+     0.0,
+     -1225.0
+    ],
+    "parent": "Frame"
+   },
+   "Index": {
+    "loc": [
+     0.0,
+     -1518.0
+    ],
+    "parent": "Frame"
+   },
+   "Index Switch": {
+    "loc": [
+     200.0,
+     -123.0
+    ],
+    "parent": "Frame"
+   },
+   "Set Position": {
+    "loc": [
+     400.0,
+     -1370.0
+    ],
+    "parent": "Frame"
+   },
+   "Mesh to Curve": {
+    "loc": [
+     600.0,
+     -1425.0
+    ],
+    "parent": "Frame"
+   },
+   "Set Spline Type": {
+    "loc": [
+     800.0,
+     -1450.0
+    ],
+    "parent": "Frame"
+   },
+   "Set Spline Resolution": {
+    "loc": [
+     1000.0,
+     -1454.0
+    ],
+    "parent": "Frame"
+   },
+   "Mesh Line.001": {
+    "loc": [
+     0.0,
+     -1572.0
+    ],
+    "parent": "Frame"
+   },
+   "Index.001": {
+    "loc": [
+     0.0,
+     -1865.0
+    ],
+    "parent": "Frame"
+   },
+   "Index Switch.001": {
+    "loc": [
+     200.0,
+     -1782.0
+    ],
+    "parent": "Frame"
+   },
+   "Set Position.001": {
+    "loc": [
+     400.0,
+     -1572.0
+    ],
+    "parent": "Frame"
+   },
+   "Mesh to Curve.001": {
+    "loc": [
+     600.0,
+     -1572.0
+    ],
+    "parent": "Frame"
+   },
+   "Set Spline Type.001": {
+    "loc": [
+     800.0,
+     -1572.0
+    ],
+    "parent": "Frame"
+   },
+   "Set Spline Resolution.001": {
+    "loc": [
+     1000.0,
+     -1572.0
+    ],
+    "parent": "Frame"
+   },
+   "Curve Length": {
+    "loc": [
+     1320.0,
+     -283.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Curve Length.001": {
+    "loc": [
+     1320.0,
+     -384.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math": {
+    "loc": [
+     1520.0,
+     -123.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.001": {
+    "loc": [
+     1320.0,
+     -485.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.002": {
+    "loc": [
+     1520.0,
+     -645.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.003": {
+    "loc": [
+     1520.0,
+     -297.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.004": {
+    "loc": [
+     1720.0,
+     -450.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.005": {
+    "loc": [
+     1520.0,
+     -471.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.006": {
+    "loc": [
+     1720.0,
+     -624.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.007": {
+    "loc": [
+     1920.0,
+     -416.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.008": {
+    "loc": [
+     2120.0,
+     -471.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Sample Curve": {
+    "loc": [
+     1720.0,
+     -143.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Separate XYZ": {
+    "loc": [
+     1920.0,
+     -352.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.009": {
+    "loc": [
+     2120.0,
+     -297.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Combine XYZ": {
+    "loc": [
+     2320.0,
+     -245.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Sample Curve.001": {
+    "loc": [
+     2320.0,
+     -390.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Separate XYZ.001": {
+    "loc": [
+     2520.0,
+     -439.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.010": {
+    "loc": [
+     2720.0,
+     -384.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Combine XYZ.001": {
+    "loc": [
+     2920.0,
+     -398.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.011": {
+    "loc": [
+     3220.0,
+     -188.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.012": {
+    "loc": [
+     3420.0,
+     -123.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.013": {
+    "loc": [
+     3620.0,
+     -275.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.014": {
+    "loc": [
+     3820.0,
+     -275.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.015": {
+    "loc": [
+     4020.0,
+     -286.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.016": {
+    "loc": [
+     4220.0,
+     -275.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.017": {
+    "loc": [
+     4420.0,
+     -275.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.018": {
+    "loc": [
+     4620.0,
+     -188.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.019": {
+    "loc": [
+     4820.0,
+     -188.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.020": {
+    "loc": [
+     4620.0,
+     -362.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.021": {
+    "loc": [
+     4820.0,
+     -362.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math": {
+    "loc": [
+     5020.0,
+     -215.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.001": {
+    "loc": [
+     5220.0,
+     -213.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.002": {
+    "loc": [
+     5020.0,
+     -362.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.003": {
+    "loc": [
+     5220.0,
+     -362.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Mix": {
+    "loc": [
+     5420.0,
+     -251.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Separate XYZ.002": {
+    "loc": [
+     5620.0,
+     -330.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.022": {
+    "loc": [
+     3220.0,
+     -362.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.023": {
+    "loc": [
+     3420.0,
+     -297.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.024": {
+    "loc": [
+     5820.0,
+     -188.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.025": {
+    "loc": [
+     3420.0,
+     -449.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.026": {
+    "loc": [
+     5820.0,
+     -362.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Combine XYZ.002": {
+    "loc": [
+     6020.0,
+     -289.5
+    ],
+    "parent": "Frame.002"
+   }
+  }
+ },
+ "GN:PA_ShardMotion": {
+  "frames": [
+   {
+    "name": "Frame",
+    "label": "a · Whose turn, and when",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.30000001192092896,
+     0.23999999463558197,
+     0.10000000149011612
+    ]
+   },
+   {
+    "name": "Frame.001",
+    "label": "b · Flight: ease in, crawl, press",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.11999999731779099,
+     0.25,
+     0.1599999964237213
+    ]
+   },
+   {
+    "name": "Frame.002",
+    "label": "c · Out, tumble and hover",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.12999999523162842,
+     0.18000000715255737,
+     0.3199999928474426
+    ]
+   }
+  ],
+  "nodes": {
+   "Group Input": {
+    "loc": [
+     -300.0,
+     0.0
+    ],
+    "parent": null
+   },
+   "Group Output": {
+    "loc": [
+     4900.0,
+     0.0
+    ],
+    "parent": null
+   },
+   "Group": {
+    "loc": [
+     0.0,
+     -123.0
+    ],
+    "parent": "Frame"
+   },
+   "Group.001": {
+    "loc": [
+     0.0,
+     -333.0
+    ],
+    "parent": "Frame"
+   },
+   "Math": {
+    "loc": [
+     200.0,
+     -366.0
+    ],
+    "parent": "Frame"
+   },
+   "Map Range": {
+    "loc": [
+     200.0,
+     -126.0
+    ],
+    "parent": "Frame"
+   },
+   "Math.001": {
+    "loc": [
+     500.0,
+     -307.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.002": {
+    "loc": [
+     700.0,
+     -307.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.003": {
+    "loc": [
+     900.0,
+     -123.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.004": {
+    "loc": [
+     1100.0,
+     -220.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.005": {
+    "loc": [
+     900.0,
+     -297.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.006": {
+    "loc": [
+     1300.0,
+     -220.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.007": {
+    "loc": [
+     900.0,
+     -491.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.008": {
+    "loc": [
+     1100.0,
+     -394.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.009": {
+    "loc": [
+     1300.0,
+     -394.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.010": {
+    "loc": [
+     1500.0,
+     -318.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.011": {
+    "loc": [
+     1700.0,
+     -307.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.012": {
+    "loc": [
+     1900.0,
+     -307.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.013": {
+    "loc": [
+     2100.0,
+     -307.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.014": {
+    "loc": [
+     2300.0,
+     -307.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.015": {
+    "loc": [
+     2500.0,
+     -307.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.016": {
+    "loc": [
+     2800.0,
+     -123.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.017": {
+    "loc": [
+     3000.0,
+     -296.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.018": {
+    "loc": [
+     2800.0,
+     -275.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.019": {
+    "loc": [
+     3000.0,
+     -470.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.020": {
+    "loc": [
+     2800.0,
+     -427.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.021": {
+    "loc": [
+     3000.0,
+     -644.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Combine XYZ": {
+    "loc": [
+     3200.0,
+     -376.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math": {
+    "loc": [
+     2800.0,
+     -601.0
+    ],
+    "parent": "Frame.002"
+   },
+   "White Noise Texture": {
+    "loc": [
+     3000.0,
+     -838.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.001": {
+    "loc": [
+     3200.0,
+     -521.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.022": {
+    "loc": [
+     2800.0,
+     -812.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Rotate": {
+    "loc": [
+     3400.0,
+     -602.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.023": {
+    "loc": [
+     2800.0,
+     -986.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.024": {
+    "loc": [
+     3200.0,
+     -732.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.025": {
+    "loc": [
+     3400.0,
+     -428.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.026": {
+    "loc": [
+     3600.0,
+     -565.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.027": {
+    "loc": [
+     3800.0,
+     -554.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Combine XYZ.001": {
+    "loc": [
+     4000.0,
+     -569.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.002": {
+    "loc": [
+     4200.0,
+     -567.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.003": {
+    "loc": [
+     4400.0,
+     -568.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.004": {
+    "loc": [
+     4600.0,
+     -567.0
+    ],
+    "parent": "Frame.002"
+   }
+  }
+ },
+ "GN:PA_SnapToCrack": {
+  "frames": [
+   {
+    "name": "Frame",
+    "label": "Newton step 1",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.30000001192092896,
+     0.23999999463558197,
+     0.10000000149011612
+    ]
+   },
+   {
+    "name": "Frame.001",
+    "label": "Newton step 2",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.11999999731779099,
+     0.25,
+     0.1599999964237213
+    ]
+   },
+   {
+    "name": "Frame.002",
+    "label": "Newton step 3",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.12999999523162842,
+     0.18000000715255737,
+     0.3199999928474426
+    ]
+   }
+  ],
+  "nodes": {
+   "Group Input": {
+    "loc": [
+     -300.0,
+     0.0
+    ],
+    "parent": null
+   },
+   "Group Output": {
+    "loc": [
+     3320.0,
+     -1018.0
+    ],
+    "parent": null
+   },
+   "Group": {
+    "loc": [
+     0.0,
+     -329.0
+    ],
+    "parent": "Frame"
+   },
+   "Voronoi Texture": {
+    "loc": [
+     200.0,
+     -123.0
+    ],
+    "parent": "Frame"
+   },
+   "Voronoi Texture.001": {
+    "loc": [
+     200.0,
+     -477.0
+    ],
+    "parent": "Frame"
+   },
+   "Vector Math": {
+    "loc": [
+     420.0,
+     -402.5
+    ],
+    "parent": "Frame"
+   },
+   "Vector Math.001": {
+    "loc": [
+     420.0,
+     -551.5
+    ],
+    "parent": "Frame"
+   },
+   "Vector Math.002": {
+    "loc": [
+     420.0,
+     -253.5
+    ],
+    "parent": "Frame"
+   },
+   "Math": {
+    "loc": [
+     620.0,
+     -337.5
+    ],
+    "parent": "Frame"
+   },
+   "Math.001": {
+    "loc": [
+     820.0,
+     -390.0
+    ],
+    "parent": "Frame"
+   },
+   "Vector Math.003": {
+    "loc": [
+     620.0,
+     -188.5
+    ],
+    "parent": "Frame"
+   },
+   "Math.002": {
+    "loc": [
+     1020.0,
+     -390.0
+    ],
+    "parent": "Frame"
+   },
+   "Vector Math.004": {
+    "loc": [
+     620.0,
+     -511.5
+    ],
+    "parent": "Frame"
+   },
+   "Math.003": {
+    "loc": [
+     1220.0,
+     -390.0
+    ],
+    "parent": "Frame"
+   },
+   "Math.004": {
+    "loc": [
+     1420.0,
+     -314.0
+    ],
+    "parent": "Frame"
+   },
+   "Math.005": {
+    "loc": [
+     1620.0,
+     -390.0
+    ],
+    "parent": "Frame"
+   },
+   "Math.006": {
+    "loc": [
+     1820.0,
+     -390.0
+    ],
+    "parent": "Frame"
+   },
+   "Vector Math.005": {
+    "loc": [
+     620.0,
+     -638.5
+    ],
+    "parent": "Frame"
+   },
+   "Math.007": {
+    "loc": [
+     1420.0,
+     -466.0
+    ],
+    "parent": "Frame"
+   },
+   "Math.008": {
+    "loc": [
+     2020.0,
+     -390.0
+    ],
+    "parent": "Frame"
+   },
+   "Vector Math.006": {
+    "loc": [
+     2220.0,
+     -403.5
+    ],
+    "parent": "Frame"
+   },
+   "Separate XYZ": {
+    "loc": [
+     2420.0,
+     -445.0
+    ],
+    "parent": "Frame"
+   },
+   "Math.009": {
+    "loc": [
+     0.0,
+     -451.0
+    ],
+    "parent": "Frame"
+   },
+   "Math.010": {
+    "loc": [
+     2620.0,
+     -390.0
+    ],
+    "parent": "Frame"
+   },
+   "Combine XYZ": {
+    "loc": [
+     2820.0,
+     -404.5
+    ],
+    "parent": "Frame"
+   },
+   "Vector Math.007": {
+    "loc": [
+     3020.0,
+     -402.5
+    ],
+    "parent": "Frame"
+   },
+   "Group.001": {
+    "loc": [
+     3320.0,
+     -329.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Voronoi Texture.002": {
+    "loc": [
+     3520.0,
+     -123.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Voronoi Texture.003": {
+    "loc": [
+     3520.0,
+     -477.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Vector Math.008": {
+    "loc": [
+     3740.0,
+     -402.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Vector Math.009": {
+    "loc": [
+     3740.0,
+     -551.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Vector Math.010": {
+    "loc": [
+     3740.0,
+     -253.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.011": {
+    "loc": [
+     3940.0,
+     -337.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.012": {
+    "loc": [
+     4140.0,
+     -390.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Vector Math.011": {
+    "loc": [
+     3940.0,
+     -188.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.013": {
+    "loc": [
+     4340.0,
+     -390.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Vector Math.012": {
+    "loc": [
+     3940.0,
+     -511.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.014": {
+    "loc": [
+     4540.0,
+     -390.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.015": {
+    "loc": [
+     4740.0,
+     -314.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.016": {
+    "loc": [
+     4940.0,
+     -390.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.017": {
+    "loc": [
+     5140.0,
+     -390.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Vector Math.013": {
+    "loc": [
+     3940.0,
+     -638.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.018": {
+    "loc": [
+     4740.0,
+     -466.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.019": {
+    "loc": [
+     5340.0,
+     -390.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Vector Math.014": {
+    "loc": [
+     5540.0,
+     -403.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Separate XYZ.001": {
+    "loc": [
+     5740.0,
+     -445.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.020": {
+    "loc": [
+     3320.0,
+     -451.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.021": {
+    "loc": [
+     5940.0,
+     -390.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Combine XYZ.001": {
+    "loc": [
+     6140.0,
+     -404.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Vector Math.015": {
+    "loc": [
+     6340.0,
+     -402.5
+    ],
+    "parent": "Frame.001"
+   },
+   "Group.002": {
+    "loc": [
+     0.0,
+     -1347.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Voronoi Texture.004": {
+    "loc": [
+     200.0,
+     -1141.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Voronoi Texture.005": {
+    "loc": [
+     200.0,
+     -1495.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.016": {
+    "loc": [
+     420.0,
+     -1420.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.017": {
+    "loc": [
+     420.0,
+     -1569.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.018": {
+    "loc": [
+     420.0,
+     -1271.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.022": {
+    "loc": [
+     620.0,
+     -1355.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.023": {
+    "loc": [
+     820.0,
+     -1408.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.019": {
+    "loc": [
+     620.0,
+     -1206.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.024": {
+    "loc": [
+     1020.0,
+     -1408.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.020": {
+    "loc": [
+     620.0,
+     -1529.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.025": {
+    "loc": [
+     1220.0,
+     -1408.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.026": {
+    "loc": [
+     1420.0,
+     -1332.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.027": {
+    "loc": [
+     1620.0,
+     -1408.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.028": {
+    "loc": [
+     1820.0,
+     -1408.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.021": {
+    "loc": [
+     620.0,
+     -1656.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.029": {
+    "loc": [
+     1420.0,
+     -1484.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.030": {
+    "loc": [
+     2020.0,
+     -1408.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.022": {
+    "loc": [
+     2220.0,
+     -1421.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Separate XYZ.002": {
+    "loc": [
+     2420.0,
+     -1463.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.031": {
+    "loc": [
+     0.0,
+     -1469.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.032": {
+    "loc": [
+     2620.0,
+     -1408.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Combine XYZ.002": {
+    "loc": [
+     2820.0,
+     -1422.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.023": {
+    "loc": [
+     3020.0,
+     -1420.5
+    ],
+    "parent": "Frame.002"
+   }
+  }
+ },
+ "GN:PA_FractureSpace": {
+  "frames": [],
+  "nodes": {
+   "Group Input": {
+    "loc": [
+     0.0,
+     36.0
+    ],
+    "parent": null
+   },
+   "Group Output": {
+    "loc": [
+     1700.0,
+     36.0
+    ],
+    "parent": null
+   },
+   "Vector Math": {
+    "loc": [
+     210.0,
+     60.5
+    ],
+    "parent": null
+   },
+   "Noise Texture": {
+    "loc": [
+     420.0,
+     140.5
+    ],
+    "parent": null
+   },
+   "Vector Math.001": {
+    "loc": [
+     650.0,
+     92.5
+    ],
+    "parent": null
+   },
+   "Vector Math.002": {
+    "loc": [
+     860.0,
+     60.5
+    ],
+    "parent": null
+   },
+   "Vector Math.003": {
+    "loc": [
+     1070.0,
+     61.5
+    ],
+    "parent": null
+   },
+   "Vector Math.004": {
+    "loc": [
+     1280.0,
+     60.5
+    ],
+    "parent": null
+   },
+   "Vector Math.005": {
+    "loc": [
+     1490.0,
+     92.5
+    ],
+    "parent": null
+   }
+  }
+ },
+ "GN:PA_Cell": {
+  "frames": [],
+  "nodes": {
+   "Group Input": {
+    "loc": [
+     0.0,
+     36.0
+    ],
+    "parent": null
+   },
+   "Group Output": {
+    "loc": [
+     1700.0,
+     47.0
+    ],
+    "parent": null
+   },
+   "Group": {
+    "loc": [
+     210.0,
+     48.0
+    ],
+    "parent": null
+   },
+   "Voronoi Texture": {
+    "loc": [
+     420.0,
+     164.0
+    ],
+    "parent": null
+   },
+   "Separate XYZ": {
+    "loc": [
+     650.0,
+     165.5
+    ],
+    "parent": null
+   },
+   "Math": {
+    "loc": [
+     860.0,
+     162.0
+    ],
+    "parent": null
+   },
+   "Math.001": {
+    "loc": [
+     1070.0,
+     63.0
+    ],
+    "parent": null
+   },
+   "Math.002": {
+    "loc": [
+     1280.0,
+     74.0
+    ],
+    "parent": null
+   },
+   "Group.001": {
+    "loc": [
+     650.0,
+     18.5
+    ],
+    "parent": null
+   },
+   "Math.003": {
+    "loc": [
+     860.0,
+     -14.0
+    ],
+    "parent": null
+   },
+   "Math.004": {
+    "loc": [
+     1490.0,
+     74.0
+    ],
+    "parent": null
+   }
+  }
+ },
+ "GN:PA_SiteInfo": {
+  "frames": [],
+  "nodes": {
+   "Group Input": {
+    "loc": [
+     0.0,
+     36.0
+    ],
+    "parent": null
+   },
+   "Group Output": {
+    "loc": [
+     2520.0,
+     80.0
+    ],
+    "parent": null
+   },
+   "Vector Math": {
+    "loc": [
+     210.0,
+     92.5
+    ],
+    "parent": null
+   },
+   "Separate XYZ": {
+    "loc": [
+     420.0,
+     59.5
+    ],
+    "parent": null
+   },
+   "Math": {
+    "loc": [
+     630.0,
+     162.0
+    ],
+    "parent": null
+   },
+   "Math.001": {
+    "loc": [
+     630.0,
+     -14.0
+    ],
+    "parent": null
+   },
+   "Math.002": {
+    "loc": [
+     840.0,
+     -14.0
+    ],
+    "parent": null
+   },
+   "Math.003": {
+    "loc": [
+     840.0,
+     162.0
+    ],
+    "parent": null
+   },
+   "Math.004": {
+    "loc": [
+     1050.0,
+     74.0
+    ],
+    "parent": null
+   },
+   "Math.005": {
+    "loc": [
+     1260.0,
+     63.0
+    ],
+    "parent": null
+   },
+   "Math.006": {
+    "loc": [
+     1470.0,
+     74.0
+    ],
+    "parent": null
+   },
+   "Math.007": {
+    "loc": [
+     1680.0,
+     74.0
+    ],
+    "parent": null
+   },
+   "Math.008": {
+    "loc": [
+     1890.0,
+     74.0
+    ],
+    "parent": null
+   },
+   "Math.009": {
+    "loc": [
+     2100.0,
+     182.0
+    ],
+    "parent": null
+   },
+   "Mix": {
+    "loc": [
+     2310.0,
+     85.0
+    ],
+    "parent": null
+   },
+   "Math.010": {
+    "loc": [
+     2100.0,
+     -14.0
+    ],
+    "parent": null
+   }
+  }
+ },
+ "GN:PA_LoopClock": {
+  "frames": [],
+  "nodes": {
+   "Group Input": {
+    "loc": [
+     0.0,
+     97.0
+    ],
+    "parent": null
+   },
+   "Group Output": {
+    "loc": [
+     1470.0,
+     69.0
+    ],
+    "parent": null
+   },
+   "Scene Time": {
+    "loc": [
+     0.0,
+     -25.0
+    ],
+    "parent": null
+   },
+   "Math": {
+    "loc": [
+     210.0,
+     74.0
+    ],
+    "parent": null
+   },
+   "Math.001": {
+    "loc": [
+     420.0,
+     74.0
+    ],
+    "parent": null
+   },
+   "Math.002": {
+    "loc": [
+     630.0,
+     74.0
+    ],
+    "parent": null
+   },
+   "Math.003": {
+    "loc": [
+     840.0,
+     63.0
+    ],
+    "parent": null
+   },
+   "Math.004": {
+    "loc": [
+     1050.0,
+     74.0
+    ],
+    "parent": null
+   },
+   "Math.005": {
+    "loc": [
+     1260.0,
+     140.0
+    ],
+    "parent": null
+   },
+   "Math.006": {
+    "loc": [
+     1260.0,
+     -14.0
+    ],
+    "parent": null
+   }
+  }
+ },
+ "MAT:PA_CreamGlaze": {
+  "frames": [
+   {
+    "name": "Frame",
+    "label": "a · Where am I: rest position, height, inside or out",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.30000001192092896,
+     0.23999999463558197,
+     0.10000000149011612
+    ]
+   },
+   {
+    "name": "Frame.001",
+    "label": "b · Uneven cream glaze",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.11999999731779099,
+     0.25,
+     0.1599999964237213
+    ]
+   },
+   {
+    "name": "Frame.002",
+    "label": "c · Crazing and tea stains",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.12999999523162842,
+     0.18000000715255737,
+     0.3199999928474426
+    ]
+   },
+   {
+    "name": "Frame.003",
+    "label": "d · Iron speckles and pinholes",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.3199999928474426,
+     0.12999999523162842,
+     0.11999999731779099
+    ]
+   },
+   {
+    "name": "Frame.004",
+    "label": "e · Worn lip, glossy coat",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.2199999988079071,
+     0.15000000596046448,
+     0.30000001192092896
+    ]
+   },
+   {
+    "name": "Frame.005",
+    "label": "f · Raw foot ring",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.10000000149011612,
+     0.25,
+     0.27000001072883606
+    ]
+   },
+   {
+    "name": "Frame.006",
+    "label": "g · Gold lip",
+    "label_size": 56,
+    "shrink": true,
+    "color": [
+     0.2800000011920929,
+     0.1899999976158142,
+     0.07999999821186066
+    ]
+   }
+  ],
+  "nodes": {
+   "Material Output": {
+    "loc": [
+     2620.0,
+     -2647.0
+    ],
+    "parent": null
+   },
+   "Attribute": {
+    "loc": [
+     0.0,
+     -123.0
+    ],
+    "parent": "Frame"
+   },
+   "Attribute.001": {
+    "loc": [
+     0.0,
+     -197.0
+    ],
+    "parent": "Frame"
+   },
+   "Separate XYZ": {
+    "loc": [
+     200.0,
+     -227.0
+    ],
+    "parent": "Frame"
+   },
+   "Separate XYZ.001": {
+    "loc": [
+     200.0,
+     -163.0
+    ],
+    "parent": "Frame"
+   },
+   "Geometry": {
+    "loc": [
+     0.0,
+     -271.0
+    ],
+    "parent": "Frame"
+   },
+   "Separate XYZ.002": {
+    "loc": [
+     200.0,
+     -291.0
+    ],
+    "parent": "Frame"
+   },
+   "Combine XYZ": {
+    "loc": [
+     400.0,
+     -186.5
+    ],
+    "parent": "Frame"
+   },
+   "Vector Math": {
+    "loc": [
+     600.0,
+     -195.5
+    ],
+    "parent": "Frame"
+   },
+   "Vector Math.001": {
+    "loc": [
+     800.0,
+     -184.5
+    ],
+    "parent": "Frame"
+   },
+   "Map Range": {
+    "loc": [
+     1000.0,
+     -126.5
+    ],
+    "parent": "Frame"
+   },
+   "Noise Texture": {
+    "loc": [
+     1300.0,
+     -123.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Noise Texture.001": {
+    "loc": [
+     1300.0,
+     -430.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math": {
+    "loc": [
+     1520.0,
+     -256.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Mix": {
+    "loc": [
+     1720.0,
+     -427.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Map Range.001": {
+    "loc": [
+     1520.0,
+     -430.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Mix.001": {
+    "loc": [
+     1920.0,
+     -427.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Map Range.002": {
+    "loc": [
+     1300.0,
+     -737.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Math.001": {
+    "loc": [
+     1520.0,
+     -670.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Mix.002": {
+    "loc": [
+     2120.0,
+     -427.0
+    ],
+    "parent": "Frame.001"
+   },
+   "Noise Texture.002": {
+    "loc": [
+     2420.0,
+     -123.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.002": {
+    "loc": [
+     2640.0,
+     -420.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.003": {
+    "loc": [
+     2840.0,
+     -515.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.004": {
+    "loc": [
+     3040.0,
+     -601.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Voronoi Texture": {
+    "loc": [
+     3240.0,
+     -391.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Map Range.003": {
+    "loc": [
+     3460.0,
+     -436.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Voronoi Texture.001": {
+    "loc": [
+     3240.0,
+     -676.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Map Range.004": {
+    "loc": [
+     3460.0,
+     -676.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Map Range.005": {
+    "loc": [
+     2420.0,
+     -430.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.002": {
+    "loc": [
+     3660.0,
+     -600.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.003": {
+    "loc": [
+     3860.0,
+     -589.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Map Range.006": {
+    "loc": [
+     2420.0,
+     -670.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.004": {
+    "loc": [
+     2640.0,
+     -631.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.005": {
+    "loc": [
+     2420.0,
+     -910.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.006": {
+    "loc": [
+     2640.0,
+     -805.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.007": {
+    "loc": [
+     2840.0,
+     -662.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.008": {
+    "loc": [
+     4060.0,
+     -676.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Mix.003": {
+    "loc": [
+     4260.0,
+     -640.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Combine XYZ.001": {
+    "loc": [
+     2420.0,
+     -1084.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Vector Math.005": {
+    "loc": [
+     2640.0,
+     -979.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.009": {
+    "loc": [
+     2840.0,
+     -836.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.010": {
+    "loc": [
+     3040.0,
+     -750.5
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.011": {
+    "loc": [
+     3240.0,
+     -961.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.012": {
+    "loc": [
+     3460.0,
+     -916.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.013": {
+    "loc": [
+     3660.0,
+     -774.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.014": {
+    "loc": [
+     2420.0,
+     -1229.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Math.015": {
+    "loc": [
+     3860.0,
+     -763.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Mix.004": {
+    "loc": [
+     4460.0,
+     -640.0
+    ],
+    "parent": "Frame.002"
+   },
+   "Voronoi Texture.002": {
+    "loc": [
+     4760.0,
+     -123.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Separate XYZ.003": {
+    "loc": [
+     4980.0,
+     -785.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.016": {
+    "loc": [
+     5180.0,
+     -682.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Noise Texture.003": {
+    "loc": [
+     4760.0,
+     -477.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.017": {
+    "loc": [
+     4980.0,
+     -849.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.018": {
+    "loc": [
+     5180.0,
+     -856.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.019": {
+    "loc": [
+     5380.0,
+     -943.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Mix.005": {
+    "loc": [
+     5580.0,
+     -1081.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Voronoi Texture.003": {
+    "loc": [
+     4760.0,
+     -784.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Separate XYZ.004": {
+    "loc": [
+     4980.0,
+     -1043.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.020": {
+    "loc": [
+     5180.0,
+     -1030.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Noise Texture.004": {
+    "loc": [
+     4760.0,
+     -1138.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.021": {
+    "loc": [
+     4980.0,
+     -1107.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.022": {
+    "loc": [
+     5180.0,
+     -1378.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.023": {
+    "loc": [
+     5380.0,
+     -1117.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Mix.006": {
+    "loc": [
+     5780.0,
+     -1168.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Voronoi Texture.004": {
+    "loc": [
+     4760.0,
+     -1445.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Separate XYZ.005": {
+    "loc": [
+     4980.0,
+     -1301.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.024": {
+    "loc": [
+     5180.0,
+     -1204.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Noise Texture.005": {
+    "loc": [
+     4760.0,
+     -1799.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.025": {
+    "loc": [
+     4980.0,
+     -1365.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.026": {
+    "loc": [
+     5180.0,
+     -1726.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.027": {
+    "loc": [
+     5380.0,
+     -1291.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Mix.007": {
+    "loc": [
+     5980.0,
+     -1168.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Voronoi Texture.005": {
+    "loc": [
+     4760.0,
+     -2106.0
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.028": {
+    "loc": [
+     4980.0,
+     -1559.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Separate XYZ.006": {
+    "loc": [
+     4980.0,
+     -1733.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.029": {
+    "loc": [
+     5180.0,
+     -1552.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.030": {
+    "loc": [
+     5380.0,
+     -1465.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Math.031": {
+    "loc": [
+     5580.0,
+     -1327.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Mix.008": {
+    "loc": [
+     6180.0,
+     -1168.5
+    ],
+    "parent": "Frame.003"
+   },
+   "Map Range.007": {
+    "loc": [
+     6480.0,
+     -123.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Mix.009": {
+    "loc": [
+     6700.0,
+     -319.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Map Range.008": {
+    "loc": [
+     6480.0,
+     -388.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Noise Texture.006": {
+    "loc": [
+     6480.0,
+     -628.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.032": {
+    "loc": [
+     6700.0,
+     -565.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.033": {
+    "loc": [
+     6900.0,
+     -442.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.034": {
+    "loc": [
+     7100.0,
+     -355.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Principled BSDF": {
+    "loc": [
+     7500.0,
+     -335.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.035": {
+    "loc": [
+     7100.0,
+     -529.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Math.036": {
+    "loc": [
+     7300.0,
+     -442.0
+    ],
+    "parent": "Frame.004"
+   },
+   "Map Range.009": {
+    "loc": [
+     0.0,
+     -2770.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Math.037": {
+    "loc": [
+     0.0,
+     -3010.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Math.038": {
+    "loc": [
+     220.0,
+     -2977.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Math.039": {
+    "loc": [
+     420.0,
+     -3197.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Math.040": {
+    "loc": [
+     620.0,
+     -3197.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Math.041": {
+    "loc": [
+     820.0,
+     -3208.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Noise Texture.007": {
+    "loc": [
+     0.0,
+     -3184.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Math.042": {
+    "loc": [
+     220.0,
+     -3151.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Math.043": {
+    "loc": [
+     1020.0,
+     -3197.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Noise Texture.008": {
+    "loc": [
+     0.0,
+     -3491.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Mix.010": {
+    "loc": [
+     220.0,
+     -3345.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Mix.011": {
+    "loc": [
+     1220.0,
+     -3161.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Principled BSDF.001": {
+    "loc": [
+     1420.0,
+     -3090.0
+    ],
+    "parent": "Frame.005"
+   },
+   "Mix Shader": {
+    "loc": [
+     1720.0,
+     -3211.5
+    ],
+    "parent": "Frame.005"
+   },
+   "Math.044": {
+    "loc": [
+     2020.0,
+     -2770.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Principled BSDF.002": {
+    "loc": [
+     2020.0,
+     -2944.0
+    ],
+    "parent": "Frame.006"
+   },
+   "Mix Shader.001": {
+    "loc": [
+     2320.0,
+     -2978.5
+    ],
+    "parent": "Frame.006"
+   }
+  }
+ },
+ "MAT:PA_Gold": {
+  "frames": [],
+  "nodes": {
+   "Material Output": {
+    "loc": [
+     960.0,
+     70.0
+    ],
+    "parent": null
+   },
+   "Texture Coordinate": {
+    "loc": [
+     0.0,
+     118.0
+    ],
+    "parent": null
+   },
+   "Noise Texture": {
+    "loc": [
+     210.0,
+     140.5
+    ],
+    "parent": null
+   },
+   "Math": {
+    "loc": [
+     440.0,
+     84.0
+    ],
+    "parent": null
+   },
+   "Principled BSDF": {
+    "loc": [
+     650.0,
+     181.0
+    ],
+    "parent": null
+   }
+  }
+ },
+ "MAT:PA_Urushi": {
+  "frames": [],
+  "nodes": {
+   "Material Output": {
+    "loc": [
+     310.0,
+     70.0
+    ],
+    "parent": null
+   },
+   "Principled BSDF": {
+    "loc": [
+     0.0,
+     181.0
+    ],
+    "parent": null
+   }
+  }
+ }
+}
