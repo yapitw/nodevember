@@ -11,11 +11,17 @@ build it again yourself.
 | Day | Prompt | Piece | |
 |---|---|---|---|
 | 01 | Origami | **Paper plane.** A sheet of washi paper folds itself into a paper plane and glides off the stack. The sheet underneath is already waiting, so the 8-second loop is seamless. | [files](2026/day01-origami) · [loop](2026/day01-origami/loop.mp4) · [**node-by-node tutorial**](2026/day01-origami/tutorial/README.md) |
+| 02 | Furniture | **A day in the corner.** A reading corner lit by one window, out of frame. In 10 seconds the sun crosses the room from raking morning light to a golden window on the wall, the lamp clicks on at blue hour, the moon comes through, and morning returns. Bouclé, walnut, travertine, pleated linen, knit, wool and glaze are all shader nodes. | [files](2026/day02-furniture-v3-corner) · [loop](2026/day02-furniture-v3-corner/loop.mp4) · [**node-by-node tutorial**](2026/day02-furniture-v3-corner/tutorial/README.md) |
 | 03 | Stitch | **Kintsugi.** An old cream tea bowl breaks along its gold seams. The shards are glued back one by one with black urushi lacquer, which squeezes out of each seam, and then gold flows down every crack from the rim until the bowl is whole again. | [files](2026/day03-stitch-v3-kintsugi) · [loop](2026/day03-stitch-v3-kintsugi/loop.mp4) · [**node-by-node tutorial**](2026/day03-stitch-v3-kintsugi/tutorial/README.md) |
 
 <p>
   <img src="2026/day01-origami/_still_086.png" width="49%" alt="The washi sheet folded into a dart on a stack of paper">
   <img src="2026/day01-origami/_still_160.png" width="49%" alt="The paper plane standing on its keel, lifting off the stack">
+</p>
+
+<p>
+  <img src="2026/day02-furniture-v3-corner/_still_076.png" width="49%" alt="A reading corner at noon: sun through an unseen window falls across a cream bouclé barrel chair, a walnut side table with a travertine lamp, and a vase of pampas grass">
+  <img src="2026/day02-furniture-v3-corner/_still_211.png" width="49%" alt="The same corner at night: the pleated linen lamp is on and warms the room, and moonlight draws the window faintly on the wall">
 </p>
 
 <p>
