@@ -13,6 +13,7 @@ build it again yourself.
 | 01 | Origami | **Paper plane.** A sheet of washi paper folds itself into a paper plane and glides off the stack. The sheet underneath is already waiting, so the 8-second loop is seamless. | [files](2026/day01-origami) · [loop](2026/day01-origami/loop.mp4) · [**node-by-node tutorial**](2026/day01-origami/tutorial/README.md) |
 | 02 | Furniture | **A day in the corner.** A reading corner lit by one window, out of frame. In 10 seconds the sun crosses the room from raking morning light to a golden window on the wall, the lamp clicks on at blue hour, the moon comes through, and morning returns. Bouclé, walnut, travertine, pleated linen, knit, wool and glaze are all shader nodes. | [files](2026/day02-furniture-v3-corner) · [loop](2026/day02-furniture-v3-corner/loop.mp4) · [**node-by-node tutorial**](2026/day02-furniture-v3-corner/tutorial/README.md) |
 | 03 | Stitch | **Kintsugi.** An old cream tea bowl breaks along its gold seams. The shards are glued back one by one with black urushi lacquer, which squeezes out of each seam, and then gold flows down every crack from the rim until the bowl is whole again. | [files](2026/day03-stitch-v3-kintsugi) · [loop](2026/day03-stitch-v3-kintsugi/loop.mp4) · [**node-by-node tutorial**](2026/day03-stitch-v3-kintsugi/tutorial/README.md) |
+| 04 | Brass | **Chladni.** Sand on a brass plate finds the nodal lines of four rising tones: an X of arcs, a rounded square round a ring, a ring of loops, then lace. At each new tone the grains leap off the parts that shake and settle on the lines that stand still. One standing-wave formula, with Newton steps in a Repeat Zone. | [files](2026/day04-brass-v2-chladni) · [loop](2026/day04-brass-v2-chladni/loop.mp4) · [**node-by-node tutorial**](2026/day04-brass-v2-chladni/tutorial/README.md) |
 
 <p>
   <img src="2026/day01-origami/_still_086.png" width="49%" alt="The washi sheet folded into a dart on a stack of paper">
@@ -27,6 +28,11 @@ build it again yourself.
 <p>
   <img src="2026/day03-stitch-v3-kintsugi/_still_001.png" width="49%" alt="A cream tea bowl with fine crazing, its cracks mended with flat gold lines">
   <img src="2026/day03-stitch-v3-kintsugi/_still_128.png" width="49%" alt="The same bowl with every shard back in place, the seams still black urushi lacquer before the gold">
+</p>
+
+<p>
+  <img src="2026/day04-brass-v2-chladni/render.png" width="49%" alt="A square brass plate on a thin shaft in a black void, white sand drawn into a rounded square around a ring at the centre bolt">
+  <img src="2026/day04-brass-v2-chladni/_still_220.png" width="49%" alt="The same plate on the highest tone: the sand has settled into dense nested loops like lace">
 </p>
 
 ## What is in a day folder
