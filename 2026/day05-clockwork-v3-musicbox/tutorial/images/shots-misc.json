@@ -1,0 +1,38 @@
+[
+ {
+  "file": "nodes-0-main.png",
+  "tree": "PA_MusicBox_GN",
+  "section": null,
+  "nodes": 8
+ },
+ {
+  "file": "nodes-gear.png",
+  "tree": "PA_Gear",
+  "section": null,
+  "nodes": 32
+ },
+ {
+  "file": "nodes-loop-clock.png",
+  "tree": "PA_LoopClock",
+  "section": null,
+  "nodes": 10
+ },
+ {
+  "file": "nodes-dome.png",
+  "tree": "PA_Dome_GN",
+  "section": null,
+  "nodes": 43
+ },
+ {
+  "file": "nodes-mat-plique.png",
+  "tree": "PA_Plique",
+  "section": null,
+  "nodes": 27
+ },
+ {
+  "file": "nodes-mat-brass.png",
+  "tree": "PA_Brass",
+  "section": null,
+  "nodes": 27
+ }
+]

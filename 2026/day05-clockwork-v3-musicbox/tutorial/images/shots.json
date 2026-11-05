@@ -1,0 +1,494 @@
+[
+ {
+  "file": "nodes-movement.png",
+  "tree": "PA_MB_Movement",
+  "section": null,
+  "nodes": 216
+ },
+ {
+  "file": "nodes-movement-1-bedplate-frame-and-barrel.png",
+  "tree": "PA_MB_Movement",
+  "section": "a · Bedplate, frame and barrel",
+  "nodes": 51,
+  "inputs": [],
+  "outputs": [
+   "flat faces, smooth walls",
+   "frame loop",
+   "Cube",
+   "Set Position",
+   "Cylinder"
+  ]
+ },
+ {
+  "file": "nodes-movement-2-cylinder-and-great-wheel.png",
+  "tree": "PA_MB_Movement",
+  "section": "b · Cylinder and great wheel",
+  "nodes": 11,
+  "inputs": [
+   "cylinder: one turn per loop"
+  ],
+  "outputs": [
+   "Cylinder",
+   "Gear",
+   "Cylinder 2"
+  ]
+ },
+ {
+  "file": "nodes-movement-3-governor-and-air-brake.png",
+  "tree": "PA_MB_Movement",
+  "section": "c · Governor and air brake",
+  "nodes": 35,
+  "inputs": [
+   "cylinder: one turn per loop"
+  ],
+  "outputs": [
+   "Gear",
+   "Gear 2",
+   "Cube",
+   "Cube 2",
+   "Cube 3",
+   "Cube 4",
+   "Gear 3",
+   "Cylinder",
+   "Cylinder 2"
+  ]
+ },
+ {
+  "file": "nodes-movement-4-score-pins.png",
+  "tree": "PA_MB_Movement",
+  "section": "d · Score pins",
+  "nodes": 21,
+  "inputs": [
+   "cylinder: one turn per loop"
+  ],
+  "outputs": [
+   "Math",
+   "pin → tooth (the score)",
+   "35 pins",
+   "Instance on Points"
+  ]
+ },
+ {
+  "file": "nodes-movement-5-pluck-summed-per-tooth.png",
+  "tree": "PA_MB_Movement",
+  "section": "e · Pluck, summed per tooth",
+  "nodes": 34,
+  "inputs": [
+   "Math",
+   "pin → tooth (the score)",
+   "35 pins",
+   "Index"
+  ],
+  "outputs": [
+   "Instance on Points"
+  ]
+ },
+ {
+  "file": "nodes-movement-6-comb-teeth.png",
+  "tree": "PA_MB_Movement",
+  "section": "f · Comb teeth",
+  "nodes": 13,
+  "inputs": [
+   "Instance on Points"
+  ],
+  "outputs": [
+   "comb teeth"
+  ]
+ },
+ {
+  "file": "nodes-movement-7-comb-plate-screws-stop-spring.png",
+  "tree": "PA_MB_Movement",
+  "section": "g · Comb plate, screws, stop spring",
+  "nodes": 38,
+  "inputs": [],
+  "outputs": [
+   "Cube",
+   "Curve to Mesh",
+   "Mesh Boolean",
+   "Mesh Boolean 2",
+   "Mesh Boolean 3",
+   "Mesh Boolean 4",
+   "Mesh Boolean 5",
+   "Mesh Boolean 6",
+   "Cube 2"
+  ]
+ },
+ {
+  "file": "nodes-movement-8-materials-and-output.png",
+  "tree": "PA_MB_Movement",
+  "section": "h · Materials and output",
+  "nodes": 9,
+  "inputs": [
+   "flat faces, smooth walls",
+   "frame loop",
+   "Cube",
+   "Set Position",
+   "Cylinder",
+   "Cube 2",
+   "Cylinder 2",
+   "Gear",
+   "Gear 2",
+   "Gear 3",
+   "Cube 3",
+   "Cube 4",
+   "Cube 5",
+   "Cube 6",
+   "Cylinder 3",
+   "Gear 4",
+   "Cylinder 4",
+   "Cylinder 5",
+   "Instance on Points",
+   "Curve to Mesh",
+   "Mesh Boolean",
+   "Mesh Boolean 2",
+   "Mesh Boolean 3",
+   "Mesh Boolean 4",
+   "Mesh Boolean 5",
+   "Mesh Boolean 6",
+   "comb teeth",
+   "Cube 7"
+  ],
+  "outputs": [
+   "CombSteel parts"
+  ]
+ },
+ {
+  "file": "nodes-tree.png",
+  "tree": "PA_MB_Tree",
+  "section": null,
+  "nodes": 552
+ },
+ {
+  "file": "nodes-tree-1-trunk.png",
+  "tree": "PA_MB_Tree",
+  "section": "a · Trunk",
+  "nodes": 22,
+  "inputs": [
+   "Index"
+  ],
+  "outputs": [
+   "Spline Parameter",
+   "Set Curve Radius"
+  ]
+ },
+ {
+  "file": "nodes-tree-2-branches.png",
+  "tree": "PA_MB_Tree",
+  "section": "b · Branches",
+  "nodes": 39,
+  "inputs": [
+   "Index",
+   "Spline Parameter"
+  ],
+  "outputs": [
+   "Set Curve Radius"
+  ]
+ },
+ {
+  "file": "nodes-tree-3-twigs.png",
+  "tree": "PA_MB_Tree",
+  "section": "c · Twigs",
+  "nodes": 85,
+  "inputs": [
+   "Index",
+   "Spline Parameter",
+   "Set Curve Radius",
+   "Set Curve Radius 2"
+  ],
+  "outputs": [
+   "Curve to Mesh",
+   "Set Curve Radius"
+  ]
+ },
+ {
+  "file": "nodes-tree-4-snow-on-the-branches.png",
+  "tree": "PA_MB_Tree",
+  "section": "d · Snow on the branches",
+  "nodes": 18,
+  "inputs": [
+   "Season",
+   "Set Curve Radius",
+   "Set Curve Radius 2"
+  ],
+  "outputs": [
+   "Curve to Mesh"
+  ]
+ },
+ {
+  "file": "nodes-tree-5-anchors.png",
+  "tree": "PA_MB_Tree",
+  "section": "e · Anchors",
+  "nodes": 17,
+  "inputs": [
+   "Set Curve Radius",
+   "Index",
+   "Set Curve Radius 2"
+  ],
+  "outputs": [
+   "leaf anchors",
+   "Position",
+   "tan: the way the wood runs",
+   "left or right",
+   "across the twig"
+  ]
+ },
+ {
+  "file": "nodes-tree-6-leaves.png",
+  "tree": "PA_MB_Tree",
+  "section": "f · Leaves",
+  "nodes": 127,
+  "inputs": [
+   "leaf anchors",
+   "Index",
+   "Season",
+   "Position",
+   "tan: the way the wood runs",
+   "left or right",
+   "across the twig",
+   "Phase"
+  ],
+  "outputs": [
+   "leaves"
+  ]
+ },
+ {
+  "file": "nodes-tree-7-blossom.png",
+  "tree": "PA_MB_Tree",
+  "section": "g · Blossom",
+  "nodes": 127,
+  "inputs": [
+   "leaf anchors",
+   "Index",
+   "Season",
+   "Position",
+   "tan: the way the wood runs",
+   "left or right",
+   "across the twig"
+  ],
+  "outputs": [
+   "blossom"
+  ]
+ },
+ {
+  "file": "nodes-tree-8-fruit.png",
+  "tree": "PA_MB_Tree",
+  "section": "h · Fruit",
+  "nodes": 114,
+  "inputs": [
+   "Index",
+   "Season",
+   "Position"
+  ],
+  "outputs": [
+   "fruit"
+  ]
+ },
+ {
+  "file": "nodes-limb.png",
+  "tree": "PA_MB_Limb",
+  "section": null,
+  "nodes": 64
+ },
+ {
+  "file": "nodes-limb-1-heading-sag-and-lift.png",
+  "tree": "PA_MB_Limb",
+  "section": "a · Heading, sag and lift",
+  "nodes": 17,
+  "inputs": [
+   "Length",
+   "Along",
+   "Elevation",
+   "Lift",
+   "Droop",
+   "Heading"
+  ],
+  "outputs": [
+   "Math",
+   "Math 2",
+   "Math 3"
+  ]
+ },
+ {
+  "file": "nodes-limb-2-crooks.png",
+  "tree": "PA_MB_Limb",
+  "section": "b · Crooks",
+  "nodes": 45,
+  "inputs": [
+   "Along",
+   "Segments",
+   "Sideways",
+   "Seed",
+   "Key",
+   "Up",
+   "Length",
+   "Heading",
+   "Math",
+   "Math 2",
+   "Math 3",
+   "Base"
+  ],
+  "outputs": [
+   "Vector Math"
+  ]
+ },
+ {
+  "file": "nodes-drum.png",
+  "tree": "PA_MB_Drum",
+  "section": null,
+  "nodes": 192
+ },
+ {
+  "file": "nodes-drum-1-plinth-and-bezel.png",
+  "tree": "PA_MB_Drum",
+  "section": "a · Plinth and bezel",
+  "nodes": 23,
+  "inputs": [],
+  "outputs": [
+   "Walnut parts",
+   "Brass parts"
+  ]
+ },
+ {
+  "file": "nodes-drum-2-cells-delaunay-dual-mesh.png",
+  "tree": "PA_MB_Drum",
+  "section": "b · Cells: Delaunay → Dual Mesh",
+  "nodes": 48,
+  "inputs": [],
+  "outputs": [
+   "cell"
+  ]
+ },
+ {
+  "file": "nodes-drum-3-cloisons-and-enamel-panes.png",
+  "tree": "PA_MB_Drum",
+  "section": "c · Cloisons and enamel panes",
+  "nodes": 20,
+  "inputs": [
+   "cell"
+  ],
+  "outputs": [
+   "Gold parts",
+   "Plique parts"
+  ]
+ },
+ {
+  "file": "nodes-drum-4-season-index.png",
+  "tree": "PA_MB_Drum",
+  "section": "d · Season index",
+  "nodes": 18,
+  "inputs": [],
+  "outputs": [
+   "Gold parts"
+  ]
+ },
+ {
+  "file": "nodes-drum-5-stage-drive.png",
+  "tree": "PA_MB_Drum",
+  "section": "e · Stage drive",
+  "nodes": 21,
+  "inputs": [
+   "Phase"
+  ],
+  "outputs": [
+   "Brass parts",
+   "Steel parts"
+  ]
+ },
+ {
+  "file": "nodes-drum-6-winding-key.png",
+  "tree": "PA_MB_Drum",
+  "section": "f · Winding key",
+  "nodes": 59,
+  "inputs": [
+   "Phase"
+  ],
+  "outputs": [
+   "Steel parts",
+   "Gold parts"
+  ]
+ },
+ {
+  "file": "nodes-stage.png",
+  "tree": "PA_MB_Stage",
+  "section": null,
+  "nodes": 310
+ },
+ {
+  "file": "nodes-stage-1-plate-and-season-emblems.png",
+  "tree": "PA_MB_Stage",
+  "section": "a · Plate and season emblems",
+  "nodes": 141,
+  "inputs": [],
+  "outputs": [
+   "Brass parts",
+   "Gold parts"
+  ]
+ },
+ {
+  "file": "nodes-stage-2-mound-and-snow-cover.png",
+  "tree": "PA_MB_Stage",
+  "section": "b · Mound and snow cover",
+  "nodes": 64,
+  "inputs": [
+   "Season"
+  ],
+  "outputs": [
+   "Set Position",
+   "Moss parts",
+   "Snow parts"
+  ]
+ },
+ {
+  "file": "nodes-stage-3-grass.png",
+  "tree": "PA_MB_Stage",
+  "section": "c · Grass",
+  "nodes": 40,
+  "inputs": [
+   "Set Position",
+   "Season"
+  ],
+  "outputs": [
+   "Grass parts"
+  ]
+ },
+ {
+  "file": "nodes-stage-4-the-tree.png",
+  "tree": "PA_MB_Stage",
+  "section": "d · The tree",
+  "nodes": 8,
+  "inputs": [
+   "Season",
+   "Phase"
+  ],
+  "outputs": [
+   "Gold parts",
+   "Snow parts",
+   "LeafEnamel parts",
+   "Blossom parts",
+   "Fruit parts"
+  ]
+ },
+ {
+  "file": "nodes-stage-5-snowfall.png",
+  "tree": "PA_MB_Stage",
+  "section": "e · Snowfall",
+  "nodes": 55,
+  "inputs": [
+   "Season",
+   "Phase",
+   "Brass parts",
+   "Gold parts",
+   "Moss parts",
+   "Snow parts",
+   "Grass parts",
+   "Gold parts 2",
+   "Snow parts 2",
+   "LeafEnamel parts",
+   "Blossom parts",
+   "Fruit parts"
+  ],
+  "outputs": [
+   "the stage turns once a year"
+  ]
+ }
+]

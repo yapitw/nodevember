@@ -14,6 +14,7 @@ build it again yourself.
 | 02 | Furniture | **A day in the corner.** A reading corner lit by one window, out of frame. In 10 seconds the sun crosses the room from raking morning light to a golden window on the wall, the lamp clicks on at blue hour, the moon comes through, and morning returns. Bouclé, walnut, travertine, pleated linen, knit, wool and glaze are all shader nodes. | [files](2026/day02-furniture-v3-corner) · [loop](2026/day02-furniture-v3-corner/loop.mp4) · [**node-by-node tutorial**](2026/day02-furniture-v3-corner/tutorial/README.md) |
 | 03 | Stitch | **Kintsugi.** An old cream tea bowl breaks along its gold seams. The shards are glued back one by one with black urushi lacquer, which squeezes out of each seam, and then gold flows down every crack from the rim until the bowl is whole again. | [files](2026/day03-stitch-v3-kintsugi) · [loop](2026/day03-stitch-v3-kintsugi/loop.mp4) · [**node-by-node tutorial**](2026/day03-stitch-v3-kintsugi/tutorial/README.md) |
 | 04 | Brass | **Chladni.** Sand on a brass plate finds the nodal lines of four rising tones: an X of arcs, a rounded square round a ring, a ring of loops, then lace. At each new tone the grains leap off the parts that shake and settle on the lines that stand still. One standing-wave formula, with Newton steps in a Repeat Zone. | [files](2026/day04-brass-v2-chladni) · [loop](2026/day04-brass-v2-chladni/loop.mp4) · [**node-by-node tutorial**](2026/day04-brass-v2-chladni/tutorial/README.md) |
+| 05 | Clockwork | **Four-season music box.** A wind-up music box whose stage makes one turn per loop, and that turn is one year. The tree on it goes from snow through blossom, leaf and fruit to leaf-fall and back, and behind a wall of translucent enamel a pinned cylinder plucks a steel comb, one bar of the tune per season. The sound is synthesised from the same score as the pins, so picture and tune loop together. | [files](2026/day05-clockwork-v3-musicbox) · [loop with sound](2026/day05-clockwork-v3-musicbox/loop_sound.mp4) · [**node-by-node tutorial**](2026/day05-clockwork-v3-musicbox/tutorial/README.md) |
 
 <p>
   <img src="2026/day01-origami/_still_086.png" width="49%" alt="The washi sheet folded into a dart on a stack of paper">
@@ -35,13 +36,18 @@ build it again yourself.
   <img src="2026/day04-brass-v2-chladni/_still_220.png" width="49%" alt="The same plate on the highest tone: the sand has settled into dense nested loops like lace">
 </p>
 
+<p>
+  <img src="2026/day05-clockwork-v3-musicbox/_still_090.png" width="49%" alt="A brass music box with a pierced band of green and amber enamel under a tall glass cloche; on its grass stage a small twisted tree is a cloud of pink blossom">
+  <img src="2026/day05-clockwork-v3-musicbox/_still_240.png" width="49%" alt="The same music box in autumn: the tree has turned orange and red apples lie fallen on the grass">
+</p>
+
 ## What is in a day folder
 
 | File | |
 |---|---|
 | `build.py` | builds the whole scene: node trees, materials, lights, camera, render settings |
 | `*.blend` | the result of `build.py`; open it to explore the node trees |
-| `loop.mp4` | the render, 1080 × 1080 |
+| `loop.mp4` | the render, 1080 × 1080 (`loop_sound.mp4` adds the sound, where there is one) |
 | `_still_*.png` | full-quality stills |
 | `nodes*.png` | node-tree screenshots |
 | `nodes_layout.json` | node positions and frames, tidied by hand; `build.py` restores them |

@@ -216,6 +216,24 @@ class Graph:
         self.tree = tree
         self.nodes, self.links = tree.nodes, tree.links
 
+    # tutorial sections
+    def section(self, label, color=None):
+        """Context manager: every node made inside `with g.section("2 · Sheet"):` goes into one labelled frame.
+        arrange() then lays each frame out as its own block (left to right, in the order made), and
+        scripts/tutorial_shots.py cuts each frame out into its own screenshot. See references/tutorial.md."""
+        return _Section(self, label, color)
+
+    def begin_section(self, label, color=None):
+        """Same as `with g.section(label):` without re-indenting: closes the open section, starts this one.
+        Call end_section() before arrange()."""
+        self.end_section()
+        self._open = _Section(self, label, color).__enter__()
+
+    def end_section(self):
+        sec, self._open = getattr(self, "_open", None), None
+        if sec is not None:
+            sec.__exit__(None, None, None)
+
     # sockets
     @staticmethod
     def out(node, key=None):
@@ -349,6 +367,34 @@ class Graph:
 
 # ───────────────────────────────────────────────────────── layout (readable node screenshots)
 
+SECTION_COLORS = [(0.36, 0.30, 0.16), (0.18, 0.32, 0.22), (0.20, 0.26, 0.40), (0.38, 0.22, 0.20),
+                  (0.30, 0.22, 0.38), (0.16, 0.32, 0.34), (0.34, 0.30, 0.22), (0.26, 0.26, 0.26)]
+
+
+class _Section:
+    def __init__(self, g, label, color):
+        self.g, self.label, self.color = g, label, color
+
+    def __enter__(self):
+        self.before = {n.as_pointer() for n in self.g.tree.nodes}
+        return self
+
+    def __exit__(self, *exc):
+        if exc[0] is not None:
+            return False
+        t = self.g.tree
+        new = [n for n in t.nodes if n.as_pointer() not in self.before and n.bl_idname not in
+               ("NodeFrame", "NodeGroupInput", "NodeGroupOutput") and n.parent is None]
+        if not new:
+            return False
+        k = sum(1 for n in t.nodes if n.bl_idname == "NodeFrame")
+        fr = t.nodes.new("NodeFrame")
+        fr.name, fr.label, fr.label_size, fr.shrink = f"Section {k + 1:02d}", self.label, 28, True
+        fr.use_custom_color, fr.color = True, self.color or SECTION_COLORS[k % len(SECTION_COLORS)]
+        for n in new:
+            n.parent = fr
+        return False
+
 def _est_height(n):
     if n.dimensions.y > 1:
         return n.dimensions.y
@@ -359,10 +405,65 @@ def _est_height(n):
     return 36 + 22 * socks + extra
 
 
+def _set_loc(n, x, y):
+    if n.parent is not None and hasattr(n, "location_absolute"):
+        n.location_absolute = (x, y)
+    else:
+        n.location = (x, y)
+
+
 def arrange(tree, gap_x=70, gap_y=28):
     """Layered left-to-right layout: column = longest path from sources, zones stay bracketed.
-    Run before node screenshots; screenshots of tidy trees get read, tangles get skipped."""
-    nodes = [n for n in tree.nodes if n.bl_idname not in ("NodeFrame",)]
+    Run before node screenshots; screenshots of tidy trees get read, tangles get skipped.
+    A tree with section frames (Graph.section) is laid out frame by frame instead: arrange_sections."""
+    if any(n.parent is not None for n in tree.nodes):
+        return arrange_sections(tree, gap_x, gap_y)
+    pos = _layered([n for n in tree.nodes if n.bl_idname not in ("NodeFrame",)], tree, gap_x, gap_y)
+    for n, (x, y) in pos.items():
+        n.location = (x, y)
+    return {"columns": len({x for x, _ in pos.values()}), "nodes": len(pos)}
+
+
+def arrange_sections(tree, gap_x=70, gap_y=28, pad=90):
+    """Each section frame is laid out on its own (layered), then the frames are placed as blocks in the order
+    they were made, wrapping into rows; Group Input sits at the far left, outputs at the far right."""
+    frames = [n for n in tree.nodes if n.bl_idname == "NodeFrame"]
+    io_in = [n for n in tree.nodes if n.bl_idname == "NodeGroupInput"]
+    io_out = [n for n in tree.nodes if n.bl_idname in ("NodeGroupOutput", "ShaderNodeOutputMaterial",
+                                                        "ShaderNodeOutputWorld") and n.parent is None]
+    loose = [n for n in tree.nodes if n.parent is None and n.bl_idname != "NodeFrame" and n not in io_in + io_out]
+    blocks = [[n for n in tree.nodes if n.parent == f] for f in frames] + ([loose] if loose else [])
+    laid = []
+    for nodes in blocks:
+        if not nodes:
+            continue
+        pos = _layered(nodes, tree, gap_x, gap_y)
+        xs = [x for x, _ in pos.values()]
+        ys = [y for _, y in pos.values()]
+        x0, y1 = min(xs), max(ys)
+        w = max(x + n.width for n, (x, _) in pos.items()) - x0
+        h = y1 - min(y - _est_height(n) for n, (_, y) in pos.items())
+        laid.append(({n: (x - x0, y - y1) for n, (x, y) in pos.items()}, w, h))
+    area = sum((w + pad) * (h + pad) for _, w, h in laid) or 1.0
+    row_w = max(2400.0, 1.7 * area ** 0.5, max((w for _, w, _ in laid), default=0))
+    x, y, row_h, right = 0.0, 0.0, 0.0, 0.0
+    for pos, w, h in laid:
+        if x > 0 and x + w > row_w:
+            x, y, row_h = 0.0, y - row_h - 2 * pad, 0.0
+        for n, (px, py) in pos.items():
+            _set_loc(n, x + px, y + py - 60)          # room for the frame label
+        x += w + 2 * pad
+        right = max(right, x)
+        row_h = max(row_h, h + 60)
+    for i, n in enumerate(io_in):
+        n.location = (-n.width - 3 * pad, -220.0 * i)
+    for i, n in enumerate(io_out):
+        n.location = (right + pad, -220.0 * i)
+    return {"sections": len(frames), "rows": round(-y / max(row_h, 1)) + 1, "nodes": sum(len(p) for p, _, _ in laid)}
+
+
+def _layered(nodes, tree, gap_x, gap_y):
+    """Positions {node: (x, top y)} for a layered layout of `nodes` (links to nodes outside are ignored)."""
     preds = {n: set() for n in nodes}
     for l in tree.links:
         if l.from_node in preds and l.to_node in preds and l.from_node != l.to_node:
@@ -389,24 +490,44 @@ def arrange(tree, gap_x=70, gap_y=28):
     last = max(depth.values(), default=0)
     for n in outs:
         depth[n] = max(depth[n], last)
+    # pull every node right, next to its first consumer ("as late as possible"): constants and primitives
+    # then sit beside the node that uses them, instead of piling up in one tall first column
+    succs = {n: [m for m in nodes if n in preds[m]] for n in nodes}
+    for n in sorted(nodes, key=lambda n: -depth[n]):
+        if succs[n] and n not in outs:
+            depth[n] = max(depth[n], min(depth[m] for m in succs[n]) - 1)
     cols = {}
     for n in nodes:
         cols.setdefault(depth[n], []).append(n)
     x = 0.0
-    ypos = {}
+    ypos, pos = {}, {}
     for c in sorted(cols):
         col = cols[c]
         col.sort(key=lambda n: (sum(ypos.get(p, 0) for p in preds[n]) / len(preds[n])) if preds[n] else 0,
                  reverse=True)
-        width = max(n.width for n in col)
-        total = sum(_est_height(n) for n in col) + gap_y * (len(col) - 1)
-        y = total / 2
+        # wrap a column taller than MAX_COL into side-by-side sub-columns, so a big Join (twenty emblems,
+        # thirty materials) doesn't stretch the section into a thin tower
+        chunks, cur, h = [], [], 0.0
         for n in col:
-            n.location = (x, y)
-            ypos[n] = y - _est_height(n) / 2
-            y -= _est_height(n) + gap_y
-        x += width + gap_x
-    return {"columns": len(cols), "nodes": len(nodes)}
+            if cur and h + _est_height(n) > MAX_COL:
+                chunks.append(cur)
+                cur, h = [], 0.0
+            cur.append(n)
+            h += _est_height(n) + gap_y
+        chunks.append(cur)
+        for ch in chunks:
+            width = max(n.width for n in ch)
+            total = sum(_est_height(n) for n in ch) + gap_y * (len(ch) - 1)
+            y = total / 2
+            for n in ch:
+                pos[n] = (x, y)
+                ypos[n] = y - _est_height(n) / 2
+                y -= _est_height(n) + gap_y
+            x += width + gap_x * (0.5 if ch is not chunks[-1] else 1.0)
+    return pos
+
+
+MAX_COL = 1500.0   # tallest node column before it wraps (node-editor units)
 
 
 def _layout_key(tree):

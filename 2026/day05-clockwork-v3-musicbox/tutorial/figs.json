@@ -1,0 +1,753 @@
+[
+ {
+  "kind": "pipeline",
+  "out": "images/pipeline.png",
+  "boxes": [
+   {
+    "id": "tree",
+    "title": "PA_MB_Tree",
+    "text": "wood, snow on branches,\nleaves, blossom, fruit",
+    "x": 1,
+    "y": -1,
+    "color": "green"
+   },
+   {
+    "id": "dome",
+    "title": "PA_Dome (own object)",
+    "text": "glass cloche; light linking\nkeeps softboxes off it",
+    "x": 2,
+    "y": -1,
+    "color": "grey"
+   },
+   {
+    "id": "clock",
+    "title": "1 · Loop clock",
+    "text": "Phase 0 → 1 per 360 frames\nseason u = 4 × Phase",
+    "x": 0,
+    "y": 0,
+    "color": "blue"
+   },
+   {
+    "id": "stage",
+    "title": "2 · The stage",
+    "text": "plate, dial, mound, snow,\ngrass, tree; turns τ·Phase",
+    "x": 1,
+    "y": 0,
+    "color": "yellow"
+   },
+   {
+    "id": "drum",
+    "title": "3 · The drum",
+    "text": "plinth, enamel wall, index,\nyear wheel, butterfly key",
+    "x": 1,
+    "y": 1,
+    "color": "purple"
+   },
+   {
+    "id": "mov",
+    "title": "4 · The movement",
+    "text": "barrel, pinned cylinder,\ngovernor, plucked comb",
+    "x": 1,
+    "y": 2,
+    "color": "teal"
+   },
+   {
+    "id": "out",
+    "title": "Join → PA_MusicBox",
+    "text": "one object, one modifier",
+    "x": 2,
+    "y": 1,
+    "color": "brown"
+   },
+   {
+    "id": "snd",
+    "title": "Sound (build.py)",
+    "text": "numpy: the same 35 pins\nas plucked steel → wav",
+    "x": 2,
+    "y": 2,
+    "color": "red"
+   }
+  ],
+  "edges": [
+   {
+    "from": "clock",
+    "to": "stage",
+    "label": "u, Phase"
+   },
+   {
+    "from": "tree",
+    "to": "stage",
+    "label": "5 geometries"
+   },
+   {
+    "from": "clock",
+    "to": "drum",
+    "label": "Phase (to 3 and 4)",
+    "via": [
+     [
+      0.87,
+      -0.26
+     ],
+     [
+      0.87,
+      0.74
+     ]
+    ]
+   },
+   {
+    "from": "clock",
+    "to": "mov",
+    "via": [
+     [
+      0.87,
+      -0.26
+     ],
+     [
+      0.87,
+      1.74
+     ]
+    ]
+   },
+   {
+    "from": "stage",
+    "to": "out",
+    "via": [
+     [
+      1.87,
+      -0.26
+     ],
+     [
+      1.87,
+      0.74
+     ]
+    ]
+   },
+   {
+    "from": "drum",
+    "to": "out"
+   },
+   {
+    "from": "mov",
+    "to": "out",
+    "via": [
+     [
+      1.87,
+      1.74
+     ],
+     [
+      1.87,
+      0.74
+     ]
+    ]
+   },
+   {
+    "from": "mov",
+    "to": "snd",
+    "label": "same score"
+   }
+  ]
+ },
+ {
+  "kind": "timeline",
+  "out": "images/timeline.png",
+  "frames": 360,
+  "unit": "frame (90 frames = one unit of season time u)",
+  "ticks": [
+   [
+    0,
+    "0\nu = 0 deep winter"
+   ],
+   [
+    90,
+    "90\nu = 1"
+   ],
+   [
+    180,
+    "180\nu = 2"
+   ],
+   [
+    270,
+    "270\nu = 3"
+   ],
+   [
+    360,
+    "360 = frame 1"
+   ]
+  ],
+  "lanes": [
+   {
+    "label": "tune (one bar a season)",
+    "bars": [
+     [
+      0,
+      90,
+      "blue",
+      "winter → thaw (Am)"
+     ],
+     [
+      90,
+      180,
+      "rose",
+      "spring (C → G)"
+     ],
+     [
+      180,
+      270,
+      "green",
+      "summer (F → G)"
+     ],
+     [
+      270,
+      360,
+      "orange",
+      "autumn (Am → E)"
+     ]
+    ]
+   },
+   {
+    "label": "emblem at the index",
+    "bars": [
+     [
+      64.5,
+      70.5,
+      "rose"
+     ],
+     [
+      154.5,
+      160.5,
+      "green"
+     ],
+     [
+      244.5,
+      250.5,
+      "orange"
+     ],
+     [
+      334.5,
+      340.5,
+      "blue"
+     ]
+    ]
+   },
+   {
+    "label": "snowfall",
+    "bars": [
+     [
+      0,
+      22.5,
+      "blue",
+      "stops"
+     ],
+     [
+      274.5,
+      297.0,
+      "blue",
+      "starts"
+     ],
+     [
+      297.0,
+      360,
+      "blue",
+      "falling"
+     ]
+    ]
+   },
+   {
+    "label": "snow on the branches",
+    "bars": [
+     [
+      4.5,
+      31.5,
+      "blue",
+      "melts"
+     ],
+     [
+      301.5,
+      342.0,
+      "blue",
+      "settles"
+     ]
+    ]
+   },
+   {
+    "label": "snow on the mound",
+    "bars": [
+     [
+      13.5,
+      45.0,
+      "blue",
+      "melts"
+     ],
+     [
+      292.5,
+      333.0,
+      "blue",
+      "covers"
+     ]
+    ]
+   },
+   {
+    "label": "grass",
+    "bars": [
+     [
+      40.5,
+      108.0,
+      "green",
+      "grows"
+     ],
+     [
+      207.0,
+      261.0,
+      "orange",
+      "dries"
+     ],
+     [
+      288.0,
+      324.0,
+      "grey",
+      "flattens"
+     ]
+    ]
+   },
+   {
+    "label": "blossom",
+    "bars": [
+     [
+      27.0,
+      67.5,
+      "rose",
+      "opens"
+     ],
+     [
+      67.5,
+      127.8,
+      "rose",
+      "falls"
+     ],
+     [
+      127.8,
+      153.0,
+      "rose",
+      "withers"
+     ]
+    ]
+   },
+   {
+    "label": "leaves",
+    "bars": [
+     [
+      81.0,
+      130.5,
+      "green",
+      "unfold"
+     ],
+     [
+      184.5,
+      243.0,
+      "orange",
+      "turn"
+     ],
+     [
+      243.0,
+      308.7,
+      "orange",
+      "fall"
+     ],
+     [
+      310.5,
+      337.5,
+      "blue",
+      "snowed under"
+     ]
+    ]
+   },
+   {
+    "label": "fruit",
+    "bars": [
+     [
+      130.5,
+      193.5,
+      "green",
+      "sets"
+     ],
+     [
+      193.5,
+      229.5,
+      "red",
+      "ripens"
+     ],
+     [
+      229.5,
+      283.5,
+      "red",
+      "drops"
+     ],
+     [
+      310.5,
+      337.5,
+      "blue",
+      "gone"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "kind": "timeline",
+  "out": "images/score.png",
+  "frames": 16,
+  "unit": "beat (16 beats = 360 frames; one bar = one season)",
+  "ticks": [
+   [
+    0,
+    "0"
+   ],
+   [
+    1,
+    "1"
+   ],
+   [
+    2,
+    "2"
+   ],
+   [
+    3,
+    "3"
+   ],
+   [
+    4,
+    "4"
+   ],
+   [
+    5,
+    "5"
+   ],
+   [
+    6,
+    "6"
+   ],
+   [
+    7,
+    "7"
+   ],
+   [
+    8,
+    "8"
+   ],
+   [
+    9,
+    "9"
+   ],
+   [
+    10,
+    "10"
+   ],
+   [
+    11,
+    "11"
+   ],
+   [
+    12,
+    "12"
+   ],
+   [
+    13,
+    "13"
+   ],
+   [
+    14,
+    "14"
+   ],
+   [
+    15,
+    "15"
+   ],
+   [
+    16,
+    "16"
+   ]
+  ],
+  "size": [
+   13,
+   6.6
+  ],
+  "lanes": [
+   {
+    "label": "C6  (tooth 16)",
+    "bars": [
+     [
+      1.5,
+      1.92,
+      "blue"
+     ],
+     [
+      9.5,
+      9.92,
+      "green"
+     ]
+    ]
+   },
+   {
+    "label": "B5  (tooth 15)",
+    "bars": [
+     [
+      10,
+      10.42,
+      "green"
+     ]
+    ]
+   },
+   {
+    "label": "A5  (tooth 14)",
+    "bars": [
+     [
+      1,
+      1.42,
+      "blue"
+     ],
+     [
+      6.5,
+      6.92,
+      "rose"
+     ],
+     [
+      8,
+      8.42,
+      "green"
+     ],
+     [
+      10.5,
+      10.92,
+      "green"
+     ]
+    ]
+   },
+   {
+    "label": "G5  (tooth 13)",
+    "bars": [
+     [
+      2,
+      2.42,
+      "blue"
+     ],
+     [
+      6,
+      6.42,
+      "rose"
+     ],
+     [
+      7,
+      7.42,
+      "rose"
+     ],
+     [
+      11,
+      11.42,
+      "green"
+     ],
+     [
+      12,
+      12.42,
+      "orange"
+     ]
+    ]
+   },
+   {
+    "label": "F5  (tooth 12)",
+    "bars": [
+     [
+      12.5,
+      12.92,
+      "orange"
+     ]
+    ]
+   },
+   {
+    "label": "E5  (tooth 11)",
+    "bars": [
+     [
+      0,
+      0.42,
+      "blue"
+     ],
+     [
+      2.5,
+      2.92,
+      "blue"
+     ],
+     [
+      5,
+      5.42,
+      "rose"
+     ],
+     [
+      13,
+      13.42,
+      "orange"
+     ]
+    ]
+   },
+   {
+    "label": "D5  (tooth 10)",
+    "bars": [
+     [
+      3,
+      3.42,
+      "blue"
+     ],
+     [
+      4.5,
+      4.92,
+      "rose"
+     ],
+     [
+      6,
+      6.42,
+      "rose"
+     ],
+     [
+      14,
+      14.42,
+      "orange"
+     ]
+    ]
+   },
+   {
+    "label": "C5  (tooth 9)",
+    "bars": [
+     [
+      4,
+      4.42,
+      "rose"
+     ],
+     [
+      8,
+      8.42,
+      "green"
+     ],
+     [
+      14.5,
+      14.92,
+      "orange"
+     ]
+    ]
+   },
+   {
+    "label": "B4  (tooth 8)",
+    "bars": [
+     [
+      11,
+      11.42,
+      "green"
+     ],
+     [
+      15,
+      15.42,
+      "orange"
+     ]
+    ]
+   },
+   {
+    "label": "G4  (tooth 6)",
+    "bars": [
+     [
+      6,
+      6.42,
+      "rose"
+     ],
+     [
+      10,
+      10.42,
+      "green"
+     ]
+    ]
+   },
+   {
+    "label": "F4  (tooth 5)",
+    "bars": [
+     [
+      8,
+      8.42,
+      "green"
+     ]
+    ]
+   },
+   {
+    "label": "E4  (tooth 4)",
+    "bars": [
+     [
+      2,
+      2.42,
+      "blue"
+     ],
+     [
+      14,
+      14.42,
+      "orange"
+     ]
+    ]
+   },
+   {
+    "label": "C4  (tooth 2)",
+    "bars": [
+     [
+      4,
+      4.42,
+      "rose"
+     ]
+    ]
+   },
+   {
+    "label": "B3  (tooth 1)",
+    "bars": [
+     [
+      15,
+      15.42,
+      "orange"
+     ]
+    ]
+   },
+   {
+    "label": "A3  (tooth 0)",
+    "bars": [
+     [
+      0,
+      0.42,
+      "blue"
+     ],
+     [
+      12,
+      12.42,
+      "orange"
+     ]
+    ]
+   }
+  ]
+ },
+ {
+  "kind": "storyboard",
+  "out": "images/storyboard.jpg",
+  "cols": 4,
+  "width": 1600,
+  "images": [
+   "../frames/0001.png",
+   "../frames/0032.png",
+   "../frames/0062.png",
+   "../frames/0140.png",
+   "../frames/0212.png",
+   "../frames/0238.png",
+   "../frames/0272.png",
+   "../frames/0312.png"
+  ],
+  "captions": [
+   "frame 1 · deep winter",
+   "32 · thaw",
+   "62 · blossom",
+   "140 · full leaf",
+   "212 · ripe fruit",
+   "238 · leaves turn",
+   "272 · leaf-fall",
+   "312 · first snow"
+  ]
+ }
+]
