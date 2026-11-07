@@ -44,7 +44,7 @@ build it again yourself.
 
 <p>
   <img src="2026/day06-vault-v5-rouen/render.png" width="49%" alt="Looking up the nave of Rouen Cathedral: grey four-storey walls lit by patches of low sun climb into an ochre rib vault with a rosette boss in every bay, and the rose window far ahead">
-  <img src="2026/day06-vault-v5-rouen/masonry_direction_detail_v1.png" width="49%" alt="Close-up of the upper vault: ochre stones laid in courses in each cell end cleanly on the moulded diagonal ribs at a carved rosette boss">
+  <img src="2026/day06-vault-v5-rouen/masonry_detail_square.png" width="49%" alt="Close-up of the upper vault: ochre stones laid in courses in each cell end cleanly on the moulded diagonal ribs at a carved rosette boss">
 </p>
 
 ## What is in a day folder
