@@ -74,3 +74,9 @@ blender -b --factory-startup --python build.py     # writes origami.blend
 `lib/proc_blender.py` is a small helper library that every build script uses. It is a builder for node graphs, plus
 layout, a seamless loop clock, a studio setup and render helpers. `lib/render_frames.sh` renders a frame sequence and
 retries if Blender crashes, then encodes the MP4.
+
+## License
+
+All rights reserved. This is a private project, shared for learning and study only. You may view, download and run
+the pieces to learn how they are made, but not redistribute them, use them commercially, present them as your own or
+use them to train models. See [LICENSE](LICENSE).
