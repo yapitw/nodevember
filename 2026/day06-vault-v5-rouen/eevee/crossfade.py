@@ -1,19 +1,16 @@
-"""Close the EEVEE loop: blend the main pass into the one-bay-on alt pass across the whole loop.
+"""Close the EEVEE loop: blend the main pass into the one-bay-on alt pass over the last second.
 
     uv run --with pillow --with numpy python eevee/crossfade.py
 
-The baked probe light is not exactly periodic with the bay, so frame 300 → 1 of the main
-pass jumps (12.6 mean RGB against 3.3 for an ordinary step). frames_alt/ holds the same
-frames with the nave one bay further forward: identical geometry, and its frame 301 is
-exactly frame 1.
+frames_alt/ holds frames 271–300 with the nave one bay further forward: identical geometry, and
+its frame 301 is exactly frame 1. Frames 271–300 of the output are (1 − φ) · main + φ · alt with
+φ = (frame − 270) / 30, so frame 300 is all alt and steps onto frame 1 like any other frame.
 
-The output is (1 − φ) · main + φ · alt over the whole loop, with φ = (frame − 1) / 300.
-The probe light drifts almost linearly as the nave slides (the vault brightens by about 10
-levels from frame 1 to 300 in the main pass), and the alt pass carries the same drift one
-bay earlier, so the linear blend cancels it: the vault stays within about half a level of
-frame 1 all the way round. (A first version faded only over frames 241–300; it undid the
-whole drift in under two seconds, which showed as the vault darkening at 8–9.5 s.)
-Writes frames_loop/, loop.mp4 and loop_3x.mp4.
+The first EEVEE version had to blend across the whole loop (600 frames), because the baked probe
+light drifted by about 10 levels per bay; undoing that in a short fade showed as the vault
+darkening. prepare_eevee.py now bakes an "endless" nave, and the drift left is about 2 levels,
+which a one-second fade hides.
+Writes frames_loop/ and loop.mp4.
 """
 import os
 import shutil
@@ -23,12 +20,12 @@ import numpy as np
 from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-N, FADE = 300, 300
+N, FADE = 300, 30
 MAIN, ALT, OUT = (os.path.join(HERE, d) for d in ("frames", "frames_alt", "frames_loop"))
 
 
 def weight(f):
-    return (f - 1) / N                   # 0 at frame 1 … 299/300 at frame 300; frame 301 is alt = frame 1
+    return max(0.0, (f - (N - FADE)) / FADE)   # 0 up to frame 270, 1/30 at 271 … 1 at 300
 
 
 os.makedirs(OUT, exist_ok=True)
@@ -46,6 +43,4 @@ print("CROSSFADE_FRAMES", N, "fade", FADE)
 enc = ["-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "16", "-movflags", "+faststart"]
 subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", "30", "-i", os.path.join(OUT, "%04d.png"),
                 *enc, os.path.join(HERE, "loop.mp4")], check=True)
-subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "2", "-i", os.path.join(HERE, "loop.mp4"),
-                "-c", "copy", os.path.join(HERE, "loop_3x.mp4")], check=True)
-print("MP4", os.path.join(HERE, "loop.mp4"), os.path.join(HERE, "loop_3x.mp4"))
+print("MP4", os.path.join(HERE, "loop.mp4"))

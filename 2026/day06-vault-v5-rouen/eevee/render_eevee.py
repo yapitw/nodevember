@@ -8,7 +8,8 @@ loop while the first works from the start; each skips frames that already exist.
 --alt renders the "one bay behind" copy into eevee/frames_alt/: the nave and its window
 lights sit one bay (6.3 m) further forward than in the main pass. The geometry is the same
 (the nave is periodic), but the baked probe light is not exactly periodic, so frame 301 of
-this pass equals frame 1 of the main pass. crossfade.py blends the two across the whole loop.
+this pass equals frame 1 of the main pass. Only frames 271–300 are needed (-- 271 300 --alt):
+crossfade.py blends the two over the last second.
 The render farm can't run this driver swap, so it renders rouen_eevee_alt.blend: the same
 file saved after use_alt_phase().
 """

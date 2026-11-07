@@ -15,8 +15,7 @@ about twenty numbers at the top of `build.py`, and the procedural audit reports 
 | File | What it is |
 |---|---|
 | [`../color/loop.mp4`](../color/loop.mp4) | the final loop: 1080 × 1080, 300 frames at 30 fps (10 s), Cycles, 256 samples |
-| [`../color/loop_3x.mp4`](../color/loop_3x.mp4) | the same loop played three times, to check the seam |
-| [`../eevee/loop.mp4`](../eevee/loop.mp4), [`../eevee/loop_3x.mp4`](../eevee/loop_3x.mp4) | the same walk rendered in EEVEE: 128 samples, about half the render time (see *The EEVEE version*) |
+| [`../eevee/loop.mp4`](../eevee/loop.mp4) | the same walk rendered in EEVEE, looking 10° higher: 128 samples, about half the render time (see *The EEVEE version*) |
 | [`../rouen.blend`](../rouen.blend) | the scene. Select **PA_Rouen** and open its Geometry Nodes modifier (`PA_Rouen_GN`). |
 | [`../color/rouen_color.blend`](../color/rouen_color.blend) | the render copy: the same tree split into a moving nave and a still west end (see *How it was rendered*) |
 | [`../clay/rouen_clay.blend`](../clay/rouen_clay.blend), [`../clay/loop_masonry_v4.mp4`](../clay/loop_masonry_v4.mp4) | the white model and its loop |
@@ -613,93 +612,104 @@ The camera is at (1.5, −1, 2), beside the nave's axis. It is turned 32° towar
 
 ## The EEVEE version
 
-![Frame 1 side by side. Left: Cycles, cool daylight on the near wall and a grey far wall. Right: EEVEE, the same view, warmer, with the vault and far wall at about the same brightness](images/cycles-vs-eevee.jpg)
+![Frame 1 side by side. Left: Cycles, cool daylight on the near wall and a grey far wall, with the rose window at the far end. Right: EEVEE, looking 10° higher so the far end stays out of frame, warmer, with the vault filling more of the picture](images/cycles-vs-eevee.jpg)
 
-The same scene also renders in EEVEE, at 128 samples, in about 28 s a frame on the Mac instead of 53 s. The geometry
-and the materials don't change at all. `eevee/prepare_eevee.py` opens `color/rouen_color.blend`, switches the engine,
-adds baked light, and saves `eevee/rouen_eevee.blend`. Three problems had to be solved on the way, and the third one is
-the interesting one.
+The same scene also renders in EEVEE, at 128 samples, in about 27 s a frame on the Mac or 23 s on the LAN farm's RTX
+4060, instead of 53 s in Cycles. The geometry and the materials don't change at all. `eevee/prepare_eevee.py` opens
+`color/rouen_color.blend`, switches the engine, adds baked light, and saves `eevee/rouen_eevee.blend`. Four problems had
+to be solved on the way, and the last one is the interesting one.
 
 ### 1 · Indoors, EEVEE needs baked light
 
 Cycles traces light through the clerestory windows, bounces it off the stone, and lets the sky in only where there is
 a hole. EEVEE does that only for what is on screen (screen-space ray tracing and *Fast GI*). Everything else comes from
-**Light Probe Volumes**: a 3D grid of points where the bounced light is baked in advance. With no probes, the sky lights
-every surface as if there were no roof, and frame 1 averages 210 out of 255 instead of 57.
+a **Light Probe Volume**: a 3D grid of points where the bounced light is baked in advance. With no probe, the sky lights
+every surface as if there were no roof, and frame 1 averages 221 out of 255 instead of about 65.
 
-- Two volumes cover what the camera sees: a near one, 68 m long with a sample about every metre, and a coarser far one
-  that reaches the west wall.
-- **They are parented to the moving nave object**, so the baked light slides with the stone it was baked on. (Moving a
+- **It is parented to the moving nave object**, so the baked light slides with the stone it was baked on. (Moving a
   probe after baking moves its light with it; we checked by moving one 3 m and watching the frame change.)
-- **They stop inside the aisle's outer wall.** The wall runs from |x| = 12.7 m to 13.9 m. The first volumes ended at
-  13 m, so their outermost samples sat outside the church, saw the sky, and lit the aisle wall pale grey. Ending them at
+- **It stops inside the aisle's outer wall.** The wall runs from |x| = 12.7 m to 13.9 m. The first volumes ended at
+  13 m, so their outermost samples sat outside the church, saw the sky, and lit the aisle wall pale grey. Ending at
   13.3 m puts those samples inside the masonry, where EEVEE throws them away.
 
-### 2 · Matching the Cycles light
+### 2 · Matching the light
 
-Probes carry fewer bounces than a path tracer, so the far wall went almost black. Two numbers bring the picture back
-close to Cycles: the upward floor fill `PA_Fill` at 3 × its Cycles power, and the scene's indirect light at 1.5 ×. Mean
-brightness of frame 1, by region:
-
-| Region | Cycles (R, G, B) | EEVEE (R, G, B) |
-|---|---|---|
-| vault (top middle) | 91, 78, 50 | 91, 75, 52 |
-| far wall (right third) | 74, 69, 54 | 79, 67, 51 |
-| near wall and aisle (left third) | 62, 64, 59 | 74, 70, 63 |
-| whole frame | 71, 69, 57 | 79, 70, 58 |
+Probes carry fewer bounces than a path tracer, so the far wall and the vault went dark. Three numbers bring the picture
+back: the upward floor fill `PA_Fill` at 2.85 × its Cycles power, the clerestory window lights at 2.8 ×, and the
+scene's indirect light at 1.5 ×. The window lights move with the nave, so lifting them can't disturb the loop.
 
 What EEVEE can't give back is the sky seen *through* the windows lighting the stone: in Cycles it makes the cool,
-almost white light on the near wall. In EEVEE that light only arrives through the blurry probes, so the picture is
+almost white light on the near wall. In EEVEE that light only arrives through the blurry probe, so the picture is
 warmer and the aisle seen through the arcade is lighter. The stone's fine pores are also sharper, because EEVEE has no
 denoiser to soften them.
 
 **Speed.** The 46 soft window lights each drew a shadow map of the 3.7 M-vertex nave on every sample. Switching their
-shadows off took a frame from 78 s to 28 s and changed it by less than half a level. 64 samples would take 15 s, but the
-noisiest 1 % of pixels then differ by 10 levels from 128 samples, and in motion that reads as crawling grain.
+shadows off took a frame from 78 s to 28 s and changed it by less than half a level. 64 samples would take about 40 %
+less time, but the jittered soft shadows then turn grainy, and in motion that reads as boiling noise.
 
-### 3 · Trick · the baked light is not periodic, so blend two passes
+### 3 · What stays with the camera shows up as moving light, and as clipping
 
-The first EEVEE loop jumped at the seam: the step from frame 300 to frame 1 was 12.6 mean RGB, against 3.3 for an
-ordinary step. Without probes the seam was fine (0.8 against 0.8), so the baked light was to blame.
+The camera never moves: the nave slides back one bay per loop. Everything that is *not* part of the nave (the west
+wall with its rose window, the floor, the rear closure behind the camera, and the big floor fill) stays at a fixed
+distance from the camera, so it travels with the viewer. Three artefacts came from that:
 
-The walk relies on one bay looking exactly like the next, but the bake doesn't respect that. EEVEE bakes by scattering
-*surfels* (small light-catching discs) over every surface at a fixed spacing. At the default density that is 0.25 m,
-and 6.3 m is 25.2 of those, so every bay gets a slightly different pattern and a slightly different light. A spacing that
-divides the bay (0.1 m) brought the seam down to 4.5, but it also changed the overall brightness, which would have meant
-matching the light and rendering everything again.
+- **Sun patches sliding over the west wall.** Sun through the moving clerestory landed on the fixed west wall, so
+  between about 1.5 s and 5 s its patches slid across stone that should be still. The sun is now **light-linked** to
+  skip the stationary object (`PA_SunReceivers`, set to *Exclude*).
+- **A flickering pier at the bottom left.** `PA_Fill` is a 10 × 90 m area light held still while the stone slides
+  through its shadow map. Without jitter EEVEE estimates its soft shadow from a single shadow map, and the estimate
+  jumped from frame to frame on the nearest pier. With **jittered shadows** the flicker band disappears, at the same
+  brightness and cost.
+- **Clipping at the far end.** The vault and the side walls slide *into* the fixed west wall, and the vault's section
+  changes through each bay, so the line where they meet moved every frame and looked like geometry passing through the
+  wall. No wall shape can hide that while the wall stands still and the nave moves. The EEVEE view therefore looks
+  10° higher than the Cycles one (pitch 58° instead of 48°, same position, yaw and lens; `CAM_PITCH` in
+  `prepare_eevee.py`), which keeps the whole west wall, rose window included, out of frame. The vault now runs out of
+  the bottom-right corner instead of ending.
 
-Instead, the walk is rendered twice:
+### 4 · Trick · bake an endless nave
 
-- the **main pass** is the normal loop;
-- the **alt pass** (`render_eevee.py --alt`) moves the nave and its window lights one bay further on: the drivers use
-  `phase − 1` instead of `fract(phase)`. The geometry is identical, because the nave is periodic. Only the baked light is
-  shifted by a bay, so **alt frame 301 is exactly main frame 1**.
+The walk relies on one bay looking exactly like the next. With probes removed the loop is perfectly periodic (the
+image after sliding one bay differs by 0.01), so any seam comes from the bake. The first bake drifted by about 10 levels
+per bay: frame 300 → 1 jumped 12.6 mean RGB against 3.3 for an ordinary step. Switching off the sun, the fill, the
+window lights, the sky or emission during the bake changed the drift by nothing. It came from the *shape* of the baked
+field, which an orthographic view of the whole elevation shows directly:
 
-![Vault brightness per frame. The main pass rises from 77 to 87 and then has to jump back at the seam; the alt pass rises from 65 to 77, ending exactly where frame 1 starts; the blended loop stays between 76.6 and 78.2 all the way round](images/eevee-blend.png)
+- **Two volumes** (a fine near one and a coarse far one) met at y ≈ 50 m with a visible step in the light.
+- **Surfels** (the light-catching discs the bake scatters over every surface) sit 0.25 m apart at the default density,
+  and 6.3 m is 25.2 of those, so the pattern beat with a period of about six bays, 30 levels from bright to dark.
+- **The end walls** (rear closure, west wall) are fixed at a distance from the camera, so the light near them is a
+  world-fixed gradient. Baked into a volume that slides with the nave, a world-fixed gradient becomes drift.
 
-The chart shows what goes wrong and why the blend works. As the nave slides, its probe light drifts: the vault just
-ahead of the camera brightens by 10.6 levels from frame 1 to frame 300, and then has to jump back. The alt pass carries
-the same drift one bay earlier. `eevee/crossfade.py` mixes them with a weight that grows across the whole loop:
+The fix happens only during the bake:
 
-`loop = (1 − φ) · main + φ · alt`, with φ = (frame − 1) / 300
+1. one uniform volume from 70 m behind the camera to past the west wall, with cells of B / 6 = 1.05 m along the nave;
+2. surfel density 16;
+3. an **endless nave**: the end walls are cut out of a temporary copy of the stationary object, static copies of the
+   nave run on two nave lengths before and behind, a long floor runs under them, and the fill reaches 45 m behind the
+   camera.
 
-At frame 1 the loop is pure main. At frame 300 it is almost pure alt, and alt's next frame is main frame 1. In
-between, the two drifts cancel, so the vault stays within 1.6 levels all the way round. Blending two renders would
-normally give ghosts, but here every edge is in the same place in both, so only the light mixes.
+Everything is put back before the file is saved. The drift over one bay fell from 10 to 2.3 (half size), and at full
+quality, before any fade, the seam measured 4.9 against 3.0 for an ordinary step (at the earlier, lower view).
 
-A first version blended only over the last 60 frames. It closed the seam, but it undid the whole 10-level drift in two
-seconds, and the vault visibly darkened between 8 and 9.5 s. Spreading the blend over the whole loop keeps the change at
-a few hundredths of a level per frame.
+**Closing the last two levels.** `render_eevee.py --alt` renders an *alt pass* with the nave and its window lights one
+bay further on (the drivers use `phase − 1` instead of `fract(phase)`). The geometry is identical, because the nave is
+periodic; only the baked light is shifted by a bay, so **alt frame 301 is exactly main frame 1**. `eevee/crossfade.py`
+blends the main pass into the alt pass over the last second:
 
-Seam check (`eevee/loop_review.json`): ordinary steps are 3.09–3.53 mean RGB (median 3.30), and the step from frame 300
-back to frame 1 is 3.27.
+`loop = (1 − φ) · main + φ · alt`, with φ = (frame − 270) / 30 for frames 271–300
 
-**Rendering it.** The two passes are 600 frames. The main pass ran on the Mac in two Blender processes, one walking
-forwards from frame 1 and one backwards from frame 300. Each skips frames that already exist, so they meet in the
-middle. The GPU was already full, though: together they made a frame every 26 s instead of 28 s. For the alt pass, the
-RTX 4060 on the LAN took frames 1–133 through Flamenco (about 24 s a frame) while the Mac rendered the rest. The farm
-can't apply the `--alt` driver change at render time, so it got its own copy, `eevee/rouen_eevee_alt.blend`. Frames from
-the two GPUs differ by 0.87 mean RGB, which doesn't show.
+Blending two renders would normally give ghosts, but every edge is in the same place in both, so only the light
+mixes. The first version needed the blend across the whole loop (600 frames), because undoing 10 levels in a short fade
+showed as the vault darkening. With 2 levels left, 30 extra frames are enough.
+
+Seam check (`eevee/loop_review.json`): ordinary steps are 2.77–3.25 mean RGB (median 2.98), and the step from frame 300
+back to frame 1 is 3.19. The vault stays between 76.3 and 78.8 all the way round.
+
+**Rendering it.** All 330 frames run on the farm through Flamenco (about 23 s a frame, plus about 27 s at the start of
+each 25-frame chunk). The farm can't apply the `--alt` driver change at render time, so it gets its own copy,
+`eevee/rouen_eevee_alt.blend`. Mac and farm frames differ by about 3 levels with the jittered fill shadow, so a single
+pass stays on one device; a small sync script copies the frames back as they finish.
 
 ## Try it yourself
 
@@ -730,14 +740,14 @@ the two GPUs differ by 0.87 mean RGB, which doesn't show.
 
    ```bash
    B=/Applications/Blender.app/Contents/MacOS/Blender
-   $B -b color/rouen_color.blend --python eevee/prepare_eevee.py          # switch engine, bake probes
-   $B -b eevee/rouen_eevee.blend --python eevee/render_eevee.py           # main pass → eevee/frames/
-   $B -b eevee/rouen_eevee.blend --python eevee/render_eevee.py -- --alt  # alt pass  → eevee/frames_alt/
+   $B -b color/rouen_color.blend --python eevee/prepare_eevee.py                # switch engine, bake the probe
+   $B -b eevee/rouen_eevee.blend --python eevee/render_eevee.py                 # main pass → eevee/frames/
+   $B -b eevee/rouen_eevee.blend --python eevee/render_eevee.py -- 271 300 --alt  # alt pass → eevee/frames_alt/
    uv run --with pillow --with numpy python eevee/crossfade.py            # blend → frames_loop/, loop.mp4
    uv run --with pillow --with numpy python eevee/seam_check.py           # loop_review.json
    ```
 
-   Then try `FILL_BOOST = 1.0` and `INDIRECT = 1.0` in `prepare_eevee.py` to see EEVEE's own, much darker, idea of
-   the nave.
+   Then try `FILL_BOOST = 1.0`, `WINDOW_BOOST = 1.0` and `INDIRECT = 1.0` in `prepare_eevee.py` to see EEVEE's own,
+   much darker, idea of the nave.
 
 *Made with Blender 5.2 Geometry Nodes for [Nodevember](https://nodevember.com) 2026, Day 6 · Vault.*
