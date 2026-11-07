@@ -1,0 +1,26 @@
+{
+  "material_reference": "_refs_material.png",
+  "palette": "grey-taupe limestone; warm ochre vault; pale cyan crown glass",
+  "shading": "procedural mineral streaks, mottling, fine pores, cavity dirt; rough stone with restrained specular",
+  "coordinates": "stored before nave movement; 4D noise periodic over 6.3 m bay",
+  "mortar_correction": "warm brown bed matched to the weathered vault, removing pale exposed backing patches",
+  "audit": {
+    "strict_procedural": true,
+    "issues": [],
+    "notes": [],
+    "trees": [
+      "PA_LoopClock",
+      "PA_Rouen_GN"
+    ]
+  },
+  "stills": [
+    "render.png",
+    "masonry_direction_v1.png",
+    "masonry_direction_detail_v1.png"
+  ],
+  "visual_review": "Final 2160² raking image, native vault crop and side-by-side detail comparison inspected; joints and moulding edges resolved, upper vault brighter, no glow haze.",
+  "latest_render": "2160², 512 spp maximum, narrow pixel filter, no glow, brighter high-window daylight",
+  "masonry": "Axial running bond follows the marked direction; exact barrel-conforming brick faces.",
+  "animation_status": "paused",
+  "paused_folder": "color/paused_2026-11-07"
+}

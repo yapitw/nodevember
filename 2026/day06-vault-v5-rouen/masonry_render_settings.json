@@ -1,0 +1,27 @@
+{
+  "resolution": [
+    2160,
+    2160
+  ],
+  "max_samples": 512,
+  "adaptive_threshold": 0.004999999888241291,
+  "minimum_samples": 64,
+  "denoising_prefilter": "ACCURATE",
+  "denoising_quality": "HIGH",
+  "pixel_filter": "BLACKMAN_HARRIS",
+  "filter_width": 0.8999999761581421,
+  "glare": false,
+  "motion_blur": false,
+  "dof": false,
+  "clerestory_lights": 46,
+  "window_fill_watts": 180.0,
+  "audit": {
+    "strict_procedural": true,
+    "issues": [],
+    "notes": [],
+    "trees": [
+      "PA_LoopClock",
+      "PA_Rouen_GN"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "transverse": {
+    "max_tone_difference_between_bays": 0.0,
+    "max_geometry_repeat_error_m": 9.5367431640625e-07
+  },
+  "lateral": {
+    "max_tone_difference_between_bays": 0.0,
+    "max_geometry_repeat_error_m": 1.430511474609375e-06
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "transverse": {
+    "vertices": 5184,
+    "faces": 4320,
+    "bricks": 432,
+    "nonmanifold_edges": 0,
+    "winding_errors": 0,
+    "zero_area_faces": 0,
+    "minimum_brick_volume": 0.000911135124695761,
+    "negative_volume_bricks": 0,
+    "max_soffit_height_error_m": 2.887742539314786e-06
+  },
+  "lateral": {
+    "vertices": 6048,
+    "faces": 5040,
+    "bricks": 504,
+    "nonmanifold_edges": 0,
+    "winding_errors": 0,
+    "zero_area_faces": 0,
+    "minimum_brick_volume": 0.00042500356172562687,
+    "negative_volume_bricks": 0,
+    "max_soffit_height_error_m": 7.652509122380025e-06
+  }
+}

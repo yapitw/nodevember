@@ -1,0 +1,213 @@
+[
+ {
+  "kind": "pipeline",
+  "out": "images/pipeline.png",
+  "size": [
+   16,
+   8.5
+  ],
+  "boxes": [
+   {
+    "id": "lan",
+    "title": "PA_LancetCutter ×29",
+    "text": "jamb box + the upper half\nof a two-circle lens",
+    "x": 0,
+    "y": 0,
+    "color": "grey"
+   },
+   {
+    "id": "mou",
+    "title": "PA_ArchMoulding ×9",
+    "text": "a carved section swept\nround one order's arch",
+    "x": 0,
+    "y": 1,
+    "color": "grey"
+   },
+   {
+    "id": "lof",
+    "title": "PA_SectionLoft ×2",
+    "text": "outline × levels → one\nring grid (pier, service)",
+    "x": 0,
+    "y": 2,
+    "color": "grey"
+   },
+   {
+    "id": "pil",
+    "title": "PA_CarvedPilaster ×2",
+    "text": "the pilaster section,\nextruded to a height",
+    "x": 0,
+    "y": 3,
+    "color": "grey"
+   },
+   {
+    "id": "wb",
+    "title": "PA_WallBay",
+    "text": "a slab · b mouldings · c tympanum …\nd pier · e aisle",
+    "x": 1,
+    "y": 1.5,
+    "color": "teal"
+   },
+   {
+    "id": "ha",
+    "title": "PA_HalfArch ×3",
+    "text": "Kind 0/1/2: transverse, wall,\ndiagonal; sweeps the rib",
+    "x": 1,
+    "y": 3,
+    "color": "yellow"
+   },
+   {
+    "id": "vc",
+    "title": "PA_VaultCells ×2",
+    "text": "a points · b row length ·\nc running bond · d onto barrel",
+    "x": 1,
+    "y": 4.2,
+    "color": "orange"
+   },
+   {
+    "id": "ww",
+    "title": "PA_WestWall",
+    "text": "rose window, tracery, glass",
+    "x": 3,
+    "y": 1.5,
+    "color": "blue"
+   },
+   {
+    "id": "s1",
+    "title": "1 · Wall bays on both sides",
+    "text": "one wall bay → 46 instances",
+    "x": 2,
+    "y": 1.5,
+    "color": "teal"
+   },
+   {
+    "id": "s2",
+    "title": "2 · Ribs and bosses",
+    "text": "three PA_HalfArch calls,\none rosette per bay",
+    "x": 2,
+    "y": 3,
+    "color": "yellow"
+   },
+   {
+    "id": "s3",
+    "title": "3 · Cells and mortar bed",
+    "text": "44 + 36 courses a half;\nmortar 6 cm behind",
+    "x": 2,
+    "y": 4.2,
+    "color": "orange"
+   },
+   {
+    "id": "s4",
+    "title": "4 · The walk, the west end",
+    "text": "nave slides back B·Phase;\nwest wall, floor, rear stay",
+    "x": 3,
+    "y": 3,
+    "color": "blue"
+   },
+   {
+    "id": "out",
+    "title": "PA_Rouen",
+    "text": "one object,\none modifier",
+    "x": 3,
+    "y": 4.4,
+    "color": "brown"
+   },
+   {
+    "id": "sh",
+    "title": "shared small groups",
+    "text": "PA_PointedProfile · PA_Bays\nPA_StoneNormals · PA_AshlarCoordinates",
+    "x": 0,
+    "y": 4.6,
+    "color": "white"
+   }
+  ],
+  "edges": [
+   {
+    "from": "lan",
+    "to": "wb"
+   },
+   {
+    "from": "mou",
+    "to": "wb"
+   },
+   {
+    "from": "lof",
+    "to": "wb"
+   },
+   {
+    "from": "pil",
+    "to": "wb"
+   },
+   {
+    "from": "wb",
+    "to": "s1"
+   },
+   {
+    "from": "ha",
+    "to": "s2"
+   },
+   {
+    "from": "vc",
+    "to": "s3"
+   },
+   {
+    "from": "s1",
+    "to": "s4"
+   },
+   {
+    "from": "s2",
+    "to": "s4"
+   },
+   {
+    "from": "s3",
+    "to": "s4"
+   },
+   {
+    "from": "ww",
+    "to": "s4"
+   },
+   {
+    "from": "s4",
+    "to": "out"
+   }
+  ]
+ },
+ {
+  "kind": "storyboard",
+  "out": "images/storyboard.jpg",
+  "cols": 4,
+  "width": 1600,
+  "images": [
+   "../color/frames/0001.png",
+   "../color/frames/0038.png",
+   "../color/frames/0076.png",
+   "../color/frames/0113.png",
+   "../color/frames/0151.png",
+   "../color/frames/0188.png",
+   "../color/frames/0226.png",
+   "../color/frames/0300.png"
+  ],
+  "captions": [
+   "frame 1 · walked 0 m",
+   "38 · 0.78 m",
+   "76 · 1.58 m",
+   "113 · 2.35 m",
+   "151 · 3.15 m (half a bay)",
+   "188 · 3.93 m",
+   "226 · 4.73 m",
+   "300 · 6.28 m; frame 301 = frame 1"
+  ]
+ },
+ {
+  "kind": "strip",
+  "out": "images/clay-vs-colour.png",
+  "height": 5,
+  "images": [
+   "../clay/preview.png",
+   "../render.png"
+  ],
+  "captions": [
+   "white model (Workbench, glazing removed)",
+   "final colour, frame 1 (Cycles, 256 spp)"
+  ]
+ }
+]

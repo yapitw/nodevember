@@ -1,0 +1,321 @@
+[
+ {
+  "file": "nodes-main.png",
+  "tree": "PA_Rouen_GN",
+  "section": null,
+  "nodes": 99
+ },
+ {
+  "file": "nodes-main-1-wall-bays-on-both-sides.png",
+  "tree": "PA_Rouen_GN",
+  "section": "1 · Wall bays on both sides",
+  "nodes": 20,
+  "inputs": [],
+  "outputs": [
+   "tone"
+  ]
+ },
+ {
+  "file": "nodes-main-2-ribs-and-bosses.png",
+  "tree": "PA_Rouen_GN",
+  "section": "2 · Ribs and bosses",
+  "nodes": 26,
+  "inputs": [],
+  "outputs": [
+   "Rib parts"
+  ]
+ },
+ {
+  "file": "nodes-main-3-cells-stone-by-stone-and-the-mortar-bed.png",
+  "tree": "PA_Rouen_GN",
+  "section": "3 · Cells, stone by stone, and the mortar bed",
+  "nodes": 27,
+  "inputs": [],
+  "outputs": [
+   "Web parts",
+   "Mortar parts"
+  ]
+ },
+ {
+  "file": "nodes-main-4-the-walk-and-the-west-end.png",
+  "tree": "PA_Rouen_GN",
+  "section": "4 · The walk and the west end",
+  "nodes": 24,
+  "inputs": [
+   "tone",
+   "Rib parts",
+   "Web parts",
+   "Mortar parts"
+  ],
+  "outputs": [
+   "stationary stone coordinates"
+  ]
+ },
+ {
+  "file": "nodes-wallbay.png",
+  "tree": "PA_WallBay",
+  "section": null,
+  "nodes": 224
+ },
+ {
+  "file": "nodes-wallbay-1-wall-slab-and-openings.png",
+  "tree": "PA_WallBay",
+  "section": "a · Wall slab and openings",
+  "nodes": 62,
+  "inputs": [],
+  "outputs": [
+   "Wall parts"
+  ]
+ },
+ {
+  "file": "nodes-wallbay-2-arch-mouldings-of-the-three-storeys.png",
+  "tree": "PA_WallBay",
+  "section": "b · Arch mouldings of the three storeys",
+  "nodes": 9,
+  "inputs": [],
+  "outputs": [
+   "arch moulding of one order",
+   "arch moulding of one order 2",
+   "arch moulding of one order 3",
+   "arch moulding of one order 4",
+   "arch moulding of one order 5",
+   "arch moulding of one order 6",
+   "arch moulding of one order 7",
+   "arch moulding of one order 8",
+   "arch moulding of one order 9",
+   "arch moulding of one order 10",
+   "arch moulding of one order 11",
+   "arch moulding of one order 12",
+   "arch moulding of one order 13",
+   "arch moulding of one order 14",
+   "arch moulding of one order 15"
+  ]
+ },
+ {
+  "file": "nodes-wallbay-3-tympanum-triforium-rail-tracery-and-glas.png",
+  "tree": "PA_WallBay",
+  "section": "c · Tympanum, triforium, rail, tracery and glass",
+  "nodes": 69,
+  "inputs": [
+   "arch moulding of one order",
+   "arch moulding of one order 2",
+   "arch moulding of one order 3",
+   "arch moulding of one order 4",
+   "arch moulding of one order 5",
+   "arch moulding of one order 6",
+   "arch moulding of one order 7",
+   "arch moulding of one order 8",
+   "arch moulding of one order 9",
+   "arch moulding of one order 10",
+   "arch moulding of one order 11",
+   "arch moulding of one order 12",
+   "arch moulding of one order 13",
+   "arch moulding of one order 14",
+   "arch moulding of one order 15"
+  ],
+  "outputs": [
+   "Trim parts",
+   "LeadedGlass parts"
+  ]
+ },
+ {
+  "file": "nodes-wallbay-4-pier-and-vaulting-shaft.png",
+  "tree": "PA_WallBay",
+  "section": "d · Pier and vaulting shaft",
+  "nodes": 60,
+  "inputs": [],
+  "outputs": [
+   "Trim parts"
+  ]
+ },
+ {
+  "file": "nodes-wallbay-5-the-aisle-behind.png",
+  "tree": "PA_WallBay",
+  "section": "e · The aisle behind",
+  "nodes": 21,
+  "inputs": [],
+  "outputs": [
+   "LeadedGlass parts"
+  ]
+ },
+ {
+  "file": "nodes-cells.png",
+  "tree": "PA_VaultCells",
+  "section": null,
+  "nodes": 189
+ },
+ {
+  "file": "nodes-cells-1-one-point-per-course.png",
+  "tree": "PA_VaultCells",
+  "section": "a · One point per course",
+  "nodes": 25,
+  "inputs": [
+   "Courses"
+  ],
+  "outputs": [
+   "Math",
+   "course"
+  ]
+ },
+ {
+  "file": "nodes-cells-2-how-long-is-the-row.png",
+  "tree": "PA_VaultCells",
+  "section": "b · How long is the row",
+  "nodes": 11,
+  "inputs": [
+   "Math",
+   "Along",
+   "course"
+  ],
+  "outputs": [
+   "pieces"
+  ]
+ },
+ {
+  "file": "nodes-cells-3-running-bond.png",
+  "tree": "PA_VaultCells",
+  "section": "c · Running bond",
+  "nodes": 78,
+  "inputs": [
+   "pieces",
+   "Seed"
+  ],
+  "outputs": [
+   "tone"
+  ]
+ },
+ {
+  "file": "nodes-cells-4-every-stone-onto-the-barrel.png",
+  "tree": "PA_VaultCells",
+  "section": "d · Every stone onto the barrel",
+  "nodes": 72,
+  "inputs": [
+   "tone",
+   "Courses",
+   "Row gap",
+   "Span",
+   "Along",
+   "Lateral",
+   "Math"
+  ],
+  "outputs": [
+   "consistent winding on all four mirrored cells"
+  ]
+ },
+ {
+  "file": "nodes-half-arch.png",
+  "tree": "PA_HalfArch",
+  "section": null,
+  "nodes": 62
+ },
+ {
+  "file": "nodes-half-arch-1-three-paths-transverse-arch-wall-rib-dia.png",
+  "tree": "PA_HalfArch",
+  "section": "a · Three paths: transverse arch, wall rib, diagonal rib",
+  "nodes": 44,
+  "inputs": [
+   "Per",
+   "Kind"
+  ],
+  "outputs": [
+   "path of this kind",
+   "Instance on Points",
+   "section plane of this kind"
+  ]
+ },
+ {
+  "file": "nodes-half-arch-2-sweep-the-rib-section-along-it.png",
+  "tree": "PA_HalfArch",
+  "section": "b · Sweep the rib section along it",
+  "nodes": 16,
+  "inputs": [
+   "Lift",
+   "path of this kind",
+   "Instance on Points",
+   "section plane of this kind",
+   "Rib width",
+   "Rib depth"
+  ],
+  "outputs": [
+   "crisp fillets, smooth arch curvature"
+  ]
+ },
+ {
+  "file": "nodes-arch-moulding.png",
+  "tree": "PA_ArchMoulding",
+  "section": null,
+  "nodes": 99
+ },
+ {
+  "file": "nodes-lancet.png",
+  "tree": "PA_LancetCutter",
+  "section": null,
+  "nodes": 30
+ },
+ {
+  "file": "nodes-section-loft.png",
+  "tree": "PA_SectionLoft",
+  "section": null,
+  "nodes": 44
+ },
+ {
+  "file": "nodes-carved-pilaster.png",
+  "tree": "PA_CarvedPilaster",
+  "section": null,
+  "nodes": 15
+ },
+ {
+  "file": "nodes-pointed-profile.png",
+  "tree": "PA_PointedProfile",
+  "section": null,
+  "nodes": 8
+ },
+ {
+  "file": "nodes-bays.png",
+  "tree": "PA_Bays",
+  "section": null,
+  "nodes": 12
+ },
+ {
+  "file": "nodes-stone-normals.png",
+  "tree": "PA_StoneNormals",
+  "section": null,
+  "nodes": 6
+ },
+ {
+  "file": "nodes-ashlar.png",
+  "tree": "PA_AshlarCoordinates",
+  "section": null,
+  "nodes": 24
+ },
+ {
+  "file": "nodes-west-wall.png",
+  "tree": "PA_WestWall",
+  "section": null,
+  "nodes": 66
+ },
+ {
+  "file": "nodes-loop-clock.png",
+  "tree": "PA_LoopClock",
+  "section": null,
+  "nodes": 10
+ },
+ {
+  "file": "nodes-limestone-noise.png",
+  "tree": "PA_LimestoneNoise",
+  "section": null,
+  "nodes": 15
+ },
+ {
+  "file": "nodes-mat-web.png",
+  "tree": "PA_Web",
+  "section": null,
+  "nodes": 23
+ },
+ {
+  "file": "nodes-mat-glass.png",
+  "tree": "PA_LeadedGlass",
+  "section": null,
+  "nodes": 25
+ }
+]
