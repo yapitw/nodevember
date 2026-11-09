@@ -1,0 +1,1 @@
+Adopted: 32 curved primary ribs split into 64 long outer members. Short L/Y offshoots, alternating handedness and radial offsets, and two short staggered cross-members per module provide the angular architectural pattern seen in the supplied close-ups. No regular honeycomb and no full outer rings. Graph and conservative non-joint outer-member intersection checks pass.

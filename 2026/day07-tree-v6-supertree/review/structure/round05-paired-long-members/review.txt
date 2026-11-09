@@ -1,0 +1,1 @@
+Retain the paired long members: this redistributes the same 128 ends into 64 long rails and 64 short L/Y offshoots, closer to the reference than a single comb spine. At comparable crown width, however, the dark metal bars remain too hair-like. Final pass increases section sizes and reduces metallic sky reflections on the dark coated frame, without increasing branch count.

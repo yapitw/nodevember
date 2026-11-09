@@ -1,0 +1,15 @@
+{
+  "blend_sha256": "3924b81c9f02c3c9ad5f57377cbf4ebc0046a00838b46c2f90fa0afe7720acda",
+  "resolution": [
+    960,
+    960
+  ],
+  "samples": 64,
+  "fps": 24,
+  "frames": [
+    1,
+    192
+  ],
+  "farm_blend_sha256": "fe6f6626b8dd93216b3bb31f760355a0b2846994a8574b0a57fdb0fa4ed4a62e",
+  "job_id": "e04ef734-339e-4ea3-9ab0-fd4e5b504aed"
+}

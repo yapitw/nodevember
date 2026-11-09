@@ -1,0 +1,1 @@
+Compared with the supplied reference: connectivity is clearer, but regular flat-top hexagonal holes look like chicken wire. The reference has long radial members and short staggered elbows. Reject this cell orientation and aspect ratio. Also remove the previous material-only black panel stripes; real ribs are now visible.

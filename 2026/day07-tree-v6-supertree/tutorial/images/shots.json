@@ -1,0 +1,625 @@
+[
+ {
+  "file": "nodes-object.png",
+  "tree": "PA_Supertree_01_GN",
+  "section": null,
+  "nodes": 3
+ },
+ {
+  "file": "nodes-object-1-supertree-one-call-six-controls.png",
+  "tree": "PA_Supertree_01_GN",
+  "section": "Supertree · one call, six controls",
+  "nodes": 1,
+  "inputs": [
+   "Height",
+   "Crown Radius",
+   "Ribs",
+   "Plant Density",
+   "Lighting Delay",
+   "Seed"
+  ],
+  "outputs": [
+   "SupertreeArchitecture"
+  ]
+ },
+ {
+  "file": "nodes-tree.png",
+  "tree": "PA_SupertreeArchitecture",
+  "section": null,
+  "nodes": 187
+ },
+ {
+  "file": "nodes-tree-1-planted-trunk.png",
+  "tree": "PA_SupertreeArchitecture",
+  "section": "1 · Planted trunk",
+  "nodes": 27,
+  "inputs": [
+   "Height",
+   "Plant Density",
+   "Seed"
+  ],
+  "outputs": [
+   "trunk radius r = 0.0625 h",
+   "PlantingFelt parts",
+   "Instance on Points"
+  ]
+ },
+ {
+  "file": "nodes-tree-2-crown-framework.png",
+  "tree": "PA_SupertreeArchitecture",
+  "section": "2 · Crown framework",
+  "nodes": 1,
+  "inputs": [
+   "Height",
+   "Crown Radius",
+   "Ribs"
+  ],
+  "outputs": [
+   "Connected branching framework"
+  ]
+ },
+ {
+  "file": "nodes-tree-3-light-bowl.png",
+  "tree": "PA_SupertreeArchitecture",
+  "section": "3 · Light bowl",
+  "nodes": 31,
+  "inputs": [
+   "Height",
+   "trunk radius r = 0.0625 h",
+   "Crown Radius"
+  ],
+  "outputs": [
+   "Curved luminous skin",
+   "OxideBurgundySteel parts"
+  ]
+ },
+ {
+  "file": "nodes-tree-4-core-and-dark-cap.png",
+  "tree": "PA_SupertreeArchitecture",
+  "section": "4 · Core and dark cap",
+  "nodes": 65,
+  "inputs": [
+   "trunk radius r = 0.0625 h",
+   "Height",
+   "Crown Radius"
+  ],
+  "outputs": [
+   "CarbonAndShadow parts",
+   "CarbonAndShadow parts 2",
+   "CarbonAndShadow parts 3",
+   "OxideBurgundySteel parts",
+   "CarbonAndShadow parts 4",
+   "OxideBurgundySteel parts 2",
+   "CarbonAndShadow parts 5",
+   "OxideBurgundySteel parts 3"
+  ]
+ },
+ {
+  "file": "nodes-tree-5-climbing-lights-and-balcony.png",
+  "tree": "PA_SupertreeArchitecture",
+  "section": "5 · Climbing lights and balcony",
+  "nodes": 55,
+  "inputs": [
+   "Ribs",
+   "trunk radius r = 0.0625 h",
+   "Height"
+  ],
+  "outputs": [
+   "Light_pink parts",
+   "GranitePlanter parts",
+   "CarbonAndShadow parts",
+   "Light_pink parts 2",
+   "Light_pink parts 3",
+   "OxideBurgundySteel parts"
+  ]
+ },
+ {
+  "file": "nodes-tree-6-light-arrival.png",
+  "tree": "PA_SupertreeArchitecture",
+  "section": "6 · Light arrival",
+  "nodes": 6,
+  "inputs": [
+   "PlantingFelt parts",
+   "Instance on Points",
+   "Connected branching framework",
+   "Curved luminous skin",
+   "OxideBurgundySteel parts",
+   "CarbonAndShadow parts",
+   "CarbonAndShadow parts 2",
+   "CarbonAndShadow parts 3",
+   "OxideBurgundySteel parts 2",
+   "CarbonAndShadow parts 4",
+   "OxideBurgundySteel parts 3",
+   "CarbonAndShadow parts 5",
+   "OxideBurgundySteel parts 4",
+   "Light_pink parts",
+   "GranitePlanter parts",
+   "CarbonAndShadow parts 6",
+   "Light_pink parts 2",
+   "Light_pink parts 3",
+   "OxideBurgundySteel parts 5",
+   "Lighting Delay",
+   "Height"
+  ],
+  "outputs": [
+   "flow"
+  ]
+ },
+ {
+  "file": "nodes-profile.png",
+  "tree": "PA_CrownProfile",
+  "section": null,
+  "nodes": 27
+ },
+ {
+  "file": "nodes-profile-1-quarter-ellipse-bowl.png",
+  "tree": "PA_CrownProfile",
+  "section": "a · Quarter-ellipse bowl",
+  "nodes": 11,
+  "inputs": [
+   "u",
+   "Trunk Radius",
+   "Crown Radius"
+  ],
+  "outputs": [
+   "Math",
+   "bowl angle θ"
+  ]
+ },
+ {
+  "file": "nodes-profile-2-straight-branch-fringe.png",
+  "tree": "PA_CrownProfile",
+  "section": "b · Straight branch fringe",
+  "nodes": 14,
+  "inputs": [
+   "u",
+   "Crown Radius",
+   "Math",
+   "bowl angle θ",
+   "Height"
+  ],
+  "outputs": [
+   "crown radius R(u)",
+   "crown height Z(u)"
+  ]
+ },
+ {
+  "file": "nodes-point.png",
+  "tree": "PA_CrownPoint",
+  "section": null,
+  "nodes": 13
+ },
+ {
+  "file": "nodes-frame.png",
+  "tree": "PA_SupertreeCrownFrame",
+  "section": null,
+  "nodes": 66
+ },
+ {
+  "file": "nodes-frame-1-curved-main-rib.png",
+  "tree": "PA_SupertreeCrownFrame",
+  "section": "1 · Curved main rib",
+  "nodes": 16,
+  "inputs": [
+   "Height",
+   "Crown Radius",
+   "Ribs"
+  ],
+  "outputs": [
+   "section scale (thinner on small, dense crowns)",
+   "frame_radius",
+   "Math"
+  ]
+ },
+ {
+  "file": "nodes-frame-2-two-rib-modules.png",
+  "tree": "PA_SupertreeCrownFrame",
+  "section": "2 · Two rib modules",
+  "nodes": 4,
+  "inputs": [
+   "Height",
+   "Crown Radius",
+   "Ribs",
+   "section scale (thinner on small, dense crowns)",
+   "frame_radius"
+  ],
+  "outputs": [
+   "rib module A",
+   "rib module B"
+  ]
+ },
+ {
+  "file": "nodes-frame-3-two-mirrored-families.png",
+  "tree": "PA_SupertreeCrownFrame",
+  "section": "3 · Two mirrored families",
+  "nodes": 25,
+  "inputs": [
+   "Ribs",
+   "rib module A",
+   "rib module B",
+   "Math",
+   "Height",
+   "section scale (thinner on small, dense crowns)"
+  ],
+  "outputs": [
+   "frame_radius",
+   "Instance on Points",
+   "Instance on Points 2"
+  ]
+ },
+ {
+  "file": "nodes-frame-4-weld-and-section-the-steel.png",
+  "tree": "PA_SupertreeCrownFrame",
+  "section": "4 · Weld and section the steel",
+  "nodes": 19,
+  "inputs": [
+   "frame_radius",
+   "Instance on Points",
+   "Instance on Points 2",
+   "Ribs",
+   "rib module B",
+   "rib module A"
+  ],
+  "outputs": [
+   "Weld actual side-branch joints",
+   "OxideBurgundySteel parts",
+   "OxideBurgundySteel parts 2"
+  ]
+ },
+ {
+  "file": "nodes-module.png",
+  "tree": "PA_RibModule",
+  "section": null,
+  "nodes": 98
+ },
+ {
+  "file": "nodes-module-1-stations-on-the-profile.png",
+  "tree": "PA_RibModule",
+  "section": "a · Stations on the profile",
+  "nodes": 47,
+  "inputs": [
+   "Height",
+   "Crown Radius",
+   "Ribs",
+   "Shift",
+   "Side"
+  ],
+  "outputs": [
+   "a · rib top u .63",
+   "l0 · u .735+shift",
+   "lt · u .805+shift",
+   "l1 · u .875+shift",
+   "l2 · tip u 1.045",
+   "r0 · u .75-shift",
+   "rt · u .805+shift",
+   "r1 · u .925-shift",
+   "nt · u .96-shift",
+   "r2 · tip u 1.045",
+   "f · L bend",
+   "mt · u .96-shift",
+   "g1 · L tip",
+   "Y fork",
+   "Y tip"
+  ]
+ },
+ {
+  "file": "nodes-module-2-two-long-rails.png",
+  "tree": "PA_RibModule",
+  "section": "b · Two long rails",
+  "nodes": 27,
+  "inputs": [
+   "a · rib top u .63",
+   "l0 · u .735+shift",
+   "Section Scale",
+   "lt · u .805+shift",
+   "l1 · u .875+shift",
+   "l2 · tip u 1.045",
+   "r0 · u .75-shift",
+   "rt · u .805+shift",
+   "r1 · u .925-shift",
+   "nt · u .96-shift",
+   "r2 · tip u 1.045"
+  ],
+  "outputs": [
+   "frame_radius",
+   "frame_radius 2",
+   "frame_radius 3",
+   "frame_radius 4",
+   "frame_radius 5",
+   "frame_radius 6",
+   "frame_radius 7",
+   "frame_radius 8",
+   "frame_radius 9"
+  ]
+ },
+ {
+  "file": "nodes-module-3-l-bracket-and-y-fork.png",
+  "tree": "PA_RibModule",
+  "section": "c · L bracket and Y fork",
+  "nodes": 15,
+  "inputs": [
+   "l1 · u .875+shift",
+   "f · L bend",
+   "Section Scale",
+   "mt · u .96-shift",
+   "g1 · L tip",
+   "r1 · u .925-shift",
+   "Y fork",
+   "Y tip"
+  ],
+  "outputs": [
+   "frame_radius",
+   "frame_radius 2",
+   "frame_radius 3",
+   "frame_radius 4",
+   "frame_radius 5"
+  ]
+ },
+ {
+  "file": "nodes-module-4-two-short-ties.png",
+  "tree": "PA_RibModule",
+  "section": "d · Two short ties",
+  "nodes": 7,
+  "inputs": [
+   "lt · u .805+shift",
+   "rt · u .805+shift",
+   "Section Scale",
+   "mt · u .96-shift",
+   "nt · u .96-shift",
+   "frame_radius",
+   "frame_radius 2",
+   "frame_radius 3",
+   "frame_radius 4",
+   "frame_radius 5",
+   "frame_radius 6",
+   "frame_radius 7",
+   "frame_radius 8",
+   "frame_radius 9",
+   "frame_radius 10",
+   "frame_radius 11",
+   "frame_radius 12",
+   "frame_radius 13",
+   "frame_radius 14"
+  ],
+  "outputs": [
+   "frame_radius"
+  ]
+ },
+ {
+  "file": "nodes-fern.png",
+  "tree": "PA_FernAndBromeliad",
+  "section": null,
+  "nodes": 48
+ },
+ {
+  "file": "nodes-fern-1-leaflet.png",
+  "tree": "PA_FernAndBromeliad",
+  "section": "1 · Leaflet",
+  "nodes": 17,
+  "inputs": [],
+  "outputs": [
+   "Set Position"
+  ]
+ },
+ {
+  "file": "nodes-fern-2-paired-leaflets-on-a-rachis.png",
+  "tree": "PA_FernAndBromeliad",
+  "section": "2 · Paired leaflets on a rachis",
+  "nodes": 23,
+  "inputs": [
+   "Set Position"
+  ],
+  "outputs": [
+   "Curve to Mesh"
+  ]
+ },
+ {
+  "file": "nodes-fern-3-three-fronds.png",
+  "tree": "PA_FernAndBromeliad",
+  "section": "3 · Three fronds",
+  "nodes": 6,
+  "inputs": [
+   "Curve to Mesh"
+  ],
+  "outputs": [
+   "TropicalLivingSkin parts"
+  ]
+ },
+ {
+  "file": "nodes-skyway.png",
+  "tree": "PA_Skyway_GN",
+  "section": null,
+  "nodes": 187
+ },
+ {
+  "file": "nodes-skyway-1-bezier-deck.png",
+  "tree": "PA_Skyway_GN",
+  "section": "1 · Bezier deck",
+  "nodes": 42,
+  "inputs": [],
+  "outputs": [
+   "flow",
+   "SkywayDeck parts"
+  ]
+ },
+ {
+  "file": "nodes-skyway-2-rails-and-pickets.png",
+  "tree": "PA_Skyway_GN",
+  "section": "2 · Rails and pickets",
+  "nodes": 61,
+  "inputs": [
+   "flow"
+  ],
+  "outputs": [
+   "Light_pink parts",
+   "Light_gold parts",
+   "WarmBrushedBronze parts",
+   "WarmBrushedBronze parts 2",
+   "WarmBrushedBronze parts 3",
+   "Light_pink parts 2",
+   "Light_gold parts 2",
+   "WarmBrushedBronze parts 4",
+   "WarmBrushedBronze parts 5",
+   "WarmBrushedBronze parts 6"
+  ]
+ },
+ {
+  "file": "nodes-skyway-3-suspension-cables.png",
+  "tree": "PA_Skyway_GN",
+  "section": "3 · Suspension cables",
+  "nodes": 82,
+  "inputs": [
+   "SkywayDeck parts",
+   "Light_pink parts",
+   "Light_gold parts",
+   "WarmBrushedBronze parts",
+   "WarmBrushedBronze parts 2",
+   "WarmBrushedBronze parts 3",
+   "Light_pink parts 2",
+   "Light_gold parts 2",
+   "WarmBrushedBronze parts 4",
+   "WarmBrushedBronze parts 5",
+   "WarmBrushedBronze parts 6"
+  ],
+  "outputs": [
+   "delay"
+  ]
+ },
+ {
+  "file": "nodes-garden.png",
+  "tree": "PA_RainGarden_GN",
+  "section": null,
+  "nodes": 180
+ },
+ {
+  "file": "nodes-garden-1-wet-plaza.png",
+  "tree": "PA_RainGarden_GN",
+  "section": "1 · Wet plaza",
+  "nodes": 3,
+  "inputs": [],
+  "outputs": [
+   "RainPolishedPlaza parts"
+  ]
+ },
+ {
+  "file": "nodes-garden-2-planting-beds.png",
+  "tree": "PA_RainGarden_GN",
+  "section": "2 · Planting beds",
+  "nodes": 168,
+  "inputs": [],
+  "outputs": [
+   "Instance on Points",
+   "PlantingFelt parts",
+   "Instance on Points 2",
+   "GranitePlanter parts",
+   "PlantingFelt parts 2",
+   "Instance on Points 3",
+   "GranitePlanter parts 2",
+   "Instance on Points 4",
+   "Instance on Points 5",
+   "Instance on Points 6",
+   "Instance on Points 7",
+   "Instance on Points 8",
+   "Instance on Points 9",
+   "Instance on Points 10",
+   "Instance on Points 11",
+   "Instance on Points 12",
+   "Instance on Points 13",
+   "Instance on Points 14"
+  ]
+ },
+ {
+  "file": "nodes-garden-3-visitors.png",
+  "tree": "PA_RainGarden_GN",
+  "section": "3 · Visitors",
+  "nodes": 7,
+  "inputs": [
+   "RainPolishedPlaza parts",
+   "Instance on Points",
+   "PlantingFelt parts",
+   "Instance on Points 2",
+   "GranitePlanter parts",
+   "PlantingFelt parts 2",
+   "Instance on Points 3",
+   "GranitePlanter parts 2",
+   "Instance on Points 4",
+   "Instance on Points 5",
+   "Instance on Points 6",
+   "Instance on Points 7",
+   "Instance on Points 8",
+   "Instance on Points 9",
+   "Instance on Points 10",
+   "Instance on Points 11",
+   "Instance on Points 12",
+   "Instance on Points 13",
+   "Instance on Points 14"
+  ],
+  "outputs": [
+   "Visitors"
+  ]
+ },
+ {
+  "file": "nodes-city.png",
+  "tree": "PA_GardenAndSkyline_GN",
+  "section": null,
+  "nodes": 169
+ },
+ {
+  "file": "nodes-city-1-tree-canopies.png",
+  "tree": "PA_GardenAndSkyline_GN",
+  "section": "1 · Tree canopies",
+  "nodes": 48,
+  "inputs": [],
+  "outputs": [
+   "Instance on Points"
+  ]
+ },
+ {
+  "file": "nodes-city-2-distant-land.png",
+  "tree": "PA_GardenAndSkyline_GN",
+  "section": "2 · Distant land",
+  "nodes": 59,
+  "inputs": [],
+  "outputs": [
+   "Continuous distant ground",
+   "Instance on Points"
+  ]
+ },
+ {
+  "file": "nodes-city-3-skyline.png",
+  "tree": "PA_GardenAndSkyline_GN",
+  "section": "3 · Skyline",
+  "nodes": 38,
+  "inputs": [],
+  "outputs": [
+   "Grounded skyline towers"
+  ]
+ },
+ {
+  "file": "nodes-city-4-conservatory-domes.png",
+  "tree": "PA_GardenAndSkyline_GN",
+  "section": "4 · Conservatory domes",
+  "nodes": 22,
+  "inputs": [
+   "Instance on Points",
+   "Continuous distant ground",
+   "Instance on Points 2",
+   "Grounded skyline towers"
+  ],
+  "outputs": [
+   "ConservatorySilverFrames parts"
+  ]
+ },
+ {
+  "file": "nodes-mat-panels.png",
+  "tree": "PA_LuminousVioletCanopyPanels",
+  "section": null,
+  "nodes": 30
+ },
+ {
+  "file": "nodes-mat-pink.png",
+  "tree": "PA_Light_pink",
+  "section": null,
+  "nodes": 25
+ }
+]

@@ -1,0 +1,1 @@
+Worst-case preset check after the seven visual rounds: the smallest background tree flagged 16 close outer-member pairs under conservative section-radius bounds. Keep hero sections unchanged, but reduce section sizes by min(1, crown_radius/18.5 * 32/ribs) for smaller or denser presets. Recheck both the hero and smallest preset before delivery.

@@ -1,0 +1,29 @@
+{
+  "strict_procedural": true,
+  "issues": [],
+  "notes": [],
+  "trees": [
+    "PA_CrownPoint",
+    "PA_CrownProfile",
+    "PA_FernAndBromeliad",
+    "PA_GardenAndSkyline_GN",
+    "PA_LowRainMist_GN",
+    "PA_RainGarden_GN",
+    "PA_RibModule",
+    "PA_Skyway_GN",
+    "PA_SupertreeArchitecture",
+    "PA_SupertreeCrownFrame",
+    "PA_Supertree_01_GN",
+    "PA_Supertree_02_GN",
+    "PA_Supertree_03_GN",
+    "PA_Supertree_04_GN",
+    "PA_Supertree_05_GN",
+    "PA_Supertree_06_GN",
+    "PA_Supertree_07_GN",
+    "PA_Supertree_08_GN",
+    "PA_Supertree_09_GN",
+    "PA_Supertree_10_GN",
+    "PA_Supertree_11_GN",
+    "PA_Visitors"
+  ]
+}

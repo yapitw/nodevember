@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "video": {
+    "codec_name": "h264",
+    "width": 960,
+    "height": 960,
+    "r_frame_rate": "24/1",
+    "duration": "8.000000",
+    "nb_read_frames": "192"
+  },
+  "sequence_frames": 192,
+  "full_decode_passed": true,
+  "luminance": {
+    "first": 66.2957,
+    "last": 81.8003,
+    "max_adjacent_change": 0.879800000000003
+  },
+  "bytes": {
+    "awakening.mp4": 809474,
+    "awakening.gif": 3137808,
+    "render.png": 3123366,
+    "piece.blend": 493026
+  },
+  "job_id": "e04ef734-339e-4ea3-9ab0-fd4e5b504aed",
+  "engine": "BLENDER_EEVEE",
+  "samples": 64,
+  "source_sha256": "3924b81c9f02c3c9ad5f57377cbf4ebc0046a00838b46c2f90fa0afe7720acda",
+  "farm_blend_sha256": "fe6f6626b8dd93216b3bb31f760355a0b2846994a8574b0a57fdb0fa4ed4a62e"
+}

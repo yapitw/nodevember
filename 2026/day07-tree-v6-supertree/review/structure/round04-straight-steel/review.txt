@@ -1,0 +1,1 @@
+Straight spines and constant sections improved the fabricated appearance, but a full reference comparison still showed too few long outer members. The next pass splits each primary into two long rails and redistributes, rather than adds, the side branches.

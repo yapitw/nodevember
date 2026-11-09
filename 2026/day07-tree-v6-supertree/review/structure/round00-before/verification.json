@@ -1,0 +1,432 @@
+{
+  "audit": {
+    "strict_procedural": true,
+    "issues": [],
+    "notes": [],
+    "trees": [
+      "PA_FernAndBromeliad",
+      "PA_GardenAndSkyline_GN",
+      "PA_LowRainMist_GN",
+      "PA_RainGarden_GN",
+      "PA_Skyway_GN",
+      "PA_SupertreeArchitecture",
+      "PA_SupertreeCrownFrame",
+      "PA_Supertree_01_GN",
+      "PA_Supertree_02_GN",
+      "PA_Supertree_03_GN",
+      "PA_Supertree_04_GN",
+      "PA_Supertree_05_GN",
+      "PA_Supertree_06_GN",
+      "PA_Supertree_07_GN",
+      "PA_Supertree_08_GN",
+      "PA_Supertree_09_GN",
+      "PA_Supertree_10_GN",
+      "PA_Supertree_11_GN",
+      "PA_Visitors"
+    ]
+  },
+  "blender": "5.2.3 LTS",
+  "animation": {
+    "frames": [
+      1,
+      192
+    ],
+    "fps": 24,
+    "seconds": 8.0,
+    "seamless_loop": false
+  },
+  "trees": [
+    {
+      "object": "PA_Supertree_01",
+      "controls": {
+        "Height": 40.0,
+        "Crown Radius": 18.5,
+        "Ribs": 32,
+        "Plant Density": 8.0,
+        "Lighting Delay": 0.0,
+        "Seed": 21
+      },
+      "structural_vertices": 34972,
+      "finite_coordinates": true,
+      "projected_bounds": [
+        [
+          -0.32071,
+          0.6931
+        ],
+        [
+          0.00108,
+          0.82184
+        ],
+        [
+          25.39235,
+          76.03578
+        ]
+      ]
+    },
+    {
+      "object": "PA_Supertree_02",
+      "controls": {
+        "Height": 48.0,
+        "Crown Radius": 22.0,
+        "Ribs": 32,
+        "Plant Density": 8.0,
+        "Lighting Delay": 2.0,
+        "Seed": 38
+      },
+      "structural_vertices": 34972,
+      "finite_coordinates": true,
+      "projected_bounds": [
+        [
+          0.30547,
+          4.80873
+        ],
+        [
+          -0.73784,
+          1.47306
+        ],
+        [
+          6.91878,
+          67.26283
+        ]
+      ]
+    },
+    {
+      "object": "PA_Supertree_03",
+      "controls": {
+        "Height": 29.0,
+        "Crown Radius": 13.5,
+        "Ribs": 32,
+        "Plant Density": 3.5,
+        "Lighting Delay": 2.9000000953674316,
+        "Seed": 55
+      },
+      "structural_vertices": 34972,
+      "finite_coordinates": true,
+      "projected_bounds": [
+        [
+          -0.12337,
+          0.37392
+        ],
+        [
+          0.13136,
+          0.50606
+        ],
+        [
+          47.9811,
+          84.89907
+        ]
+      ]
+    },
+    {
+      "object": "PA_Supertree_04",
+      "controls": {
+        "Height": 33.0,
+        "Crown Radius": 14.5,
+        "Ribs": 32,
+        "Plant Density": 3.5,
+        "Lighting Delay": 3.5,
+        "Seed": 72
+      },
+      "structural_vertices": 34972,
+      "finite_coordinates": true,
+      "projected_bounds": [
+        [
+          0.35612,
+          0.75181
+        ],
+        [
+          0.14265,
+          0.53099
+        ],
+        [
+          51.98875,
+          92.20863
+        ]
+      ]
+    },
+    {
+      "object": "PA_Supertree_05",
+      "controls": {
+        "Height": 28.0,
+        "Crown Radius": 13.0,
+        "Ribs": 32,
+        "Plant Density": 3.5,
+        "Lighting Delay": 4.050000190734863,
+        "Seed": 89
+      },
+      "structural_vertices": 34972,
+      "finite_coordinates": true,
+      "projected_bounds": [
+        [
+          0.62471,
+          0.91219
+        ],
+        [
+          0.1884,
+          0.41897
+        ],
+        [
+          78.58953,
+          114.16589
+        ]
+      ]
+    },
+    {
+      "object": "PA_Supertree_06",
+      "controls": {
+        "Height": 25.0,
+        "Crown Radius": 12.0,
+        "Ribs": 32,
+        "Plant Density": 3.5,
+        "Lighting Delay": 3.799999952316284,
+        "Seed": 106
+      },
+      "structural_vertices": 34972,
+      "finite_coordinates": true,
+      "projected_bounds": [
+        [
+          0.31979,
+          0.51313
+        ],
+        [
+          0.19803,
+          0.38487
+        ],
+        [
+          88.06568,
+          120.64944
+        ]
+      ]
+    },
+    {
+      "object": "PA_Supertree_07",
+      "controls": {
+        "Height": 26.0,
+        "Crown Radius": 12.5,
+        "Ribs": 32,
+        "Plant Density": 3.5,
+        "Lighting Delay": 3.5,
+        "Seed": 123
+      },
+      "structural_vertices": 34972,
+      "finite_coordinates": true,
+      "projected_bounds": [
+        [
+          -0.01246,
+          0.29721
+        ],
+        [
+          0.18965,
+          0.40252
+        ],
+        [
+          79.70095,
+          113.62633
+        ]
+      ]
+    },
+    {
+      "object": "PA_Supertree_08",
+      "controls": {
+        "Height": 24.0,
+        "Crown Radius": 11.0,
+        "Ribs": 32,
+        "Plant Density": 3.5,
+        "Lighting Delay": 3.9000000953674316,
+        "Seed": 140
+      },
+      "structural_vertices": 34972,
+      "finite_coordinates": true,
+      "projected_bounds": [
+        [
+          0.51936,
+          0.66763
+        ],
+        [
+          0.2125,
+          0.36102
+        ],
+        [
+          107.58482,
+          137.79474
+        ]
+      ]
+    },
+    {
+      "object": "PA_Supertree_09",
+      "controls": {
+        "Height": 24.0,
+        "Crown Radius": 12.0,
+        "Ribs": 32,
+        "Plant Density": 3.5,
+        "Lighting Delay": 4.0,
+        "Seed": 157
+      },
+      "structural_vertices": 34972,
+      "finite_coordinates": true,
+      "projected_bounds": [
+        [
+          0.68801,
+          0.89619
+        ],
+        [
+          0.21374,
+          0.35955
+        ],
+        [
+          109.65853,
+          141.93289
+        ]
+      ]
+    },
+    {
+      "object": "PA_Supertree_10",
+      "controls": {
+        "Height": 23.0,
+        "Crown Radius": 11.0,
+        "Ribs": 32,
+        "Plant Density": 3.5,
+        "Lighting Delay": 3.5999999046325684,
+        "Seed": 174
+      },
+      "structural_vertices": 34972,
+      "finite_coordinates": true,
+      "projected_bounds": [
+        [
+          0.25808,
+          0.40553
+        ],
+        [
+          0.22229,
+          0.34428
+        ],
+        [
+          126.53669,
+          156.43721
+        ]
+      ]
+    },
+    {
+      "object": "PA_Supertree_11",
+      "controls": {
+        "Height": 30.0,
+        "Crown Radius": 14.0,
+        "Ribs": 32,
+        "Plant Density": 3.5,
+        "Lighting Delay": 3.200000047683716,
+        "Seed": 191
+      },
+      "structural_vertices": 34972,
+      "finite_coordinates": true,
+      "projected_bounds": [
+        [
+          -0.45596,
+          0.18903
+        ],
+        [
+          0.13405,
+          0.51314
+        ],
+        [
+          48.87838,
+          87.13796
+        ]
+      ]
+    }
+  ],
+  "errors": [],
+  "simulation_nodes": [],
+  "keyframe_actions": 0,
+  "external_image_files": [],
+  "curved_light_skin": {
+    "vertices": 12352,
+    "max_quarter_ellipse_error": 9.813774065614567e-07,
+    "max_mesh_edge_m": 0.3254587807321182,
+    "connected_without_rim_to_neck_bridges": true
+  },
+  "crown_framework": {
+    "vertices": 1728,
+    "edges": 1760,
+    "connected_components": 1,
+    "component_sizes": [
+      1728
+    ],
+    "vertex_degrees": {
+      "1": 64,
+      "2": 1536,
+      "3": 128
+    },
+    "outer_tips": 64,
+    "expected_outer_tips": 64,
+    "independent_outer_rings": 0,
+    "short_neighbour_ties": 32
+  },
+  "light_energy": {
+    "1": {
+      "PA_CrownGlow_0": 300.0,
+      "PA_CrownGlow_1": 300.0,
+      "PA_CrownGlow_10": 300.0,
+      "PA_CrownGlow_2": 300.0,
+      "PA_CrownGlow_3": 300.0,
+      "PA_CrownGlow_4": 300.0,
+      "PA_CrownGlow_5": 300.0,
+      "PA_CrownGlow_6": 300.0,
+      "PA_CrownGlow_7": 300.0,
+      "PA_CrownGlow_8": 300.0,
+      "PA_CrownGlow_9": 300.0
+    },
+    "49": {
+      "PA_CrownGlow_0": 2942.857,
+      "PA_CrownGlow_1": 300.0,
+      "PA_CrownGlow_10": 300.0,
+      "PA_CrownGlow_2": 300.0,
+      "PA_CrownGlow_3": 300.0,
+      "PA_CrownGlow_4": 300.0,
+      "PA_CrownGlow_5": 300.0,
+      "PA_CrownGlow_6": 300.0,
+      "PA_CrownGlow_7": 300.0,
+      "PA_CrownGlow_8": 300.0,
+      "PA_CrownGlow_9": 300.0
+    },
+    "97": {
+      "PA_CrownGlow_0": 4000.0,
+      "PA_CrownGlow_1": 2942.857,
+      "PA_CrownGlow_10": 300.0,
+      "PA_CrownGlow_2": 564.286,
+      "PA_CrownGlow_3": 300.0,
+      "PA_CrownGlow_4": 300.0,
+      "PA_CrownGlow_5": 300.0,
+      "PA_CrownGlow_6": 300.0,
+      "PA_CrownGlow_7": 300.0,
+      "PA_CrownGlow_8": 300.0,
+      "PA_CrownGlow_9": 300.0
+    },
+    "145": {
+      "PA_CrownGlow_0": 4000.0,
+      "PA_CrownGlow_1": 4000.0,
+      "PA_CrownGlow_10": 4000.0,
+      "PA_CrownGlow_2": 4000.0,
+      "PA_CrownGlow_3": 4000.0,
+      "PA_CrownGlow_4": 2810.714,
+      "PA_CrownGlow_5": 3471.428,
+      "PA_CrownGlow_6": 4000.0,
+      "PA_CrownGlow_7": 3207.143,
+      "PA_CrownGlow_8": 2942.857,
+      "PA_CrownGlow_9": 4000.0
+    },
+    "192": {
+      "PA_CrownGlow_0": 4000.0,
+      "PA_CrownGlow_1": 4000.0,
+      "PA_CrownGlow_10": 4000.0,
+      "PA_CrownGlow_2": 4000.0,
+      "PA_CrownGlow_3": 4000.0,
+      "PA_CrownGlow_4": 4000.0,
+      "PA_CrownGlow_5": 4000.0,
+      "PA_CrownGlow_6": 4000.0,
+      "PA_CrownGlow_7": 4000.0,
+      "PA_CrownGlow_8": 4000.0,
+      "PA_CrownGlow_9": 4000.0
+    }
+  },
+  "passed": true
+}

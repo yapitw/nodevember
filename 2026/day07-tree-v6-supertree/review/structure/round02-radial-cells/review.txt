@@ -1,0 +1,1 @@
+Rejected after zooming the actual reference edge: elongated cells still produce enclosed, repetitive honeycomb holes. The reference instead has long radial spines with staggered L/T/Y offshoots and short open ends. The reference detail crops are saved in the parent review folder. Next round uses branching modules with three different offshoot types, not a tessellated net.

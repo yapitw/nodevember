@@ -1,0 +1,334 @@
+[
+ {
+  "kind": "storyboard",
+  "out": "images/storyboard.jpg",
+  "cols": 4,
+  "width": 1600,
+  "images": [
+   "../frames/0001.png",
+   "../frames/0025.png",
+   "../frames/0049.png",
+   "../frames/0073.png",
+   "../frames/0097.png",
+   "../frames/0121.png",
+   "../frames/0145.png",
+   "../frames/0192.png"
+  ],
+  "captions": [
+   "frame 1 · 0 s · blue hour, every crown dark",
+   "frame 25 · 1 s · tree 01's bowl starts to glow",
+   "frame 49 · 2 s · tree 01 fully lit, its crown light ramps",
+   "frame 73 · 3 s · the light crosses the skyway",
+   "frame 97 · 4 s · the near tree 02 opens",
+   "frame 121 · 5 s · the grove begins, tree by tree",
+   "frame 145 · 6 s · the last crowns fade in",
+   "frame 192 · 8 s · the hold: everything awake"
+  ]
+ },
+ {
+  "kind": "timeline",
+  "out": "images/timeline.png",
+  "frames": 192,
+  "unit": "frame",
+  "ticks": [
+   [
+    1,
+    "0 s"
+   ],
+   [
+    25,
+    "1 s"
+   ],
+   [
+    49,
+    "2 s"
+   ],
+   [
+    73,
+    "3 s"
+   ],
+   [
+    97,
+    "4 s"
+   ],
+   [
+    121,
+    "5 s"
+   ],
+   [
+    145,
+    "6 s"
+   ],
+   [
+    169,
+    "7 s"
+   ],
+   [
+    192,
+    "8 s"
+   ]
+  ],
+  "lanes": [
+   {
+    "label": "Tree 01 (delay 0)",
+    "bars": [
+     [
+      1.0,
+      40.6,
+      "purple",
+      "light climbs"
+     ],
+     [
+      40.6,
+      56.2,
+      "grey",
+      "fade"
+     ]
+    ]
+   },
+   {
+    "label": "CrownGlow 01",
+    "bars": [
+     [
+      25.0,
+      58.6,
+      "rose",
+      "300 → 4000 W"
+     ]
+    ]
+   },
+   {
+    "label": "Skyway (delay 1.7)",
+    "bars": [
+     [
+      43.8,
+      83.4,
+      "yellow",
+      "right end → left end"
+     ],
+     [
+      83.4,
+      99.0,
+      "grey",
+      ""
+     ]
+    ]
+   },
+   {
+    "label": "Tree 02 (delay 2.0)",
+    "bars": [
+     [
+      51.4,
+      91.0,
+      "purple",
+      "light climbs"
+     ],
+     [
+      91.0,
+      106.6,
+      "grey",
+      "fade"
+     ]
+    ]
+   },
+   {
+    "label": "CrownGlow 02",
+    "bars": [
+     [
+      73.0,
+      106.6,
+      "rose",
+      "300 → 4000 W"
+     ]
+    ]
+   },
+   {
+    "label": "Grove, 9 trees (2.9–4.05)",
+    "bars": [
+     [
+      74.1,
+      142.7,
+      "purple",
+      "staggered climbs"
+     ],
+     [
+      142.7,
+      158.3,
+      "grey",
+      ""
+     ]
+    ]
+   },
+   {
+    "label": "CrownGlow, grove",
+    "bars": [
+     [
+      94.6,
+      155.8,
+      "rose",
+      "staggered ramps"
+     ]
+    ]
+   }
+  ],
+  "shade": [
+   [
+    158.3,
+    192
+   ]
+  ]
+ },
+ {
+  "kind": "pipeline",
+  "out": "images/pipeline.png",
+  "box": [
+   2.7,
+   1.25
+  ],
+  "step": [
+   3.3,
+   1.9
+  ],
+  "boxes": [
+   {
+    "id": "prof",
+    "title": "1 · Crown profile",
+    "text": "R(u), Z(u): quarter-ellipse\nbowl + straight fringe",
+    "x": 0,
+    "y": 1,
+    "color": "blue"
+   },
+   {
+    "id": "trunk",
+    "title": "2 · Planted trunk",
+    "text": "bumpy cylinder r = 0.0625 h\n+ fern rosettes",
+    "x": 1,
+    "y": 0,
+    "color": "green"
+   },
+   {
+    "id": "frame",
+    "title": "3 · Crown framework",
+    "text": "32 ribs × rib module\nwelded, box sections",
+    "x": 1,
+    "y": 1,
+    "color": "brown"
+   },
+   {
+    "id": "bowl",
+    "title": "4 · Light bowl",
+    "text": "64 × 193 grid wrapped\nonto the profile",
+    "x": 1,
+    "y": 2,
+    "color": "purple"
+   },
+   {
+    "id": "core",
+    "title": "5 · Core, cap, balcony",
+    "text": "cone, dark discs, pink\nlight lines, balcony",
+    "x": 1,
+    "y": 3,
+    "color": "grey"
+   },
+   {
+    "id": "arr",
+    "title": "6 · Light arrival",
+    "text": "store delay, flow = z / h\nshaders read the clock",
+    "x": 2,
+    "y": 1.5,
+    "color": "rose"
+   },
+   {
+    "id": "trees",
+    "title": "7 · Eleven trees",
+    "text": "one group, six controls\nper object",
+    "x": 3,
+    "y": 1.5,
+    "color": "orange"
+   },
+   {
+    "id": "sky",
+    "title": "8 · Skyway",
+    "text": "cubic Bezier between\nthe two balconies",
+    "x": 3,
+    "y": 3,
+    "color": "yellow"
+   },
+   {
+    "id": "env",
+    "title": "9 · Garden, skyline, sky",
+    "text": "plaza, beds, canopies,\nland, towers, domes",
+    "x": 4,
+    "y": 2.25,
+    "color": "teal"
+   }
+  ],
+  "edges": [
+   {
+    "from": "prof",
+    "to": "frame",
+    "label": ""
+   },
+   {
+    "from": "prof",
+    "to": "bowl",
+    "label": ""
+   },
+   {
+    "from": "trunk",
+    "to": "arr"
+   },
+   {
+    "from": "frame",
+    "to": "arr"
+   },
+   {
+    "from": "bowl",
+    "to": "arr"
+   },
+   {
+    "from": "core",
+    "to": "arr"
+   },
+   {
+    "from": "arr",
+    "to": "trees",
+    "label": "delay, flow"
+   },
+   {
+    "from": "trees",
+    "to": "env"
+   },
+   {
+    "from": "sky",
+    "to": "env"
+   }
+  ]
+ },
+ {
+  "kind": "strip",
+  "out": "images/skin-and-crown.png",
+  "height": 4,
+  "images": [
+   "../inspect/shape-side.png",
+   "../inspect/crown-side.png"
+  ],
+  "captions": [
+   "the light skin alone (orthographic side view)",
+   "the whole crown: skin, frame and dark cap"
+  ]
+ },
+ {
+  "kind": "strip",
+  "out": "images/structure-strip.png",
+  "height": 4.5,
+  "images": [
+   "../inspect/structure.png",
+   "../inspect/structure-bay.png"
+  ],
+  "captions": [
+   "Connected branching framework, neutral material",
+   "the Bay output: two neighbouring rib modules"
+  ]
+ }
+]
