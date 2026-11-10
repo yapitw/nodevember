@@ -407,5 +407,18 @@
    "2 · from the left-front: lit and shadow sides",
    "3 · from behind (final): the edges glow"
   ]
+ },
+ {
+  "kind": "strip",
+  "out": "images/stem-seat.jpg",
+  "height": 4.0,
+  "images": [
+   "images/_seat_before.jpg",
+   "images/_seat_after.jpg"
+  ],
+  "captions": [
+   "first render: the foot hovers over the stone",
+   "seated: the stem grows out of felt"
+  ]
  }
 ]

@@ -83,6 +83,18 @@ Date: 2026-11-08
 - Mac run (backlit): 360 frames in 99 min (render_frames.sh, one attempt, no crash). Largest mean-luma step 0.6
   (frames 140–160, the camera moving in off the bright moss), mean 0.11, hold ≤ 0.12: no flicker. Under the backlight
   the trunks face the camera in shadow, so the light-link figure is rendered from the first render's .blend.
+- Stem seat (2026-11-10, "最後一個場景感覺指尖和蘑菇沒接上"): the SDF fillet, mean and weathering leave the stone
+  2 mm below `FINGERTIP` (the bones' tip), so the stem's flat foot ring hovered 0.7–1.6 mm over the stone, and the knot
+  was hidden inside the stem's flare. Now a Raycast finds the stone under the fingertip, the stem starts 1.5 mm
+  inside it (the cap stays put), the knot is a felt cushion draped on the stone (one ray per point, upper half
+  standing off the hit), the felt is matte with full sheen, the stem's lowest 6 mm whiten into it, and 340 fibrils
+  instead of 220. Frames 1–119 have no knot or stem, but the Mac was busy with Day 9, so the whole shot went back to
+  the farm (now online again) for one device: farm run 3.
+- Farm run 3 (seated stem): 360 frames in 71 min, all from the farm node. The mean-luma curve follows the Mac run's
+  within 0.03 per step (the dip at frames 140–162 is the camera moving in off the moss), so no flicker; frames
+  1–119 sit about 1 level brighter than the Mac's (OptiX vs Metal), uniform across the shot. Joint crop at frame 360:
+  the stem rises out of the felt, no gap. render-wide.png re-rendered on the Mac (`still_wide.py -- --camz -7
+  --lift 4 --tx 1.5 --fstop 0.08`, then vignette + still grain). Tutorial crops and figures redone (stem-seat.jpg new).
 - Tutorial: the repeated hand helpers became node groups (PA_Bone, PA_Knuckle, PA_Capsule, PA_Nail, PA_Rosettes), and
   every frame got a "N · Title" or "a · Title" label. Proven unchanged: evaluated vertex counts and coordinate sums at
   frames 120 and 300 match (the mycelium differs by 0.001 summed over 286 705 points, float noise), and the stone
@@ -93,7 +105,7 @@ Date: 2026-11-08
 - [x] piece.blend (Cycles 128 spp, 1080², persistent data; `save_final.py` writes it from build.py)
 - [x] render.png (frame 360: the close-up, vignette + grain)
 - [x] render-wide.png (the whole hand with the grown mushroom, frame 360; `still_wide.py`)
-- [x] loop.mp4 (15 s, 24 fps, 1080², vignette + temporal grain; 360 frames on the Mac, backlit)
+- [x] loop.mp4 (15 s, 24 fps, 1080², vignette + temporal grain; 360 frames on the farm, backlit, stem seated)
 - [ ] nodes.png (node tree screenshot, readable)
 - [x] tutorial/README.md (node-by-node walkthrough; node cut-outs in tutorial/images, figure scripts in tutorial/src)
 - [ ] extra: hand sweep / breakdown

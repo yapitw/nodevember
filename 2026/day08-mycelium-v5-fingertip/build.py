@@ -534,8 +534,8 @@ def build_hand(piece, G, M):
     return ob
 
 
-def mushroom_params(g, G):
-    """Per-frame numbers of the mushroom, from the growth clock."""
+def mushroom_params(g, G, stone):
+    """Per-frame numbers of the mushroom, from the growth clock, and where the stem stands on the stone."""
     gr = g.group(G['growth'])
     o = lambda n: g.out(gr, n)
     B, st, cp, op = o('Pin'), o('Stem'), o('Cap'), o('Open')
@@ -546,7 +546,13 @@ def mushroom_params(g, G):
     P['th2'] = lab(mix(g, 0.45, 0.64, op), 'bend of the margin (rad)')
     P['tc'] = lab(g.math('MULTIPLY', B, mix(g, 0.14, 0.22, cp)), 'cap flesh thickness')
     P['rs'] = lab(g.math('MULTIPLY', B, mix(g, 0.1, 0.19, st)), 'stem radius')
-    P['z0'] = lab(g.math('SUBTRACT', FINGERTIP.z, 0.12), 'stem foot z: the fingertip')
+    # the SDF's fillet and smoothing wear the stone ~2 mm below the bones' tip: find the real surface with a ray,
+    # start the stem 1.5 mm inside it, and keep the cap where it was (the stem grows longer at its foot)
+    hit = lab(g.node('GeometryNodeRaycast', Target_Geometry=stone, Source_Position=g.vec(FINGERTIP.x, FINGERTIP.y, FINGERTIP.z + 2.0),
+                     Ray_Direction=(0.0, 0.0, -1.0), Ray_Length=10.0), 'the stone under the fingertip')
+    P['zs'] = xyz(g, g.out(hit, 'Hit Position'))[2]
+    P['z0'] = lab(g.math('SUBTRACT', P['zs'], 0.15), 'stem foot z: inside the stone')
+    P['len'] = lab(g.math('SUBTRACT', g.math('ADD', FINGERTIP.z, P['H']), P['z0']), 'stem length: foot → cap')
     P['lean'] = lab(g.math('MULTIPLY', st, 0.28), 'lean')
     # circumnutation: the growing tip circles slowly
     ph = g.math('MULTIPLY', P['Tu'], TAU * 2.2)
@@ -561,7 +567,7 @@ def spine(g, P, t):
     t2 = g.math('MULTIPLY', t, t)
     x = g.math('ADD', FINGERTIP.x, g.math('MULTIPLY', g.math('ADD', P['lean'], P['swx']), t2))
     y = g.math('ADD', FINGERTIP.y, g.math('MULTIPLY', g.math('ADD', g.math('MULTIPLY', P['lean'], -0.25), P['swy']), t2))
-    z = g.math('ADD', P['z0'], g.math('MULTIPLY', t, g.math('ADD', P['H'], 0.12)))
+    z = g.math('ADD', P['z0'], g.math('MULTIPLY', t, P['len']))
     return g.vec(x, y, z)
 
 
@@ -676,7 +682,7 @@ def gill_material():
 
 
 def stem_material():
-    """Polished, translucent stem: brown at the base, pale under the cap, faint lengthwise fibres."""
+    """Polished, translucent stem: brown at the base, pale under the cap, faint lengthwise fibres, a white felted foot."""
     mat, g = _mat('Stem')
     t, ph = sattr(g, 'st'), sattr(g, 'sphi')
     col = rgb_mix(g, smoothstep(g, 0.0, 0.9, t), (0.22, 0.13, 0.07, 1), (0.64, 0.52, 0.40, 1))
@@ -684,6 +690,8 @@ def stem_material():
                        Vector=g.vec(g.math('MULTIPLY', g.math('COSINE', ph), 9.0), g.math('MULTIPLY', g.math('SINE', ph), 9.0),
                                     g.math('MULTIPLY', t, 0.8))), 'Factor')
     col = rgb_mix(g, g.math('MULTIPLY', smoothstep(g, 0.4, 0.8, fib), 0.35), col, (0.86, 0.74, 0.58, 1))
+    foot = g.math('SUBTRACT', 1.0, smoothstep(g, 0.0, 0.6, g.math('ADD', sattr(g, 'sh'), g.math('MULTIPLY', fib, 0.35))))
+    col = rgb_mix(g, g.math('MULTIPLY', foot, 0.85), col, (0.90, 0.87, 0.80, 1))      # the foot whitens into the felt
     bump = g.node('ShaderNodeBump', Strength=0.15, Distance=0.004, Height=fib)
     p = principled(g, Base_Color=col, Roughness=0.3, Subsurface_Weight=0.6, Subsurface_Radius=(0.9, 0.6, 0.4),
                    Subsurface_Scale=0.1, Normal=bump)
@@ -691,9 +699,15 @@ def stem_material():
 
 
 def felt_material():
+    """Mycelial felt: matte and velvety (sheen lights its fuzz against the sun), with a fine matted-fibre bump."""
     mat, g = _mat('Felt')
-    return finish(g, mat, principled(g, Base_Color=(0.93, 0.89, 0.82, 1), Roughness=0.95, Subsurface_Weight=0.3,
-                                     Subsurface_Radius=(0.5, 0.5, 0.5), Subsurface_Scale=0.05))
+    co = g.out(g.node('ShaderNodeTexCoord'), 'Object')
+    fibre = g.out(g.node('ShaderNodeTexNoise', Vector=g.vmath('MULTIPLY', co, (1.0, 1.0, 3.0)), Scale=60.0, Detail=6.0,
+                         Roughness=0.7), 'Factor')
+    bump = g.node('ShaderNodeBump', Strength=0.5, Distance=0.006, Height=fibre)
+    return finish(g, mat, principled(g, Base_Color=(0.78, 0.76, 0.70, 1), Roughness=1.0, Subsurface_Weight=0.5,
+                                     Subsurface_Radius=(0.5, 0.5, 0.5), Subsurface_Scale=0.05, Sheen_Weight=1.0,
+                                     Sheen_Roughness=0.35, Normal=bump))
 
 
 def spore_material():
@@ -1210,10 +1224,10 @@ def build_mycelium(piece, G, M, hand):
                     Radius=g.math('MULTIPLY', 0.0019, g.math('SUBTRACT', 1.0, g.math('MULTIPLY', 0.6, attr(g, 'wt')))))
         cur = join(g, cur, fz)
     with g.section('10 · Mushroom size'):
-        P = mushroom_params(g, G)
+        P = mushroom_params(g, G, stone)
     with g.section('11 · Stem foot'):
         # white fibrils fanning from the stem base, draped over the fingertip
-        fp = g.node('GeometryNodePoints', Count=220)
+        fp = g.node('GeometryNodePoints', Count=340)
         fib = realize(g, g.node('GeometryNodeInstanceOnPoints', Points=fp,
                                 Instance=g.node('GeometryNodeResampleCurve', Count=6,
                                                 Curve=g.node('GeometryNodeCurvePrimitiveLine', Start=(0, 0, 0), End=(0, 0, 1)))))
@@ -1221,7 +1235,8 @@ def build_mycelium(piece, G, M, hand):
         ci = g.out(g.node('GeometryNodeInputIndex'), 'Index')
         cid = g.math('FLOOR', g.math('DIVIDE', ci, 6.0))
         fphi_c = rand(g, cid, 91, 0.0, TAU)
-        root_c = g.vmath('ADD', spine(g, P, rand(g, cid, 92, 0.02, 0.07)), polar(g, P['rs'], fphi_c, 0.0))
+        t_root = g.math('ADD', rand(g, cid, 92, 0.02, 0.07), g.math('DIVIDE', 0.15, P['len']))   # 2–7 % of the stem above the stone
+        root_c = g.vmath('ADD', spine(g, P, t_root), polar(g, P['rs'], fphi_c, 0.0))
         fl_c = g.math('MULTIPLY', P['B'], rand(g, cid, 93, 0.35, 1.3))
         tip_c = g.vmath('ADD', root_c, polar(g, fl_c, g.math('ADD', fphi_c, rand(g, cid, 94, -0.4, 0.4)), g.math('MULTIPLY', fl_c, -0.6)))
         line = vmix(g, root_c, tip_c, par)
@@ -1240,11 +1255,12 @@ def build_mycelium(piece, G, M, hand):
     return ob
 
 
-def build_mushroom(piece, G, M):
+def build_mushroom(piece, G, M, hand):
     ob, g = pb.gn_object('Mushroom', piece)
     parts = []
     with g.section('1 · Clock → sizes'):
-        P = mushroom_params(g, G)
+        stone = g.out(g.node('GeometryNodeObjectInfo', props={'transform_space': 'ORIGINAL'}, Object=hand), 'Geometry')
+        P = mushroom_params(g, G, stone)
         alive = g.math('GREATER_THAN', P['B'], 0.01)
         top_c = lab(g.vmath('ADD', spine(g, P, 1.0), g.vec(0, 0, P['tc'])), 'cap top centre')
 
@@ -1296,24 +1312,36 @@ def build_mushroom(piece, G, M):
     with g.section('4 · Stem'):
         m = grid(g, 90, 24)
         t, phi = attr(g, 'a'), g.math('MULTIPLY', attr(g, 'b'), TAU)
-        zt = g.math('MULTIPLY', t, g.math('ADD', P['H'], 0.12))
+        hs = lab(g.math('SUBTRACT', g.math('MULTIPLY', t, P['len']), 0.15), 'height above the stone')
+        zt = g.math('MAXIMUM', hs, 0.0)
         r = g.math('MULTIPLY', P['rs'], g.math('SUBTRACT', 1.12, g.math('MULTIPLY', 0.22, t)))
         r = g.math('ADD', r, g.math('MULTIPLY', P['rs'], g.math('MULTIPLY', 0.6, g.math('EXPONENT', g.math('MULTIPLY', -1.0, g.math('POWER', g.math('DIVIDE', zt, 0.3), 2.0))))))
         r = g.math('ADD', r, g.math('MULTIPLY', g.math('MULTIPLY', P['rs'], 0.35), smoothstep(g, 0.94, 1.0, t)))
         # slightly over-long so the apex sits inside the cap flesh
         tt = g.math('MULTIPLY', t, 1.02)
         st = g.node('GeometryNodeSetPosition', Geometry=m, Position=g.vmath('ADD', spine(g, P, tt), polar(g, r, phi, 0.0)))
-        st = store(g, store(g, st, 'st', t), 'sphi', phi)
+        st = store(g, store(g, store(g, st, 'st', t), 'sphi', phi), 'sh', hs)
         st = g.node('GeometryNodeMergeByDistance', Geometry=st, Distance=0.0002)
         parts.append(pb.set_material(g, g.node('GeometryNodeSetShadeSmooth', Geometry=st), M['stem']))
 
     with g.section('5 · Hyphal knot'):
         gr = P['gr']
         kn = g.out(gr, 'Knot')
+        # a felt cushion draped on the fingertip: every point drops a ray onto the stone, and the upper half of the
+        # sphere stands up off it, so the rim lies on the stone and the stem rises out of white felt
         k = g.node('GeometryNodeMeshIcoSphere', Radius=1.0, Subdivisions=4)
-        lump = g.math('ADD', 0.7, g.math('MULTIPLY', 0.6, noise(g, pos(g), 2.5, detail=4.0, rough=0.7)))
-        kp = g.vmath('MULTIPLY', g.vmath('SCALE', pos(g), scale=g.math('MULTIPLY', lump, g.math('MULTIPLY', kn, 0.36))), (1.0, 1.0, 0.6))
-        k = g.node('GeometryNodeSetPosition', Geometry=k, Position=g.vmath('ADD', kp, (FINGERTIP.x, FINGERTIP.y, FINGERTIP.z - 0.06)))
+        ux, uy, uz = xyz(g, pos(g))
+        lump = g.math('ADD', 0.55, g.math('MULTIPLY', 0.9, noise(g, pos(g), 1.8, detail=4.0, rough=0.7)))
+        R = lab(g.math('MULTIPLY', lump, g.math('MULTIPLY', kn, 0.75)), 'cushion radius')
+        kx = g.math('ADD', FINGERTIP.x, g.math('MULTIPLY', ux, R))
+        ky = g.math('ADD', FINGERTIP.y, g.math('MULTIPLY', uy, R))
+        under = lab(g.node('GeometryNodeRaycast', Target_Geometry=stone, Source_Position=g.vec(kx, ky, FINGERTIP.z + 2.0),
+                           Ray_Direction=(0.0, 0.0, -1.0), Ray_Length=10.0), 'the stone under each point')
+        sz = g.math('MAXIMUM', xyz(g, g.out(under, 'Hit Position'))[2], FINGERTIP.z - 1.5)
+        tuft = g.math('ADD', 0.75, g.math('MULTIPLY', 0.5, noise(g, pos(g), 9.0, detail=3.0, rough=0.6)))
+        h = lab(g.math('MULTIPLY', g.math('MULTIPLY', g.math('MULTIPLY', g.math('POWER', g.math('MAXIMUM', uz, 0.0), 1.5), R), tuft), 0.42),
+                'felt thickness')
+        k = g.node('GeometryNodeSetPosition', Geometry=k, Position=g.vec(kx, ky, g.math('ADD', sz, g.math('SUBTRACT', h, 0.015))))
         k = delete(g, k, g.math('LESS_THAN', kn, 0.01))
         parts.append(pb.set_material(g, g.node('GeometryNodeSetShadeSmooth', Geometry=k), M['felt']))
 
@@ -1468,7 +1496,7 @@ def build(samples=128, engine='CYCLES'):
     build_moss(NAME, G, M)
     hand = build_hand(NAME, G, M)
     build_mycelium(NAME, G, M, hand)
-    build_mushroom(NAME, G, M)
+    build_mushroom(NAME, G, M, hand)
     build_canopy(NAME, M)
     rig(NAME, F_END)
     skip = bpy.data.collections.new('PA_SunSkips')               # light linking: the sun leaves the trunks to the sky

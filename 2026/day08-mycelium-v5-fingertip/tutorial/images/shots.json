@@ -8,7 +8,7 @@
  {
   "file": "nodes-hand-1-fingers.png",
   "tree": "PA_Hand_GN",
-  "section": "1 \u00b7 Fingers",
+  "section": "1 · Fingers",
   "nodes": 5,
   "inputs": [],
   "outputs": [
@@ -22,7 +22,7 @@
  {
   "file": "nodes-hand-2-palm-and-wrist.png",
   "tree": "PA_Hand_GN",
-  "section": "2 \u00b7 Palm and wrist",
+  "section": "2 · Palm and wrist",
   "nodes": 32,
   "inputs": [],
   "outputs": [
@@ -39,7 +39,7 @@
  {
   "file": "nodes-hand-3-muscle-and-fist.png",
   "tree": "PA_Hand_GN",
-  "section": "3 \u00b7 Muscle and fist",
+  "section": "3 · Muscle and fist",
   "nodes": 17,
   "inputs": [
    "wrist and forearm",
@@ -63,22 +63,22 @@
  {
   "file": "nodes-hand-4-stone.png",
   "tree": "PA_Hand_GN",
-  "section": "4 \u00b7 Stone",
+  "section": "4 · Stone",
   "nodes": 12,
   "inputs": [
    "the whole skeleton"
   ],
   "outputs": [
-   "into the moss: 1.4 \u00d7 life size"
+   "into the moss: 1.4 × life size"
   ]
  },
  {
   "file": "nodes-hand-5-weathering.png",
   "tree": "PA_Hand_GN",
-  "section": "5 \u00b7 Weathering",
+  "section": "5 · Weathering",
   "nodes": 29,
   "inputs": [
-   "into the moss: 1.4 \u00d7 life size"
+   "into the moss: 1.4 × life size"
   ],
   "outputs": [
    "Set Position"
@@ -87,7 +87,7 @@
  {
   "file": "nodes-hand-6-hollows-and-height.png",
   "tree": "PA_Hand_GN",
-  "section": "6 \u00b7 Hollows and height",
+  "section": "6 · Hollows and height",
   "nodes": 15,
   "inputs": [
    "Set Position"
@@ -105,7 +105,7 @@
  {
   "file": "nodes-finger-1-three-bones-three-curls.png",
   "tree": "PA_Finger",
-  "section": "a \u00b7 Three bones, three curls",
+  "section": "a · Three bones, three curls",
   "nodes": 31,
   "inputs": [
    "C1",
@@ -134,7 +134,7 @@
  {
   "file": "nodes-finger-2-flesh.png",
   "tree": "PA_Finger",
-  "section": "b \u00b7 Flesh",
+  "section": "b · Flesh",
   "nodes": 14,
   "inputs": [
    "Base",
@@ -159,7 +159,7 @@
  {
   "file": "nodes-finger-3-knuckles.png",
   "tree": "PA_Finger",
-  "section": "c \u00b7 Knuckles",
+  "section": "c · Knuckles",
   "nodes": 4,
   "inputs": [
    "Base",
@@ -188,7 +188,7 @@
  {
   "file": "nodes-bone-1-spheres-along-the-bone.png",
   "tree": "PA_Bone",
-  "section": "a \u00b7 Spheres along the bone",
+  "section": "a · Spheres along the bone",
   "nodes": 12,
   "inputs": [
    "Start",
@@ -198,21 +198,21 @@
   ],
   "outputs": [
    "radius: 7 % slimmer mid-bone",
-   "mid-bone: sin(\u03c0t)",
+   "mid-bone: sin(πt)",
    "Set Curve Radius"
   ]
  },
  {
   "file": "nodes-bone-2-pad-on-the-palm-side.png",
   "tree": "PA_Bone",
-  "section": "b \u00b7 Pad on the palm side",
+  "section": "b · Pad on the palm side",
   "nodes": 10,
   "inputs": [
    "Angle",
    "Fwd",
    "Up",
    "radius: 7 % slimmer mid-bone",
-   "mid-bone: sin(\u03c0t)",
+   "mid-bone: sin(πt)",
    "Set Curve Radius"
   ],
   "outputs": [
@@ -240,7 +240,7 @@
  {
   "file": "nodes-nail-1-outline.png",
   "tree": "PA_Nail",
-  "section": "a \u00b7 Outline",
+  "section": "a · Outline",
   "nodes": 13,
   "inputs": [
    "LP",
@@ -258,7 +258,7 @@
  {
   "file": "nodes-nail-2-plate-and-groove.png",
   "tree": "PA_Nail",
-  "section": "b \u00b7 Plate and groove",
+  "section": "b · Plate and groove",
   "nodes": 27,
   "inputs": [
    "w: towards the back",
@@ -273,12 +273,12 @@
   "file": "nodes-mycelium.png",
   "tree": "PA_Mycelium_GN",
   "section": null,
-  "nodes": 321
+  "nodes": 327
  },
  {
   "file": "nodes-mycelium-1-stone-lattice.png",
   "tree": "PA_Mycelium_GN",
-  "section": "1 \u00b7 Stone lattice",
+  "section": "1 · Stone lattice",
   "nodes": 25,
   "inputs": [],
   "outputs": [
@@ -292,7 +292,7 @@
  {
   "file": "nodes-mycelium-2-edge-cost.png",
   "tree": "PA_Mycelium_GN",
-  "section": "2 \u00b7 Edge cost",
+  "section": "2 · Edge cost",
   "nodes": 27,
   "inputs": [
    "nrm"
@@ -304,7 +304,7 @@
  {
   "file": "nodes-mycelium-3-shortest-paths.png",
   "tree": "PA_Mycelium_GN",
-  "section": "3 \u00b7 Shortest paths",
+  "section": "3 · Shortest paths",
   "nodes": 4,
   "inputs": [
    "where the colony leaves the soil",
@@ -321,7 +321,7 @@
  {
   "file": "nodes-mycelium-4-hyphae-and-cords.png",
   "tree": "PA_Mycelium_GN",
-  "section": "4 \u00b7 Hyphae and cords",
+  "section": "4 · Hyphae and cords",
   "nodes": 25,
   "inputs": [
    "paths down to the soil",
@@ -335,7 +335,7 @@
  {
   "file": "nodes-mycelium-5-stats.png",
   "tree": "PA_Mycelium_GN",
-  "section": "5 \u00b7 Stats",
+  "section": "5 · Stats",
   "nodes": 4,
   "inputs": [
    "cord",
@@ -349,7 +349,7 @@
  {
   "file": "nodes-mycelium-6-network-curves.png",
   "tree": "PA_Mycelium_GN",
-  "section": "6 \u00b7 Network \u2192 curves",
+  "section": "6 · Network → curves",
   "nodes": 19,
   "inputs": [
    "cord",
@@ -362,13 +362,13 @@
  {
   "file": "nodes-mycelium-7-growth-front.png",
   "tree": "PA_Mycelium_GN",
-  "section": "7 \u00b7 Growth front",
+  "section": "7 · Growth front",
   "nodes": 20,
   "inputs": [
    "d at the fingertip",
-   "Growth \u203a Colony",
+   "Growth › Colony",
    "smoothed, on the stone",
-   "Growth \u203a Cords"
+   "Growth › Cords"
   ],
   "outputs": [
    "behind the front",
@@ -380,13 +380,13 @@
  {
   "file": "nodes-mycelium-8-radius.png",
   "tree": "PA_Mycelium_GN",
-  "section": "8 \u00b7 Radius",
+  "section": "8 · Radius",
   "nodes": 42,
   "inputs": [
    "behind the front",
    "age: older = thicker, whiter",
    "dt max",
-   "Growth \u203a Cords",
+   "Growth › Cords",
    "kind",
    "grown so far"
   ],
@@ -397,7 +397,7 @@
  {
   "file": "nodes-mycelium-9-cottony-fuzz.png",
   "tree": "PA_Mycelium_GN",
-  "section": "9 \u00b7 Cottony fuzz",
+  "section": "9 · Cottony fuzz",
   "nodes": 43,
   "inputs": [
    "yg"
@@ -409,32 +409,34 @@
  {
   "file": "nodes-mycelium-10-mushroom-size.png",
   "tree": "PA_Mycelium_GN",
-  "section": "10 \u00b7 Mushroom size",
-  "nodes": 33,
-  "inputs": [],
+  "section": "10 · Mushroom size",
+  "nodes": 38,
+  "inputs": [
+   "Object Info"
+  ],
   "outputs": [
+   "stem length: foot → cap",
    "lean",
    "sway x",
    "sway y",
-   "stem height H",
-   "stem foot z: the fingertip",
+   "stem foot z: inside the stone",
    "stem radius",
-   "Growth \u203a Pin"
+   "Growth › Pin"
   ]
  },
  {
   "file": "nodes-mycelium-11-stem-foot.png",
   "tree": "PA_Mycelium_GN",
-  "section": "11 \u00b7 Stem foot",
-  "nodes": 69,
+  "section": "11 · Stem foot",
+  "nodes": 70,
   "inputs": [
+   "stem length: foot → cap",
    "lean",
    "sway x",
    "sway y",
-   "stem height H",
-   "stem foot z: the fingertip",
+   "stem foot z: inside the stone",
    "stem radius",
-   "Growth \u203a Pin",
+   "Growth › Pin",
    "Object Info"
   ],
   "outputs": [
@@ -450,21 +452,21 @@
  {
   "file": "nodes-clock-1-clock.png",
   "tree": "PA_Growth",
-  "section": "a \u00b7 Clock",
+  "section": "a · Clock",
   "nodes": 5,
   "inputs": [],
   "outputs": [
-   "T: growth clock 0 \u2192 1",
+   "T: growth clock 0 → 1",
    "Tu: unclamped clock"
   ]
  },
  {
   "file": "nodes-clock-2-one-curve-per-process.png",
   "tree": "PA_Growth",
-  "section": "b \u00b7 One curve per process",
+  "section": "b · One curve per process",
   "nodes": 9,
   "inputs": [
-   "T: growth clock 0 \u2192 1"
+   "T: growth clock 0 → 1"
   ],
   "outputs": [
    "Colony",
@@ -487,7 +489,7 @@
  {
   "file": "nodes-trunks-1-trunks.png",
   "tree": "PA_Trunks_GN",
-  "section": "1 \u00b7 Trunks",
+  "section": "1 · Trunks",
   "nodes": 13,
   "inputs": [],
   "outputs": [
@@ -503,7 +505,7 @@
  {
   "file": "nodes-mat-stone-1-mottled-sandstone.png",
   "tree": "PA_Stone",
-  "section": "a \u00b7 Mottled sandstone",
+  "section": "a · Mottled sandstone",
   "nodes": 37,
   "inputs": [],
   "outputs": [
@@ -516,7 +518,7 @@
  {
   "file": "nodes-mat-stone-2-grime-in-the-hollows.png",
   "tree": "PA_Stone",
-  "section": "b \u00b7 Grime in the hollows",
+  "section": "b · Grime in the hollows",
   "nodes": 13,
   "inputs": [
    "Mix"
@@ -529,7 +531,7 @@
  {
   "file": "nodes-mat-stone-3-lichen.png",
   "tree": "PA_Stone",
-  "section": "c \u00b7 Lichen",
+  "section": "c · Lichen",
   "nodes": 41,
   "inputs": [
    "Texture Coordinate",
@@ -545,7 +547,7 @@
  {
   "file": "nodes-mat-stone-4-damp-bump-shader.png",
   "tree": "PA_Stone",
-  "section": "d \u00b7 Damp, bump, shader",
+  "section": "d · Damp, bump, shader",
   "nodes": 19,
   "inputs": [
    "Attribute",
@@ -565,7 +567,7 @@
   "file": "nodes-mushroom.png",
   "tree": "PA_Mushroom_GN",
   "section": null,
-  "nodes": 286
+  "nodes": 310
  },
  {
   "file": "nodes-canopy.png",

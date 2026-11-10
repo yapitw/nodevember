@@ -1,8 +1,9 @@
 #!/bin/bash
 # Inputs for tutorial/figs.json: crops of the final frames and of the concept renders.
-#   tutorial/src/crops.sh RENDER_DIR [FIRST_FRAMES FRONT_FRAMES]   (RENDER_DIR holds the output of hand_stages.py,
+#   tutorial/src/crops.sh RENDER_DIR [FIRST_FRAMES FRONT_FRAMES [UNSEATED_FRAMES]]   (RENDER_DIR holds the output of hand_stages.py,
 #   cost_fields.py, sun_link.py (run on the first render's .blend); FIRST_FRAMES the frames of the first render, sun from the left and a little behind,
-#   SUN_DIR (0.86, -0.22, -0.46); FRONT_FRAMES those of the second, sun from the left-front, (0.86, 0.22, -0.40))
+#   SUN_DIR (0.86, -0.22, -0.46); FRONT_FRAMES those of the second, sun from the left-front, (0.86, 0.22, -0.40);
+#   UNSEATED_FRAMES the backlit frames from before the stem was seated on the stone)
 # Run from the piece folder. Writes tutorial/images/_*.jpg.
 set -euo pipefail
 R=${1:?render dir}
@@ -27,6 +28,11 @@ jpg $R/_sun_hits.png "crop=540:250:0:0" $I/_sun_hits.jpg
 jpg frames/0360.png "crop=600:400:240:680" $I/stem-foot.jpg   # the last frame: fibrils over the fingertip, curled fuzz
 FIST="crop=600:760:280:220"           # the fist at frame 133 (the camera has started to move in)
 jpg frames/0133.png "$FIST" $I/_sun_back.jpg
+SEAT="crop=500:330:290:750"           # the stem's foot in the last frame
+jpg frames/0360.png "$SEAT" $I/_seat_after.jpg
+if [ -n "${4:-}" ]; then              # optional: frames rendered before the stem was seated on the stone
+  jpg "$4/0360.png" "$SEAT" $I/_seat_before.jpg
+fi
 if [ -n "${3:-}" ]; then              # optional: the two earlier renders, for the sun-direction figure
   jpg "$2/0133.png" "$FIST" $I/_sun_side.jpg
   jpg "$3/0133.png" "$FIST" $I/_sun_front.jpg

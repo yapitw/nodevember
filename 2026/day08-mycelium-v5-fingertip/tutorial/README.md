@@ -83,9 +83,9 @@ Click any screenshot to see it at full size.
 | 1 | **Growth clock** | `PA_Growth` · 14 | T, Tu and one Float Curve per process |
 | 2 | **Hand** | `PA_Hand_GN` · 110, `PA_Capsule` · 9, `PA_Nail` · 40 | fingers, palm and muscle as spheres → distance field → weathered stone; hollows and height for later |
 | 3 | **Finger** | `PA_Finger` · 49, `PA_Bone` · 22, `PA_Knuckle` · 17 | one finger from three bone lengths, three curls and two radii |
-| 4 | **Mycelium** | `PA_Mycelium_GN` · 319 | two shortest-path fields on the stone; hyphae, cords, fuzz and the stem foot |
+| 4 | **Mycelium** | `PA_Mycelium_GN` · 325 | two shortest-path fields on the stone; hyphae, cords, fuzz and the stem foot |
 | 5 | **Stone** | material `PA_Stone` · 110, `PA_Rosettes` · 23 | sandstone colour, grime in the hollows, lichen, damp near the soil |
-| 6 | **Mushroom** | `PA_Mushroom_GN` · 284, `PA_Cap` · 86 | the v4 Bonnet, 1.3 × larger, standing on the fingertip |
+| 6 | **Mushroom** | `PA_Mushroom_GN` · 308, `PA_Cap` · 86 | the v4 Bonnet, 1.3 × larger, seated on the stone in a felt cushion |
 | 7 | **Light and forest** | `PA_Canopy_GN` · 62, `PA_Forest_GN` · 60, `PA_Trunks_GN` · 13 | a low backlight through the leaves, the forest out of focus, trunks the sun skips |
 | 8 | **Camera** | Python keys | wide → finger → close-up, and the aperture |
 
@@ -469,17 +469,18 @@ and old ones 45 %, so the margin is the fluffiest part.
   own axis by a random angle, so the hooks curl every way.
 - Each wisp is 0.04–0.17 long, with a radius of 0.0019 that tapers to 40 % at its tip.
 
-![The stem's foot on the fingertip in the last frame: fibrils fan out from the stem and drape over the stone, with short curled wisps along them; spores in the air](images/stem-foot.jpg)
+![The stem's foot on the fingertip in the last frame: the stem rises out of a white felt cushion, fibrils fan out from it and drape over the stone, with short curled wisps along them; spores in the air](images/stem-foot.jpg)
 
 ### 10 · Mushroom size and 11 · Stem foot
 
-![10 · Mushroom size: the mushroom's sizes from the growth clock (stem height H, stem radius, stem foot z: the fingertip, lean, sway)](images/nodes-mycelium-10-mushroom-size.png)
+![10 · Mushroom size: the mushroom's sizes from the growth clock (stem height H, stem radius, lean, sway) and a Raycast that finds the stone under the fingertip (stem foot z: inside the stone, stem length: foot → cap)](images/nodes-mycelium-10-mushroom-size.png)
 
-![11 · Stem foot: 220 fibrils of 6 points from the stem's surface near its foot, reaching outwards and down; over the first 35 % of their length they are pulled onto the stone with Sample Nearest Surface](images/nodes-mycelium-11-stem-foot.png)
+![11 · Stem foot: 340 fibrils of 6 points from the stem's surface just above the stone, reaching outwards and down; over the first 35 % of their length they are pulled onto the stone with Sample Nearest Surface](images/nodes-mycelium-11-stem-foot.png)
 
 Section 10 repeats the mushroom's own sizes from the clock (the same numbers as `1 · Clock → sizes` in
-**PA_Mushroom_GN**), so the foot fits the stem. Section 11 is the v4 stem foot, but draped. Each of 220 fibrils leaves
-the stem's surface near its foot and runs outwards and down, 0.35–1.3 long. Over the first 35 % of its length it is
+**PA_Mushroom_GN**, with the ray that finds the stone; section 6 explains it), so the foot fits the stem. Section 11 is
+the v4 stem foot, but draped. Each of 340 fibrils leaves the stem's surface 2–7 % of the stem's length above the stone
+and runs outwards and down, 0.35–1.3 long. Over the first 35 % of its length it is
 pulled onto the stone (**Sample Nearest Surface** of the position and of the normal, 0.012 out), and from there on it
 lies on it. The fibrils wrap the fingertip instead of sticking out into the air.
 
@@ -556,10 +557,40 @@ changed from v4:
 
 - **It is 1.3 × larger,** so it holds its own on a stone finger: `stem height H` = `Pin` × mix(0.18, 5.7, `Stem`) and
   `cap arc length L` = `Pin` × mix(0.39, 2.5, `Cap`). The thickness and the stem radius scale with them.
-- **It stands on the fingertip.** The stem's axis starts at `FINGERTIP` (`stem foot z: the fingertip` is 0.12 below
-  it, so the foot sinks into the knot), and the hyphal knot sits there too.
+- **It is seated on the stone.** The stem's axis rises over `FINGERTIP`, but its foot starts where a ray meets the
+  stone, and the hyphal knot is a felt cushion draped over the fingertip (the trick below).
 - **It runs on the re-timed clock** (section 1), so the cap finishes opening at frame 276, while the camera is still
   closing in on it.
+
+### Trick · seat it on the surface, not on the skeleton
+
+![The stem's foot in the last frame, twice: in the first render the stem ends in a flat ring that hovers over the stone; seated, it rises out of a white felt cushion that lies on the stone](images/stem-seat.jpg)
+
+`FINGERTIP` is the end of the raised finger's last bone, worked out in Python from the same lengths and curls as the
+bones. The stone is not there. **Points to SDF Grid**, the fillet and the mean round the tip off and the weathering wears
+it, so the real surface lies 2 mm lower, and its highest point is 2.7 mm to one side. The first render started the
+stem 1.2 mm below `FINGERTIP`: its flat bottom ring hovered 0.7–1.6 mm over the stone, and in the close-up the stem
+looked set down on the fingertip, not grown out of it.
+
+Two **Raycast** nodes fix it. Both shoot straight down at **PA_Hand**'s geometry (an **Object Info** node):
+
+- `the stone under the fingertip` casts one ray from 2 cm above `FINGERTIP`. `stem foot z: inside the stone` is its hit,
+  1.5 mm lower, and `stem length: foot → cap` runs from there to where the cap always was, `FINGERTIP` + `stem height
+  H`. The stem grows longer at its foot and the cap does not move. Its flare is measured from the stone
+  (`height above the stone`), so it widens where it meets it.
+- `the stone under each point` drapes the knot. An **Ico Sphere** of radius 1 is spread to `cushion radius` (0.75 ×
+  `Knot`, with a lumpy noise rim, about 5 mm in the hold). Every point casts its own ray down at its x and y. The lower
+  half of the sphere lies on the hit, 0.15 mm inside, and the upper half stands up off it by `felt thickness`
+  (height on the sphere^1.5 × 0.42 × the radius × a fine tufting noise). Where the fingertip curves away the rim
+  follows it down, so no edge floats.
+
+The stem's material whitens over its lowest 6 mm (`sh`, its height above the stone, plus its own fibre noise), and the
+felt is matte with full **Sheen**, so against the sun its edge glows like fuzz. The stem grows out of white felt, as a
+real stem grows out of its basal mycelium.
+
+> **Try it:** in **PA_Mushroom_GN**, change 0.42 in `felt thickness` to 0. The felt lies flat on the stone and the
+> stem meets the grey stone in a hard line. Then change 0.15 in `stem foot z: inside the stone` to −0.12: the stem's
+> foot ends 1.2 mm above the stone, and the gap of the first render is back.
 
 ---
 
@@ -676,11 +707,11 @@ to f/16 so that the whole cap and the top of the finger are sharp together.
 
 - Cycles, 128 samples with denoising, 1080 × 1080, at most 10 bounces (6 diffuse), AgX Medium High Contrast,
   exposure +0.4, persistent data (the moss, the ground and the hand stay in memory between frames).
-- All 360 frames were rendered on one machine, an Apple M4 Pro (Metal), with `render_frames.sh` (in `lib/`):
-  99 minutes, about 16 seconds a frame. Most of a frame's time goes on re-evaluating the mycelium and the mushroom,
-  not on sampling. The two earlier lighting renders ran on a LAN render farm node (RTX 4060, OptiX, through Flamenco)
-  in about 70 minutes each. With about 20 million moss curve points, OptiX and Metal render the out-of-focus hair a
-  little differently, so a shot is never split between the two.
+- All 360 frames were rendered on one machine, a LAN render farm node (RTX 4060, OptiX, through Flamenco): 71 minutes,
+  about 12 seconds a frame. Most of a frame's time goes on re-evaluating the mycelium and the mushroom, not on
+  sampling. An earlier render ran on an Apple M4 Pro (Metal) with `render_frames.sh` (in `lib/`) in 99 minutes. With
+  about 20 million moss curve points, OptiX and Metal render the out-of-focus hair a little differently, so a shot is
+  never split between the two: when only the last 240 frames changed, all 360 were rendered again on one device.
 - A bloom in the compositor (`pb.post(bloom=0.5)`: a **Glare** node, Bloom, threshold 0.8) lets the backlit edges
   and highlights glow.
 - Vignette and grain were added in ffmpeg (`vignette=angle=PI/6,noise=alls=5:allf=t+u`): the 5.x compositor has no
