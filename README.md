@@ -17,6 +17,7 @@ build it again yourself.
 | 05 | Clockwork | **Four-season music box.** A wind-up music box whose stage makes one turn per loop, and that turn is one year. The tree on it goes from snow through blossom, leaf and fruit to leaf-fall and back, and behind a wall of translucent enamel a pinned cylinder plucks a steel comb, one bar of the tune per season. The sound is synthesised from the same score as the pins, so picture and tune loop together. | [files](2026/day05-clockwork-v3-musicbox) · [loop with sound](2026/day05-clockwork-v3-musicbox/loop_sound.mp4) · [**node-by-node tutorial**](2026/day05-clockwork-v3-musicbox/tutorial/README.md) |
 | 06 | Vault | **Rouen nave.** You lie on the floor of the nave of Rouen Cathedral and look up as you walk towards the rose window: four storeys of stone, pointed arches and a quadripartite rib vault, with every ochre stone of the cells laid course by course. The nave slides back one bay per loop, so the 10-second walk never ends. Rendered in Cycles, and again in EEVEE. | [files](2026/day06-vault-v5-rouen) · [loop](2026/day06-vault-v5-rouen/color/loop.mp4) · [EEVEE loop](2026/day06-vault-v5-rouen/eevee/loop.mp4) · [**node-by-node tutorial**](2026/day06-vault-v5-rouen/tutorial/README.md) |
 | 07 | Tree | **After the rain — Supertree.** Eleven steel trees in an imagined Singapore garden at blue hour, inspired by the Supertree Grove at Gardens by the Bay. After the rain the garden wakes: violet-white light rises tree by tree through curved, flaring canopies, and a suspended skyway lights up between the two nearest trees. The crown framework is one connected graph of ribs, branches and ties, all in Geometry Nodes. A one-shot 8-second event, not a loop. Rendered in EEVEE. | [files](2026/day07-tree-v6-supertree) · [video](2026/day07-tree-v6-supertree/awakening.mp4) · [**node-by-node tutorial**](2026/day07-tree-v6-supertree/tutorial/README.md) |
+| 08 | Mycelium | **Fingertip.** A weathered stone hand stands in fern moss on a forest floor and points one finger at the sky, with a low sun behind it. White hyphae leave the soil and climb the stone, cords gather up the raised finger, a hyphal knot swells on its tip, and a bonnet mushroom grows there, opens and sheds spores into the light. The hand is a skeleton of bones melted into stone by a signed distance field, and the mycelium is shortest paths over its mesh. A one-shot 15-second growth, not a loop. Rendered in Cycles. | [files](2026/day08-mycelium-v5-fingertip) · [video](2026/day08-mycelium-v5-fingertip/loop.mp4) · [**node-by-node tutorial**](2026/day08-mycelium-v5-fingertip/tutorial/README.md) |
 
 <p>
   <img src="2026/day01-origami/_still_086.png" width="49%" alt="The washi sheet folded into a dart on a stack of paper">
@@ -51,6 +52,11 @@ build it again yourself.
 <p>
   <img src="2026/day07-tree-v6-supertree/_still_001.png" width="49%" alt="Blue hour in a garden of tall steel trees before the lights: dark violet crowns, planted trunks lit green from below, a skyway between the two nearest trees">
   <img src="2026/day07-tree-v6-supertree/render_1080.png" width="49%" alt="The same garden awake: every crown glows violet-white through black radial ribs, the skyway glows pink and gold, and wet paths reflect the light">
+</p>
+
+<p>
+  <img src="2026/day08-mycelium-v5-fingertip/render-wide.png" width="49%" alt="A stone hand in fern moss points one finger at the sky, its stone laced with white mycelium; a small pale mushroom stands on the fingertip, its cap glowing in the backlight against a dark forest">
+  <img src="2026/day08-mycelium-v5-fingertip/render.png" width="49%" alt="Close-up of the pale bonnet mushroom on its thin pink stem, the gills lit from behind by a low golden sun and spores drifting through the light, above the fingertip wrapped in white threads">
 </p>
 
 ## What is in a day folder

@@ -447,8 +447,11 @@ def arrange_sections(tree, gap_x=70, gap_y=28, pad=90):
     area = sum((w + pad) * (h + pad) for _, w, h in laid) or 1.0
     row_w = max(2400.0, 1.7 * area ** 0.5, max((w for _, w, _ in laid), default=0))
     x, y, row_h, right = 0.0, 0.0, 0.0, 0.0
-    for pos, w, h in laid:
-        if x > 0 and x + w > row_w:
+    for i, (pos, w, h) in enumerate(laid):
+        # a small last block (the join / materials step everything feeds) stays on the row it follows;
+        # wrapped to a new row's left edge, every link into it loops back across the whole tree
+        tail = i == len(laid) - 1 and len(laid) > 2 and w < 0.5 * row_w
+        if x > 0 and x + w > row_w and not tail:
             x, y, row_h = 0.0, y - row_h - 2 * pad, 0.0
         for n, (px, py) in pos.items():
             _set_loc(n, x + px, y + py - 60)          # room for the frame label
@@ -458,7 +461,7 @@ def arrange_sections(tree, gap_x=70, gap_y=28, pad=90):
     for i, n in enumerate(io_in):
         n.location = (-n.width - 3 * pad, -220.0 * i)
     for i, n in enumerate(io_out):
-        n.location = (right + pad, -220.0 * i)
+        n.location = (right + pad, y - 60 - 220.0 * i)   # level with the last block, which feeds it
     return {"sections": len(frames), "rows": round(-y / max(row_h, 1)) + 1, "nodes": sum(len(p) for p, _, _ in laid)}
 
 

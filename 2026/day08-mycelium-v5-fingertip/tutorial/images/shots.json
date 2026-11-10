@@ -1,0 +1,594 @@
+[
+ {
+  "file": "nodes-hand.png",
+  "tree": "PA_Hand_GN",
+  "section": null,
+  "nodes": 112
+ },
+ {
+  "file": "nodes-hand-1-fingers.png",
+  "tree": "PA_Hand_GN",
+  "section": "1 \u00b7 Fingers",
+  "nodes": 5,
+  "inputs": [],
+  "outputs": [
+   "thumb: folded over the middle finger",
+   "little: curled",
+   "ring: curled",
+   "middle: curled",
+   "index: pointing up"
+  ]
+ },
+ {
+  "file": "nodes-hand-2-palm-and-wrist.png",
+  "tree": "PA_Hand_GN",
+  "section": "2 \u00b7 Palm and wrist",
+  "nodes": 32,
+  "inputs": [],
+  "outputs": [
+   "wrist and forearm",
+   "wrist and forearm 2",
+   "wrist and forearm 3",
+   "palm bone: little",
+   "palm bone: ring",
+   "palm bone: middle",
+   "palm bone: index",
+   "palm"
+  ]
+ },
+ {
+  "file": "nodes-hand-3-muscle-and-fist.png",
+  "tree": "PA_Hand_GN",
+  "section": "3 \u00b7 Muscle and fist",
+  "nodes": 17,
+  "inputs": [
+   "wrist and forearm",
+   "wrist and forearm 2",
+   "wrist and forearm 3",
+   "palm bone: little",
+   "palm bone: ring",
+   "palm bone: middle",
+   "palm bone: index",
+   "palm",
+   "thumb: folded over the middle finger",
+   "little: curled",
+   "ring: curled",
+   "middle: curled",
+   "index: pointing up"
+  ],
+  "outputs": [
+   "the whole skeleton"
+  ]
+ },
+ {
+  "file": "nodes-hand-4-stone.png",
+  "tree": "PA_Hand_GN",
+  "section": "4 \u00b7 Stone",
+  "nodes": 12,
+  "inputs": [
+   "the whole skeleton"
+  ],
+  "outputs": [
+   "into the moss: 1.4 \u00d7 life size"
+  ]
+ },
+ {
+  "file": "nodes-hand-5-weathering.png",
+  "tree": "PA_Hand_GN",
+  "section": "5 \u00b7 Weathering",
+  "nodes": 29,
+  "inputs": [
+   "into the moss: 1.4 \u00d7 life size"
+  ],
+  "outputs": [
+   "Set Position"
+  ]
+ },
+ {
+  "file": "nodes-hand-6-hollows-and-height.png",
+  "tree": "PA_Hand_GN",
+  "section": "6 \u00b7 Hollows and height",
+  "nodes": 15,
+  "inputs": [
+   "Set Position"
+  ],
+  "outputs": [
+   "Stone parts"
+  ]
+ },
+ {
+  "file": "nodes-finger.png",
+  "tree": "PA_Finger",
+  "section": null,
+  "nodes": 51
+ },
+ {
+  "file": "nodes-finger-1-three-bones-three-curls.png",
+  "tree": "PA_Finger",
+  "section": "a \u00b7 Three bones, three curls",
+  "nodes": 31,
+  "inputs": [
+   "C1",
+   "C2",
+   "C3",
+   "Up",
+   "Fwd",
+   "L1",
+   "Base",
+   "L2",
+   "L3",
+   "R1",
+   "R0"
+  ],
+  "outputs": [
+   "joint 1",
+   "radius at joint 1",
+   "joint 2",
+   "radius at joint 2",
+   "angle of bone 2",
+   "joint 3",
+   "angle of bone 3",
+   "side"
+  ]
+ },
+ {
+  "file": "nodes-finger-2-flesh.png",
+  "tree": "PA_Finger",
+  "section": "b \u00b7 Flesh",
+  "nodes": 14,
+  "inputs": [
+   "Base",
+   "joint 1",
+   "R0",
+   "radius at joint 1",
+   "Up",
+   "Fwd",
+   "C1",
+   "joint 2",
+   "radius at joint 2",
+   "angle of bone 2",
+   "joint 3",
+   "R1",
+   "angle of bone 3",
+   "side"
+  ],
+  "outputs": [
+   "oval section"
+  ]
+ },
+ {
+  "file": "nodes-finger-3-knuckles.png",
+  "tree": "PA_Finger",
+  "section": "c \u00b7 Knuckles",
+  "nodes": 4,
+  "inputs": [
+   "Base",
+   "C1",
+   "R0",
+   "Up",
+   "Fwd",
+   "joint 1",
+   "angle of bone 2",
+   "radius at joint 1",
+   "joint 2",
+   "angle of bone 3",
+   "radius at joint 2",
+   "oval section"
+  ],
+  "outputs": [
+   "oval section"
+  ]
+ },
+ {
+  "file": "nodes-bone.png",
+  "tree": "PA_Bone",
+  "section": null,
+  "nodes": 24
+ },
+ {
+  "file": "nodes-bone-1-spheres-along-the-bone.png",
+  "tree": "PA_Bone",
+  "section": "a \u00b7 Spheres along the bone",
+  "nodes": 12,
+  "inputs": [
+   "Start",
+   "End",
+   "R End",
+   "R Start"
+  ],
+  "outputs": [
+   "radius: 7 % slimmer mid-bone",
+   "mid-bone: sin(\u03c0t)",
+   "Set Curve Radius"
+  ]
+ },
+ {
+  "file": "nodes-bone-2-pad-on-the-palm-side.png",
+  "tree": "PA_Bone",
+  "section": "b \u00b7 Pad on the palm side",
+  "nodes": 10,
+  "inputs": [
+   "Angle",
+   "Fwd",
+   "Up",
+   "radius: 7 % slimmer mid-bone",
+   "mid-bone: sin(\u03c0t)",
+   "Set Curve Radius"
+  ],
+  "outputs": [
+   "Curve to Points"
+  ]
+ },
+ {
+  "file": "nodes-knuckle.png",
+  "tree": "PA_Knuckle",
+  "section": null,
+  "nodes": 19
+ },
+ {
+  "file": "nodes-capsule.png",
+  "tree": "PA_Capsule",
+  "section": null,
+  "nodes": 11
+ },
+ {
+  "file": "nodes-nail.png",
+  "tree": "PA_Nail",
+  "section": null,
+  "nodes": 42
+ },
+ {
+  "file": "nodes-nail-1-outline.png",
+  "tree": "PA_Nail",
+  "section": "a \u00b7 Outline",
+  "nodes": 13,
+  "inputs": [
+   "LP",
+   "Tip Joint",
+   "Along",
+   "Side",
+   "Back",
+   "R"
+  ],
+  "outputs": [
+   "w: towards the back",
+   "box: < 0 inside the nail"
+  ]
+ },
+ {
+  "file": "nodes-nail-2-plate-and-groove.png",
+  "tree": "PA_Nail",
+  "section": "b \u00b7 Plate and groove",
+  "nodes": 27,
+  "inputs": [
+   "w: towards the back",
+   "R",
+   "box: < 0 inside the nail"
+  ],
+  "outputs": [
+   "Math"
+  ]
+ },
+ {
+  "file": "nodes-mycelium.png",
+  "tree": "PA_Mycelium_GN",
+  "section": null,
+  "nodes": 321
+ },
+ {
+  "file": "nodes-mycelium-1-stone-lattice.png",
+  "tree": "PA_Mycelium_GN",
+  "section": "1 \u00b7 Stone lattice",
+  "nodes": 25,
+  "inputs": [],
+  "outputs": [
+   "nrm",
+   "where the colony leaves the soil",
+   "Math",
+   "fingertip vertex",
+   "Object Info"
+  ]
+ },
+ {
+  "file": "nodes-mycelium-2-edge-cost.png",
+  "tree": "PA_Mycelium_GN",
+  "section": "2 \u00b7 Edge cost",
+  "nodes": 27,
+  "inputs": [
+   "nrm"
+  ],
+  "outputs": [
+   "edge cost: hollows are cheap"
+  ]
+ },
+ {
+  "file": "nodes-mycelium-3-shortest-paths.png",
+  "tree": "PA_Mycelium_GN",
+  "section": "3 \u00b7 Shortest paths",
+  "nodes": 4,
+  "inputs": [
+   "where the colony leaves the soil",
+   "edge cost: hollows are cheap",
+   "Math",
+   "nrm"
+  ],
+  "outputs": [
+   "paths down to the soil",
+   "paths up to the fingertip",
+   "dt"
+  ]
+ },
+ {
+  "file": "nodes-mycelium-4-hyphae-and-cords.png",
+  "tree": "PA_Mycelium_GN",
+  "section": "4 \u00b7 Hyphae and cords",
+  "nodes": 25,
+  "inputs": [
+   "paths down to the soil",
+   "paths up to the fingertip",
+   "dt"
+  ],
+  "outputs": [
+   "cord"
+  ]
+ },
+ {
+  "file": "nodes-mycelium-5-stats.png",
+  "tree": "PA_Mycelium_GN",
+  "section": "5 \u00b7 Stats",
+  "nodes": 4,
+  "inputs": [
+   "cord",
+   "fingertip vertex"
+  ],
+  "outputs": [
+   "d at the fingertip",
+   "dt max"
+  ]
+ },
+ {
+  "file": "nodes-mycelium-6-network-curves.png",
+  "tree": "PA_Mycelium_GN",
+  "section": "6 \u00b7 Network \u2192 curves",
+  "nodes": 19,
+  "inputs": [
+   "cord",
+   "Object Info"
+  ],
+  "outputs": [
+   "smoothed, on the stone"
+  ]
+ },
+ {
+  "file": "nodes-mycelium-7-growth-front.png",
+  "tree": "PA_Mycelium_GN",
+  "section": "7 \u00b7 Growth front",
+  "nodes": 20,
+  "inputs": [
+   "d at the fingertip",
+   "Growth \u203a Colony",
+   "smoothed, on the stone",
+   "Growth \u203a Cords"
+  ],
+  "outputs": [
+   "behind the front",
+   "age: older = thicker, whiter",
+   "kind",
+   "grown so far"
+  ]
+ },
+ {
+  "file": "nodes-mycelium-8-radius.png",
+  "tree": "PA_Mycelium_GN",
+  "section": "8 \u00b7 Radius",
+  "nodes": 42,
+  "inputs": [
+   "behind the front",
+   "age: older = thicker, whiter",
+   "dt max",
+   "Growth \u203a Cords",
+   "kind",
+   "grown so far"
+  ],
+  "outputs": [
+   "yg"
+  ]
+ },
+ {
+  "file": "nodes-mycelium-9-cottony-fuzz.png",
+  "tree": "PA_Mycelium_GN",
+  "section": "9 \u00b7 Cottony fuzz",
+  "nodes": 43,
+  "inputs": [
+   "yg"
+  ],
+  "outputs": [
+   "yg"
+  ]
+ },
+ {
+  "file": "nodes-mycelium-10-mushroom-size.png",
+  "tree": "PA_Mycelium_GN",
+  "section": "10 \u00b7 Mushroom size",
+  "nodes": 33,
+  "inputs": [],
+  "outputs": [
+   "lean",
+   "sway x",
+   "sway y",
+   "stem height H",
+   "stem foot z: the fingertip",
+   "stem radius",
+   "Growth \u203a Pin"
+  ]
+ },
+ {
+  "file": "nodes-mycelium-11-stem-foot.png",
+  "tree": "PA_Mycelium_GN",
+  "section": "11 \u00b7 Stem foot",
+  "nodes": 69,
+  "inputs": [
+   "lean",
+   "sway x",
+   "sway y",
+   "stem height H",
+   "stem foot z: the fingertip",
+   "stem radius",
+   "Growth \u203a Pin",
+   "Object Info"
+  ],
+  "outputs": [
+   "Delete Geometry"
+  ]
+ },
+ {
+  "file": "nodes-clock.png",
+  "tree": "PA_Growth",
+  "section": null,
+  "nodes": 16
+ },
+ {
+  "file": "nodes-clock-1-clock.png",
+  "tree": "PA_Growth",
+  "section": "a \u00b7 Clock",
+  "nodes": 5,
+  "inputs": [],
+  "outputs": [
+   "T: growth clock 0 \u2192 1",
+   "Tu: unclamped clock"
+  ]
+ },
+ {
+  "file": "nodes-clock-2-one-curve-per-process.png",
+  "tree": "PA_Growth",
+  "section": "b \u00b7 One curve per process",
+  "nodes": 9,
+  "inputs": [
+   "T: growth clock 0 \u2192 1"
+  ],
+  "outputs": [
+   "Colony",
+   "Cords",
+   "Knot",
+   "Pin",
+   "Stem",
+   "Cap",
+   "Open",
+   "Sway",
+   "Spores"
+  ]
+ },
+ {
+  "file": "nodes-trunks.png",
+  "tree": "PA_Trunks_GN",
+  "section": null,
+  "nodes": 15
+ },
+ {
+  "file": "nodes-trunks-1-trunks.png",
+  "tree": "PA_Trunks_GN",
+  "section": "1 \u00b7 Trunks",
+  "nodes": 13,
+  "inputs": [],
+  "outputs": [
+   "Bark parts"
+  ]
+ },
+ {
+  "file": "nodes-mat-stone.png",
+  "tree": "PA_Stone",
+  "section": null,
+  "nodes": 110
+ },
+ {
+  "file": "nodes-mat-stone-1-mottled-sandstone.png",
+  "tree": "PA_Stone",
+  "section": "a \u00b7 Mottled sandstone",
+  "nodes": 37,
+  "inputs": [],
+  "outputs": [
+   "Mix",
+   "Texture Coordinate",
+   "fine grain",
+   "iron stains"
+  ]
+ },
+ {
+  "file": "nodes-mat-stone-2-grime-in-the-hollows.png",
+  "tree": "PA_Stone",
+  "section": "b \u00b7 Grime in the hollows",
+  "nodes": 13,
+  "inputs": [
+   "Mix"
+  ],
+  "outputs": [
+   "Mix",
+   "Attribute"
+  ]
+ },
+ {
+  "file": "nodes-mat-stone-3-lichen.png",
+  "tree": "PA_Stone",
+  "section": "c \u00b7 Lichen",
+  "nodes": 41,
+  "inputs": [
+   "Texture Coordinate",
+   "fine grain",
+   "Mix",
+   "iron stains"
+  ],
+  "outputs": [
+   "Mix",
+   "Math"
+  ]
+ },
+ {
+  "file": "nodes-mat-stone-4-damp-bump-shader.png",
+  "tree": "PA_Stone",
+  "section": "d \u00b7 Damp, bump, shader",
+  "nodes": 19,
+  "inputs": [
+   "Attribute",
+   "Mix",
+   "Math",
+   "fine grain"
+  ],
+  "outputs": []
+ },
+ {
+  "file": "nodes-rosettes.png",
+  "tree": "PA_Rosettes",
+  "section": null,
+  "nodes": 25
+ },
+ {
+  "file": "nodes-mushroom.png",
+  "tree": "PA_Mushroom_GN",
+  "section": null,
+  "nodes": 286
+ },
+ {
+  "file": "nodes-canopy.png",
+  "tree": "PA_Canopy_GN",
+  "section": null,
+  "nodes": 64
+ },
+ {
+  "file": "nodes-forest.png",
+  "tree": "PA_Forest_GN",
+  "section": null,
+  "nodes": 62
+ },
+ {
+  "file": "nodes-moss.png",
+  "tree": "PA_Moss_GN",
+  "section": null,
+  "nodes": 190
+ },
+ {
+  "file": "nodes-ground.png",
+  "tree": "PA_Ground_GN",
+  "section": null,
+  "nodes": 233
+ }
+]
